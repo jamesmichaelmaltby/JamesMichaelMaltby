@@ -1,0 +1,7 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    James Michael Maltby -- Educator and Technology Researcher-- @jmmaltby
+
