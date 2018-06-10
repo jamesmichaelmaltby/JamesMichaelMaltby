@@ -1,6 +1,6 @@
 ---
 
-title: James Michael Maltby!
+title: James Michael Maltby
 
 url: https://jamesmichaelmaltby.com
 
@@ -27,7 +27,7 @@ summary: I am a learning technologist with over five years experience as a proje
 
         <!-- Page Meta -->
 				<title vamp="title">{{ page.title }}</title>
-				<meta name="description" content="{{ page.summary }}">
+				<meta name="description" content="{{ page.description }}">
 				<meta name="robots" content="index, nofollow">
 				<link rel="canonical" href="{{ page.url }}"/>
 
@@ -44,7 +44,7 @@ summary: I am a learning technologist with over five years experience as a proje
 
         <!-- Social Meta -->
         <meta property="og:title" content="{{ page.title }}">
-        <meta property="og:description" content="Educator and technology researcher. Currently Learning Technology Manager at Plumpton College.">
+		<meta property="og:description" content="{{ page.description }}">
         <meta property="og:image" content="{{ page.url }}/thumbnail.jpg">
 				<meta property="og:image:secure_url" content="{{ page.url }}/thumbnail.jpg" />
 				<link rel="image_src" href="{{ page.url }}/thumbnail.jpg" />
@@ -926,21 +926,9 @@ input, button {
 							width:3rem;
 						}
 
-            .copied {
-  animation: showcopied 1.5s ease;
-}
 
-@keyframes showcopied {
-  0% {
-    background:#ddd;
-  }
 
-  100% {
-    background:#fff;
-  }
-}
-
-			@keyframes fadein {
+@keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
@@ -969,11 +957,11 @@ input, button {
     to   { opacity: 1; }
 }
 main {
-	-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 0.5s; /* Firefox < 16 */
-        -ms-animation: fadein 0.5s; /* Internet Explorer */
-         -o-animation: fadein 0.5s; /* Opera < 12.1 */
-            animation: fadein 0.5s;
+	/*-webkit-animation: fadein 0.5s; 
+       -moz-animation: fadein 0.5s; 
+        -ms-animation: fadein 0.5s; 
+         -o-animation: fadein 0.5s; 
+            animation: fadein 0.5s;*/
 }
 footer {
     clear:both;
