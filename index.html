@@ -1,3 +1,20 @@
+---
+
+title: James Michael Maltby!
+
+url: https://jamesmichaelmaltby.com
+
+email: contact@jamesmichaelmaltby.com
+
+headline: Educator &amp; Technology Researcher &middot; Learning Technology Manager at <a href="https://www.plumpton.ac.uk">Plumpton College</a>
+
+description: Educator and technology researcher. Currently Learning Technology Manager at Plumpton College.
+
+summary: I am a learning technologist with over five years experience as a project manager and teacher within the arts and education sectors.
+
+---
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,13 +23,13 @@
 				<!-- Document Meta -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 				<meta charset="utf-8">
-				<base href="">
+				<base href="{{ page.url }}">
 
         <!-- Page Meta -->
-				<title vamp="title">James Michael Maltby</title>
-				<meta name="description" content="Educator and technology researcher. Currently Learning Technology Manager at Plumpton College.">
+				<title vamp="title">{{ page.title }}</title>
+				<meta name="description" content="{{ page.summary }}">
 				<meta name="robots" content="index, nofollow">
-				<link rel="canonical" href="https://jamesmichaelmaltby.com/"/>
+				<link rel="canonical" href="{{ page.url }}"/>
 
         <!-- Mobile Meta -->
         <meta name="viewport" content="user-scalable=no, width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
@@ -26,27 +43,25 @@
 				<meta name="theme-color" content="#ffffff">
 
         <!-- Social Meta -->
-        <meta property="og:title" content="James Michael Maltby">
+        <meta property="og:title" content="{{ page.title }}">
         <meta property="og:description" content="Educator and technology researcher. Currently Learning Technology Manager at Plumpton College.">
-        <meta property="og:image" content="https://jamesmichaelmaltby.com/thumbnail.jpg">
-				<meta property="og:image:secure_url" content="https://jamesmichaelmaltby.com/thumbnail.jpg" />
-				<link rel="image_src" href="https://jamesmichaelmaltby.com/thumbnail.jpg" />
+        <meta property="og:image" content="{{ page.url }}/thumbnail.jpg">
+				<meta property="og:image:secure_url" content="{{ page.url }}/thumbnail.jpg" />
+				<link rel="image_src" href="{{ page.url }}/thumbnail.jpg" />
 				
-				<meta itemprop="name" content="James Michael Maltby"/>
-				<meta itemprop="url" content="https://jamesmichaelmaltby.com/"/>
-				<meta itemprop="thumbnailUrl" content="https://jamesmichaelmaltby.com/thumbnail.jpg"/>
+				<meta itemprop="name" content="{{ page.title }}"/>
+				<meta itemprop="url" content="{{ page.url }}/"/>
+				<meta itemprop="thumbnailUrl" content="{{ page.url }}/thumbnail.jpg"/>
 				
 				<meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://jamesmichaelmaltby.com">
-        <meta property="og:site_name" content="James Michael Maltby">
+        <meta property="og:url" content="{{ page.url }}">
+        <meta property="og:site_name" content="{{ page.title }}">
         <!-- <meta property="fb:app_id" content="your_app_id" /> -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image:alt" content="Thumbnail">
 		<meta name="twitter:site" content="@jmmaltby">
-
-		<link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
 	
 		<style>
 			/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -1032,14 +1047,14 @@ nav ul li a.is-active {
 			<header>
                 
 			<a href="/"><img class="profile__photo" src="jamesmichaelmaltby.jpg"/></a>
-			<h1 class="profile__titlƒe">James Michael Maltby</h1>
+			<h1 class="profile__titlƒe">{{ page.title }}</h1>
 			<h2 class="profile__subtitle">
-			Educator &amp; Technology Researcher &middot; Learning Technology Manager at <a href="https://www.plumpton.ac.uk">Plumpton College</a>
+				{{ page.headline }}
 			</h2>
 			
 			<nav class="profile__links">
 
-			<a alt="Contact" class="profile__link" href="mailto:contact@jamesmichaelmaltby.com">
+			<a alt="Contact" class="profile__link" href="{{ page.email }}">
 						<svg class="icon"><use xlink:href="#mail" /></svg><span class="icon__caption">Email</span>
 						</a>
 <!--
@@ -1081,11 +1096,12 @@ nav ul li a.is-active {
 			</header>
 			<main>
 				<p class="profile__paragraph">
-				I am a learning technologist with over five years experience as a project manager and teacher within the arts and education sectors. </p>
-				</main>
-				
+					{{ page.summary }}
+				</p>
+			</main>
+
 				<footer>
-					 Designed by James Michael Maltby &middot; This site uses Google Analytics cookies to anonymously track usage &middot; &copy; 2018 Copyright
+					 Designed by {{ page.title }} &middot; This site uses Google Analytics cookies to anonymously track usage &middot; &copy; 2018 Copyright
 				</footer>
 		
 		
@@ -1110,7 +1126,7 @@ nav ul li a.is-active {
 		{
 		  "@context": "http://schema.org/",
 		  "@type": "Person",
-			"name": "James Michael Maltby",
+			"name": "{{ page.title }}",
 			"image": "jamesmichaelmaltby.jpg",
 			"jobTitle": "Educator & Technology Researcher",
 			"birthPlace": "Royal Tunbridge Wells, England",
@@ -1122,7 +1138,7 @@ nav ul li a.is-active {
 			"addressLocality": "Brighton",
 			"addressRegion": "England"
 			},
-			"url": "http://jamesmichaelmaltby.com",
+			"url": "https://jamesmichaelmaltby.com",
 			"sameAs" : [ 
 				"https://www.facebook.com/jamesmichaelmaltby",
 				  "https://www.linkedin.com/in/jamesmichaelmaltby",
