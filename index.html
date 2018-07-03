@@ -8,9 +8,9 @@ email: contact@jamesmichaelmaltby.com
 
 headline: Learning technologist &amp; educational researcher &middot; Learning technology manager at <a href="https://www.plumpton.ac.uk">Plumpton College</a>
 
-description: Experienced learning technologist and educational researcher. I work with educational organisations as well as regional and national projects to develop innovative digital resources and solutions that have a real impact on learners and teachers.
+description: Experienced learning technologist and educational researcher. I have worked with organisations as well as regional and national projects to develop innovative digital resources and solutions that have a real impact on learners and teachers.
 
-summary: I am an experienced learning technologist and educational researcher. I work with organisations as well as regional and national projects to develop innovative digital resources and solutions that have a real impact on learners and teachers.<br/><br/>As a researcher I explore the application of the latest cognitive science, pedagogy and digital technology within the classroom. Current areas of research include virtual reality, blended learning and machine learning.
+summary: I am an experienced learning technologist and educational researcher. I have worked with organisations as well as regional and national projects to develop innovative digital resources and solutions that have a real impact on learners and teachers.<br/><br/>As a researcher I explore the application of the latest cognitive science, pedagogy and digital technology within the classroom. Current areas of research include virtual reality, blended learning and machine learning.
 
 ---
 
@@ -618,6 +618,7 @@ input, button {
 				padding:0;
 				color:#777;
 				padding:1.5rem 0;
+				font-size: 11pt;
 			}
 			.profile__portfolio-item {
 				text-align: left;
@@ -874,14 +875,23 @@ input, button {
 
 						.portfolio__news {
 						  max-width:640px;
-							margin:3rem auto 0 auto;
+						  padding:0 1rem;
+							margin:2rem auto 4rem auto;
 							clear:both;
 							overflow:hidden;
+							font-size:11pt;
+							line-height: 1.5;
 						}
 						.portfolio__news__body {
 							float:left;
 							text-align:left;
-							width:calc(100% - 10rem);
+							clear:both;
+							margin-bottom:0.25rem;
+							/* width:calc(100% - 10rem); */
+						}
+
+						.portfolio__news a {
+							padding:0 0 0 0.5em;
 						}
 
 						.portfolio__news__date {
@@ -964,6 +974,7 @@ main {
         -ms-animation: fadein 0.5s; 
          -o-animation: fadein 0.5s; 
             animation: fadein 0.5s;*/
+			text-align:left;
 }
 footer {
     clear:both;
@@ -1069,6 +1080,40 @@ nav ul li a.is-active {
 				<p class="profile__paragraph">
 					{{ page.summary }}
 				</p>
+
+				<div class="portfolio__news">
+				
+						<div class="portfolio__news__body">
+							<strong>Teaching with Virtual Reality</strong>
+						</div>
+
+						<div class="portfolio__news__image">
+							<a href="https://www.teachingwithvirtualreality.com">Project Website</a>
+						</div>
+
+						<div class="portfolio__news__body">
+								Entry-level immersive technology has reached a price and complexity point where it is now accessible to the average classroom. But how can teachers effectively integrate these technologies into their lessons? In 2018, a partnership of Sussex training providers explored the effective use of 360°, augmented and virtual reality technologies within the classroom. The partnership will be publishing an interactive website in July 2018 to showcase the project case studies. 
+							</div>
+									
+			</div>
+
+
+				<div class="portfolio__news">
+				
+							<div class="portfolio__news__body">
+								<strong>Practical Blended Learning</strong>
+							</div>
+
+							<div class="portfolio__news__image">
+								<a href="https://www.plumptononline.ac.uk/practical-blended-learning-report.pdf">Project Report</a> <a href="https://www.plumptononline.ac.uk/practical-blended-learning-presentation.pdf">Presentation</a>
+							</div>
+
+							<div class="portfolio__news__body">
+									Technology has become ubiquitous in the classroom and in the modern workplace, but how can further education colleges integrate technology and digital literacy effectively into their teaching programmes? In 2017, Plumpton College researched and evaluated new blended learning teaching practices as well as trialling the latest learning technologies. The report was presented at JISC Digifest 2018 as well as regional conferences.
+							</div>
+										
+				</div>
+
 			</main>
 
 				<footer>
