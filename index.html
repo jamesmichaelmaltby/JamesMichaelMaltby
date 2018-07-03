@@ -866,7 +866,7 @@ input, button {
                 letter-spacing:6pt;
                 margin:0 0 2rem 0;
                 border:none;
-                box-sizing:border-box:
+                box-sizing:border-box;
             }
             .profile__refer-code:focus,
             .profile__refer-link:focus {
@@ -890,9 +890,7 @@ input, button {
 							/* width:calc(100% - 10rem); */
 						}
 
-						.portfolio__news a {
-							padding:0 0 0 0.5em;
-						}
+						
 
 						.portfolio__news__date {
 							float:left;
@@ -931,9 +929,22 @@ input, button {
 						}
 
 						.portfolio__news__image {
-							float:right;
+							float:left;
 							overflow:visible;
 						}
+						.portfolio__news a {
+							padding:0 0 0.25rem 0;
+						}
+
+						@media only screen and (min-width: 768px) {
+							.portfolio__news__image {
+								float:right;
+							}
+							.portfolio__news a {
+								padding:0 0 0 0.5em;
+							}
+						}
+
 						.portfolio__news__image img {
 							width:3rem;
 						}
