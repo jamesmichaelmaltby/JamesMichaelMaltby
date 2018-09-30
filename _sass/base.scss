@@ -35,8 +35,48 @@ h3, .h3 {
     font-weight: 300;
     margin-top:2rem;
     font-weight:700;
+    font-size:1rem;
 }
 
 h4, .h4 {
     font-weight: 300;
 }
+
+table, tr, td, thead {
+    padding:0;
+    margin:0;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    line-height:1.5;
+}
+tr {
+    padding:1rem 0;
+}
+td {
+    min-width:6rem;
+}
+
+.iframe-container--4x3 {
+    padding-top: 75%;
+  }
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+    margin:0;
+    max-width: 720px;
+  }
+  
+  .iframe-container iframe {
+     border: 0;
+     height: 100%;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     border:0;
+     margin:0;
+     padding:0;
+  }
+

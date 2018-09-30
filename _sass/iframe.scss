@@ -1,0 +1,38 @@
+
+ .jmm-video {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%;
+ }
+
+ .jmm-video iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+ }
+
+
+@media (min-width: 1024px) {
+    .jmm-video {
+        background:#000;
+        height: 100%;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+
+    }
+    .jmm-video iframe {
+        box-sizing: border-box;
+        height: 56.25vw;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        width: 177.77777778vh;
+    }
+}

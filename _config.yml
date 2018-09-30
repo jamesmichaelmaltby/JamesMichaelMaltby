@@ -1,10 +1,11 @@
 title: James Michael Maltby
 subtitle: Learning technologist &amp; educational researcher &middot; Learning technology manager at <a href="https://www.plumpton.ac.uk">Plumpton College</a>
 description: Experienced learning technologist and educational researcher, specialising in the application of blended learning and virtual reality in the classroom 
-summary: James Michael Maltby is an experienced learning technologist, educational researcher and project manager. James uses cognitive science, pedagogy and digital technology to create innovative learning content and platforms. Current areas of research include the application of blended learning, machine learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.<br/><br/>Before working full-time as a learning technologist, James was a special educational needs teacher supporting students on the autistic spectrum. He is a member of the Association for Learning Technology and National Autistic Society.
+summary: James Michael Maltby is an experienced learning technologist, educational researcher and project manager. James uses cognitive science, pedagogy and digital technology to create innovative learning content and platforms. Current areas of research include the application of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.<br/><br/>Before working full-time as a learning technologist, James was a special educational needs teacher supporting students on the autistic spectrum. He is a member of the Association for Learning Technology and National Autistic Society.
 
 email: hello@jamesmichaelmaltby.com
 # basehref: https://jamesmichaelmaltby.com
-basehref: https://jamesmichaelmaltby.com
+basehref: http://192.168.1.89:4000
+
 sass:
     style: compressed

@@ -4,12 +4,9 @@
     margin:0 auto 0 auto;
     text-align: left; 
 }
-.jmm-content-full {
-    display:none;
-}
 
-.jmm-content-section {
-    padding:2rem 1rem;
+.jmm-content-section--full {
+    padding:0;
 }
 
 .jmm-content-section img {
@@ -25,14 +22,14 @@
         left:30%;
         bottom:0;
         right:0;
-        padding:2rem 3rem;
+        padding:2rem 3rem 8rem 3rem;
         max-width:100%;
         overflow-y:scroll;
         -webkit-overflow-scrolling:touch;
         height:100%;
     }
 
-    .jmm-content-full {
+    .jmm-content-section--full {
         position:absolute;
         top:0;
         left:0;
