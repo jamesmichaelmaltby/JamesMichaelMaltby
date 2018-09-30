@@ -24,7 +24,7 @@ From December 2016 to January 2018, I was initially contracted at Plumpton Colle
 
 Before working full-time in learning technology, I was a special educational needs teacher at [Broomhill Bank School](http://www.broomhillbank.org.uk) in Rusthall. The school is a provider for students with communication and interaction difficulties and specific speech and language impairments, including those on the autistic spectrum. Whilst at the school I coordinated various technology projects including the deployment of tablet computers in classrooms and the use of a new virtual learning environment.
 
-For the last two years I have managing learning technology as the sole aspect of my job. I have been developing the experience and capabilities required of someone within my specialist role. I feel I am the right moment in my career to apple for professional accredidation.
+For the last two years I have managing learning technology as the sole aspect of my job. I have been developing the experience and capabilities required of someone within my specialist role. I feel I am the right moment in my career to apply for professional accredidation.
 
 
 ### Education & Qualifications
@@ -52,16 +52,14 @@ These formed the basis of a period of evaluation in lessons in order to identify
 The two most important lessons we learnt from these evaluations was the importance that digital skills and technical confidence had on the effectiveness of technology, and how the technology infrastructre of the college was the biggest barrier to the use of new technology in the classroom.  
 
 ### Technical Knowledge and Ability in the use of Learning Technology
-In order to start to overcome the issues digital skills and technical confidence that were identified above, I was asked to design a programme of twillight workshops. These sessions were designed as an opporunity to showcase best practices and provide practical training to staff. We branded this programme 'Blended Learning Month':
+In order to start to overcome the issue of digital skills and technical confidence that were identified above, I was asked to design a programme of twillight workshops. These sessions were designed as an opporunity to showcase best practices and provide practical training to staff. We branded this programme 'Blended Learning Month':
 
 ![Blended Learning Month](/images/blendedlearning.png#poster "Blended Learning Month")
 
-Over 100 member of staff attended at least one twillight session during November 2017.
-
+Over 100 member of staff attended at least one twillight session during November 2017. Running the sessions proved a valuable experience for me to fully develop my technical knowledge and ability with the workshop themes and develop effective best practices to pass onto staff. However, I had be aware that the majority of teachers would not have the dedicated time that I had to specialise in all areas so I would have to highly targeted in my training.
 
 ### Supporting the Deployment of Learning Technologies
-In order to avoid barriers to the use of learning technology due to infrastructural issues, it was decided that the college's IT strategy needed to be renewed for the new academic year. In January 2018 I worked closed with the Head of Teaching, Learning and Quality and IT Manager to create the college's new [Digital Learning Strategy](/files/digitallearningstrategy.pdf).
-
+In order to avoid barriers to the use of learning technology due to infrastructural issues, it was decided that the college's IT strategy needed to be renewed for the new academic year. In January 2018 I worked closed with the Head of Teaching, Learning and Quality and IT Manager to create the college's new [Digital Learning Strategy](/files/digitallearningstrategy.pdf). This document fomalised our training programme above and outlined a roadmap for further development and deployment of technologies. 
 
 
 

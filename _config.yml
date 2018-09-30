@@ -5,6 +5,6 @@ summary: James Michael Maltby is an experienced learning technologist, education
 
 email: hello@jamesmichaelmaltby.com
 # basehref: https://jamesmichaelmaltby.com
-basehref: http://192.168.1.89:4000
+basehref: https://jamesmichaelmaltby.com
 sass:
     style: compressed
