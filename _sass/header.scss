@@ -1,0 +1,155 @@
+
+.jmm-header {
+    padding:2rem 2rem;
+    text-align: center;
+    color:#777;
+    max-width:640px;
+    box-sizing: border-box;
+    margin:0 auto 0 auto;
+}
+
+
+.jmm-footer small {
+    font-size:0.7rem;
+}
+.jmm-footer {
+    color:#999;
+    margin-top:3rem;
+}
+
+.jmm-header-back, a.jmm-header-back {
+    padding:1rem 1rem;
+    display: block;
+    font-size:0.8rem;
+    color:#555;
+    text-decoration: none;
+    text-align: left;
+    z-index:9999;
+}
+a.jmm-header-back:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .jmm-header  {
+        position:fixed;
+        top:0;
+        left:0;
+        bottom:0;
+        width:30%;
+        padding:2rem 3rem;
+        overflow-y:scroll;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    a.jmm-header-back {
+        display: none;
+    }
+
+    /*.jmm-footer {
+        position:fixed;
+        left:0;
+        bottom:0;
+        width:30%;
+        padding:2rem 3rem;
+    }*/
+
+    .jmm-header-wrap, .jmm-footer-wrap  {
+        max-width:360px;
+        margin:0 auto 0 auto;
+    }
+}
+
+
+
+
+
+
+.jmm-header a {
+    color:#777;
+    text-decoration: underline;
+}
+.jmm-header a:hover {
+    text-decoration: none;
+}
+
+.jmm-header-headshot {
+    border-radius: 50%;
+    width:7rem;
+    overflow: hidden;
+    margin:0 auto 1rem auto;
+}
+
+.jmm-header-headshot img {
+    width:100%;
+}
+
+.jmm-header-title {
+    font-weight:700;
+    font-size:1.5rem;
+    margin-bottom:0;
+    color:#555;
+}
+
+
+.jmm-header-nav {
+    padding:1rem 0 1rem 0;
+    text-align: center;
+}
+a.jmm-header-navlink, .jmm-header-navlink {
+    padding:0 0.5rem;
+    text-decoration: none;
+}
+.jmm-header-navlink, a.jmm-header-navlink svg {
+    /*width:1.175rem;
+    height:1.175rem;*/
+    height:1rem;
+    width:1rem;
+    fill:#bbb;
+    /*transition:fill 1.0s ease;*/
+}
+
+.jmm-header-navlink, a.jmm-header-navlink:hover svg {
+    fill:#333;
+}
+
+.jmm-header-navlink, a.jmm-header-navlink:hover span {
+    color:#333;
+}
+   
+
+.jmm-header-navlink__caption {
+	font-size:0.8rem;
+	line-height:1;
+	padding-left:4pt;
+	vertical-align:text-bottom;
+	color:#777;
+}
+.jmm-header-navlink__icon {
+    vertical-align:middle;
+}
+
+
+.jmm-header-subtitle {
+    font-size:0.8rem;
+    line-height: 1.5;
+    font-weight: 400;
+    padding:1rem 0 0.5rem 0;
+    margin:0;
+    color:#777;
+    /*border-bottom:1px solid #f0f0f0;*/
+}
+.jmm-header-subtitle strong {
+    color:#444;
+}
+
+
+.jmm-header-summary {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height:1.5;
+    padding:1rem 0;
+    border-top:1px solid #e0e0e0;
+    border-bottom:1px solid #e0e0e0;
+    text-align: left;
+}
