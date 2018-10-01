@@ -16,6 +16,11 @@
     width:100%;
 }
 
+.jmm-content-section {
+    max-width:512px;
+    margin:0 auto 0 auto;
+}
+
 
 @media (min-width: 1024px) {
 
@@ -57,8 +62,10 @@
         color:#fefefe;
     }
 
-    .jmm-content p {
+
+    .jmm-content-section {
         max-width:720px;
+        margin:0;
     }
 
     .jmm-content h1 {
