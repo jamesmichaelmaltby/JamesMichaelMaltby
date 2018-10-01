@@ -98,7 +98,7 @@ Alongside this framework, I am currently in the process of launching a new forma
 
 The Blended Learning Models, Three E's and Digital Skills are embedded within our Level 3 and 4 Teacher Training programmes. I have run specialist sessions to encourage our new teachers to experiment with new technologies and there is an expectation that they embrace a fresh idea within their assessed micro-teaches.
 
-> In reflection, I believe it is incredibly important for learning technologists to embedded within college teaching & learning processes. Unlike traditional IT roles, a learning technologists needs to be aware of the way that new products and services can directly impact on learning. The projects I have completed over the last two years would not have been successul without a clear understanding of teaching, learning & assessment and learning from colleagues within the teacher training provision.
+> In reflection, I believe it is incredibly important for learning technologists to become embedded within college teaching & learning processes. Unlike traditional IT roles, a learning technologists needs to be aware of the way that new products and services can directly impact on learning. The projects I have completed over the last two years would not have been successul without a clear understanding of teaching, learning & assessment and learning. I also benefitted hugely from working closely with colleagues with teacher training specialism.
 
 ## Core Area 3: The Wider Context
 Two major pieces of legislation that has affect my working practice in the last year is the introduction of the [General Data Protection Regulations](https://www.gov.uk/government/publications/guide-to-the-general-data-protection-regulation) (GDPR) in May and update to [Keeping Children Safe in Education](https://www.gov.uk/government/publications/keeping-children-safe-in-education--2) (KCSIE) in September. Both presented different professional challenges.
@@ -115,6 +115,7 @@ KCSIE was updated in September 2018. It outlines the legal duties that all staff
 
 This pop-up learning task had to completed before staff could continue to the rest of the site. Compliance was monitored and reported back to the safeguarding team. 
 
+> In reflection, I believe the most important reason for being aware of wider issues in technology is being able to properly advise and support non-specialist staff. Most teachers do not have the time to keep up-to-date with the latest practice and regulations. As a specialist, a learning technologist can disseminate this information approporiately and support organisation wide changes. 
 
 ## Core Area 4: Communication and Working with Others
 During my time is a learning technologist, my greatest communication successes have been during the redevelopment of the Plumpton College virtual learning environment for the 2017/18 academic year. 
@@ -131,7 +132,6 @@ There were three main ways that communication lead to this success. Firstly, it 
 Secondly, we formed a technical team of staff who were going to implement the redesign. This included a designer, developer, copywriter, and page designers for cross-college courses. I supervised the team and pulled all of the different content together. We used project management software to manage the different tasks that needed to be completed and to track progress.
 
 Finally, when the new platform was ready to be released widely, we designed a structured training programme to introduce staff to the new system. I also ran workshops for students to communicate all of the changes so they were prepared for the new academic year. 
-
 
 <h2 id="specialistoptions">Specialist Options</h2>
 During the last two years I have lead two major pieces of practional learning technology research which have lead me to become a specialist with blended learning and virtual reality. The first in 2017, entitled 'Practical Blended Learning', explored and evaluated the application of learning technology and blended learning pedagogy in vocational subjects. The second in 2018, entitled 'Teaching with Virtual Reality', explored best practices for designing and using immersive content within the classroom. Both projects were featured as case studies in JISC's FELTAG 2018 report ['Breaking through: stories of effective digital practice from UK further education (FE) and skills'](http://repository.jisc.ac.uk/6986/1/Breaking_through_stories_of_effective_digital_practice_report.pdf).
