@@ -3,7 +3,8 @@
     padding:2rem 2rem;
     text-align: center;
     color:#777;
-    max-width:640px;
+    max-width:420px;
+    width:100%;
     box-sizing: border-box;
     margin:0 auto 0 auto;
 }
@@ -14,7 +15,7 @@
 }
 .jmm-footer {
     color:#999;
-    margin-top:3rem;
+    margin:3rem 0;
 }
 
 .jmm-header-back, a.jmm-header-back {
@@ -32,11 +33,13 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
 
 @media (min-width: 1024px) {
     .jmm-header  {
-        position:fixed;
+        /*position:fixed;
         top:0;
         left:0;
-        bottom:0;
-        width:32%;
+        bottom:0;*/
+        //width:32%;
+        float:left;
+        max-width:420px;
         padding:2rem 3rem;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;

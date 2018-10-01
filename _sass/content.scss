@@ -1,6 +1,6 @@
 .jmm-content {
     box-sizing: border-box;
-    max-width:640px;
+    /*max-width:640px;*/
     margin:0 auto 0 auto;
     text-align: left; 
     padding:0
@@ -20,16 +20,17 @@
 @media (min-width: 1024px) {
 
     .jmm-content {
-        position:fixed;
+        position:absolute;
         top:0;
-        left:32%;
         bottom:0;
         right:0;
-        padding:0;
-        max-width:100%;
+        left:420px;
+        width:auto;
+        /*max-width:100%;*/
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
         height:100%;
+        box-sizing: border-box;
     }
     
     .jmm-content-section {

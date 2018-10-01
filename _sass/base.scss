@@ -16,7 +16,15 @@ p, .p, ul, li {
 a, a:link, a:visited {
     text-decoration: underline;
     color:#333;
+    outline-style:none;
+    box-shadow:none;
+    border-color:transparent;
 }
+
+a:hover img {
+    opacity:0.75;
+}
+
 a:hover {
     text-decoration: none;
 }
