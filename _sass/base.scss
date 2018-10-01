@@ -123,6 +123,8 @@ td {
     margin-top:1em;
   }
 
-blockquote a {
+blockquote a,
+blockquote a:link,
+blockquote a:visited {
     color:#555;
 }
