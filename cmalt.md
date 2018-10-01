@@ -155,7 +155,7 @@ The partnership published the website [Teaching with Virtual Reality](https://ww
 <iframe src="https://player.vimeo.com/video/292610656" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
-I presented the paper at the [Swansea University Virtual Reality in Higher Education](http://www.swansea.ac.uk/vr-in-teaching/vr-conference/) conference in September 2018. The project also received commendation from the [Association of College's Beacon Awards](https://www.aoc.co.uk/aoc-beacon-awards-stage-1-beacon-standard?dm_i=26BG,5VI93,L0BA5D,MZ4AU,1).
+I presented the paper at the [Swansea University Virtual Reality in Higher Education](http://www.swansea.ac.uk/vr-in-teaching/vr-conference/) conference in September 2018. The project received commendation from the [Association of College's Beacon Awards](https://www.aoc.co.uk/aoc-beacon-awards-stage-1-beacon-standard?dm_i=26BG,5VI93,L0BA5D,MZ4AU,1) for 'Effective use of technology in Further Education'.
 
 
 ## Future Plans
