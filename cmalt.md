@@ -8,6 +8,7 @@ permalink: /cmalt
 Welcome to my portfolio page for [Certified Membership](https://www.alt.ac.uk/certified-membership) (CMALT) of the [Assocication for Learning Technology](https://www.alt.ac.uk) (ALT). CMALT is a peer assessed accredidation for learning technology practitioners wishing to certify their experiences and capabilities, as well as demonstrate their commitment to professional development. ALT defines 'learning technology' as:
 
 > The broad range of communication, information and related technologies that can be used to support learning, teaching, and assessment.
+>
 > – Association for Learning Technology
 
 The principles and values of the CMALT scheme are: 
@@ -15,6 +16,7 @@ The principles and values of the CMALT scheme are:
 > * A commitment to keep up to date with new technologies.
 > * An empathy with and willingness to learn from colleagues from different backgrounds and specialist options.
 > * A commitment to communicate and disseminate effective practice.
+>
 > – Association for Learning Technology
 
 ## Contextual Statement
