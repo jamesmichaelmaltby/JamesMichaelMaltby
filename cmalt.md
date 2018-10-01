@@ -10,7 +10,7 @@ Welcome to my portfolio page for [Certified Membership](https://www.alt.ac.uk/ce
 
 > The broad range of communication, information and related technologies that can be used to support learning, teaching, and assessment.
 >
-> – Association for Learning Technology
+> – Association for Learning Technology, ['CMALT Guidelines'](https://www.alt.ac.uk/sites/alt.ac.uk/files/CMALT%20Guidelines_2018_NC_ND.pdf)
 
 The principles and values of the CMALT scheme are: 
 > * A commitment to exploring and understanding the interplay between technology and learning.
@@ -18,7 +18,7 @@ The principles and values of the CMALT scheme are:
 > * An empathy with and willingness to learn from colleagues from different backgrounds and specialist options.
 > * A commitment to communicate and disseminate effective practice.
 >
-> – Association for Learning Technology
+> – Association for Learning Technology, ['CMALT Guidelines'](https://www.alt.ac.uk/sites/alt.ac.uk/files/CMALT%20Guidelines_2018_NC_ND.pdf)
 
 ## Contextual Statement
 
