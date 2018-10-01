@@ -11,11 +11,13 @@
 
 
 .jmm-footer small {
-    font-size:0.7rem;
+    font-size:0.6rem;
+    line-height:0;
 }
 .jmm-footer {
     color:#999;
-    margin:3rem 0;
+    margin:2rem 0 2rem 0;
+    line-height:0.8;
 }
 
 .jmm-header-back, a.jmm-header-back {
@@ -49,13 +51,9 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
         display: none;
     }
 
-    /*.jmm-footer {
-        position:fixed;
-        left:0;
-        bottom:0;
-        width:30%;
-        padding:2rem 3rem;
-    }*/
+    .jmm-footer {
+
+    }
 
     .jmm-header-wrap, .jmm-footer-wrap  {
         max-width:360px;
