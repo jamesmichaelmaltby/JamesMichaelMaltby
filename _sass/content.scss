@@ -3,10 +3,12 @@
     max-width:640px;
     margin:0 auto 0 auto;
     text-align: left; 
+    padding:0
+}
+.jmm-content-section {
     padding: 1rem 1rem 4rem 1rem;
 }
-
-.jmm-content.jmm-content-section--full {
+.jmm-content-section--full {
     padding:0;
 }
 
@@ -23,11 +25,15 @@
         left:22%;
         bottom:0;
         right:0;
-        padding:2rem 3rem 8rem 3rem;
+        padding:0;
         max-width:100%;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
         height:100%;
+    }
+    
+    .jmm-content-section {
+     padding:2rem 3rem 8rem 3rem;
     }
 
     .jmm-content-section--full {
@@ -36,6 +42,7 @@
         left:0;
         right:0;
         bottom:0;
+        padding:0;
         background: none no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
