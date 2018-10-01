@@ -21,13 +21,13 @@
     padding:1rem 0;
     display: block;
     font-size:0.8rem;
-    color:#555;
+    color:#aaa;
     text-decoration: none;
     text-align: left;
     z-index:9999;
 }
-a.jmm-header-back:hover {
-    text-decoration: underline;
+a.jmm-header-back:hover,a.jmm-header-back:active {
+    color:#555;
 }
 
 @media (min-width: 1024px) {
