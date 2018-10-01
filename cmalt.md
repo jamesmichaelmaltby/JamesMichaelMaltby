@@ -133,6 +133,8 @@ Secondly, we formed a technical team of staff who were going to implement the re
 
 Finally, when the new platform was ready to be released widely, we designed a structured training programme to introduce staff to the new system. I also ran workshops for students to communicate all of the changes so they were prepared for the new academic year. 
 
+> In reflection, I believe the most important role of a learning technologist is to empower staff and students. Communication is essential to achieving this as you need to understand the exact needs of the user and provide clear instruction to support them develop their own knowledge and skills. This also applies to an organisation as a whole. Before starting any change project it is important to listen to group needs and clearly articulate the impact of new processes and systems.
+
 <h2 id="specialistoptions">Specialist Options</h2>
 During the last two years I have lead two major pieces of practional learning technology research which have lead me to become a specialist with blended learning and virtual reality. The first in 2017, entitled 'Practical Blended Learning', explored and evaluated the application of learning technology and blended learning pedagogy in vocational subjects. The second in 2018, entitled 'Teaching with Virtual Reality', explored best practices for designing and using immersive content within the classroom. Both projects were featured as case studies in JISC's FELTAG 2018 report ['Breaking through: stories of effective digital practice from UK further education (FE) and skills'](http://repository.jisc.ac.uk/6986/1/Breaking_through_stories_of_effective_digital_practice_report.pdf).
 
