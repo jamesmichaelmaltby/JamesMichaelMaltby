@@ -4,6 +4,7 @@ title: My CMALT Portfolio
 permalink: /cmalt
 ---
 # My CMALT Portfolio
+*30 September 2018*
 
 Welcome to my portfolio page for [Certified Membership](https://www.alt.ac.uk/certified-membership) (CMALT) of the [Association for Learning Technology](https://www.alt.ac.uk) (ALT). CMALT is a peer assessed accreditation for learning technology practitioners wishing to certify their experiences and capabilities, as well as demonstrate their commitment to professional development. ALT defines 'learning technology' as:
 
