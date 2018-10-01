@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+@media (min-width: 1024px) {
+    body,html { margin: 0; height: 100%; overflow: hidden; }
+}
+
 p, .p, ul, li {
     line-height: 1.5;
 }
