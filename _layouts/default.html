@@ -7,7 +7,7 @@
         <!-- Document Meta -->
         <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
         <meta charset="utf-8">
-        <base href="{{ site.basehref }}">
+        <base href="{{ site.url }}">
 
         <!-- Page Meta -->
         <title>
@@ -15,7 +15,7 @@
         </title>
         <meta name="description" content="{{ page.description }}">
         <meta name="robots" content="index, follow">
-        <link rel="canonical" href="{{ site.basehref }}{{page.permalink}}"/>
+        <link rel="canonical" href="{{ site.url }}{{page.permalink}}"/>
 
         <!-- Mobile Meta -->
         <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -32,18 +32,18 @@
         <meta property="og:type" content="profile" /> 
         <meta property="og:title" content="{{ page.title }}">
         <meta property="og:description" content="{{ page.description }}">
-        <meta property="og:image" content="{{ page.basehref }}/thumbnail.jpg">
+        <meta property="og:image" content="{{ site.url }}/thumbnail.jpg">
         <meta property="og:image:secure_url" content="{{ site.url }}/thumbnail.jpg" />
-        <link rel="image_src" href="{{ page.basehref }}/thumbnail.jpg" />
+        <link rel="image_src" href="{{ site.url }}/thumbnail.jpg" />
 
         <meta itemprop="name" content="{{ page.title }}"/>
-        <meta itemprop="url" content="{{ page.basehref }}"/>
-        <meta itemprop="thumbnailUrl" content="{{ page.basehref }}/thumbnail.jpg"/>
+        <meta itemprop="url" content="{{ site.url }}"/>
+        <meta itemprop="thumbnailUrl" content="{{ site.url }}/thumbnail.jpg"/>
 
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="{{ page.basehref }}">
+        <meta property="og:url" content="{{ site.url }}">
         <meta property="og:site_name" content="{{ page.title }}">
         <!-- <meta property="fb:app_id" content="your_app_id" /> -->
         <meta name="twitter:card" content="summary_large_image">
