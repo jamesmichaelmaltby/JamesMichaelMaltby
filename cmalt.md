@@ -10,10 +10,10 @@ Welcome to my portfolio page for [Certified Membership](https://www.alt.ac.uk/ce
 > The broad range of communication, information and related technologies that can be used to support learning, teaching, and assessment.
 
 The principles and values of the CMALT scheme are: 
-* A commitment to exploring and understanding the interplay between technology and learning.
-* A commitment to keep up to date with new technologies.
-* An empathy with and willingness to learn from colleagues from different backgrounds and specialist options.
-* A commitment to communicate and disseminate effective practice.
+> * A commitment to exploring and understanding the interplay between technology and learning.
+> * A commitment to keep up to date with new technologies.
+> * An empathy with and willingness to learn from colleagues from different backgrounds and specialist options.
+> * A commitment to communicate and disseminate effective practice.
 
 
 ## Contextual Statement

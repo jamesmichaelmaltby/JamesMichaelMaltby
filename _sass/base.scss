@@ -23,7 +23,7 @@ a:hover {
 
 h1, .h1 {
     font-weight: 300;
-    margin:0 0 4rem 0;
+    margin:2rem 0 4rem 0;
 }
 
 h2, .h2 {
@@ -80,3 +80,45 @@ td {
      padding:0;
   }
 
+
+
+  blockquote{
+    font-size: 1em;
+    width:90%;
+    font-style:italic;
+    color: #555555;
+    padding:1.2em 1rem 1.2em 3rem;
+    border-left:8px solid #777 ;
+    line-height:1.6;
+    position: relative;
+    background:#EDEDED;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 1024px) {
+    blockquote {
+        max-width: 640px;
+    }
+  }
+  
+  blockquote::before{
+    font-family:Arial;
+    content: "\201C";
+    color:#777;
+    font-size:4em;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+  }
+  
+  blockquote::after{
+    content: '';
+  }
+  
+  blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+  }
