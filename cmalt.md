@@ -63,7 +63,7 @@ Over 80 members of staff attended at least one twillight session during November
 ### Supporting the Deployment of Learning Technologies
 In order to avoid barriers to the use of learning technology due to infrastructural issues, it was decided that the college's IT strategy needed to be renewed for the new academic year. In January 2018 I worked closed with the Head of Teaching, Learning and Quality and IT Manager to create the college's new [Digital Learning Strategy](/files/digitallearningstrategy.pdf). This document fomalised our new digital skills programme discussed below and outlined a roadmap for further development and deployment of technologies. 
 
-In order to write this report, I had to meet with every division in the college and student representives from the union. This proved a valuable exercise in evaluating our operational plans to a create strategy that was suitable for all members of the college.
+In order to write this report, I had to meet with every division in the college and student representives from the union. This proved a valuable exercise in evaluating our operational plans to create strategy a that was suitable for all members of the college.
 
 > In reflection it was incredibly important to canvas as diverse a set of users as possible in order to write a document that was practical and feasible. So far the process of change across the college has been successul with many new IT systems being introduced in the new academic year and a noticable increase in the digital skills and confidence of staff.
 
@@ -97,6 +97,8 @@ Alongside this framework, I am currently in the process of launching a new forma
 ![Digital Skills](/images/digitalskills.png#poster "Digital Skills")
 
 The Blended Learning Models, Three E's and Digital Skills are embedded within our Level 3 and 4 Teacher Training programmes. I have run specialist sessions to encourage our new teachers to experiment with new technologies and there is an expectation that they embrace a fresh idea within their assessed micro-teaches.
+
+> In reflection, I believe it is incredibly important for learning technologists to embedded within college teaching & learning processes. Unlike traditional IT roles, a learning technologists needs to be aware of the way that new products and services can directly impact on learning. The projects I have completed over the last two years would not have been successul without a clear understanding of teaching, learning & assessment and learning from colleagues within the teacher training provision.
 
 ## Core Area 3: The Wider Context
 Two major pieces of legislation that has affect my working practice in the last year is the introduction of the [General Data Protection Regulations](https://www.gov.uk/government/publications/guide-to-the-general-data-protection-regulation) (GDPR) in May and update to [Keeping Children Safe in Education](https://www.gov.uk/government/publications/keeping-children-safe-in-education--2) (KCSIE) in September. Both presented different professional challenges.
