@@ -58,15 +58,18 @@
         {% endif %}
 
 
-        {% if page.url != '/' %}
-        <a href='/' class="jmm-header-back">
-            &larr; Back to Homepage
-        </a>
-        {% endif %}
+        
 
         {% assign content = content | strip_newlines %}
         {% if content != "" %}
         <section class="jmm-content-section {%if page.full %}jmm-content-section--full{%endif%}">
+		
+	{% if page.url != '/' %}
+        <a href='/' class="jmm-header-back">
+            &larr; Back to Homepage
+        </a>
+        {% endif %}
+		
         {{content}}
         </section>
         {% endif %}
