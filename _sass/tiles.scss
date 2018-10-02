@@ -1,0 +1,94 @@
+@keyframes zoomIn {
+    0% {
+        transform:scale(0);
+        opacity:0;
+    }
+    100% { 
+        transform:scale(1);
+        opacity:1;
+    }
+}
+.jmm-tile { 
+    border:0.25rem solid #fdfdfd;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    //transform:scale(1.0) translateZ(0);
+    /*z-index: 9999999;*/
+    position: relative;
+    height:45vh;
+    animation: zoomIn 1s forwards;
+    animation-delay: 0s;
+}
+
+
+
+/*
+@for $i from 2 through 20 {
+    .jmm-tile:nth-child(#{$i}) {
+        animation-delay: #{$i-1}s;
+    }
+}
+*/
+
+.jmm-tile a {
+    position: absolute;
+    top:0; bottom:0;
+    left:0;right:0;
+    background-color:rgba(0,0,0,0);
+    color:transparent;
+    
+    transition:all 0.2s ease;
+    text-align: center;
+    font-size:0.8rem;
+    text-transform: uppercase;
+    font-weight:200;
+    display: block;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing:4px;
+    text-decoration: none;
+}
+
+.jmm-tile a span {
+  
+}
+
+.jmm-tile a:hover {
+    background-color:rgba(0,0,0,0.5);
+    color:#fff;
+    text-decoration: none;
+}
+
+.jmm-tile a:visited {
+    background-color:rgba(0,0,0,0.5);
+    color:#fff;
+    text-decoration: none;
+}
+
+
+.jmm-tile:hover {
+    /*transform:scale(1.1) translateZ(100px);
+    z-index: 9999999;*/
+}
+
+.jmm-tiles {
+    /*border:0.25rem solid #fdfdfd;*/
+    /*position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;*/
+}
+
+
+
+@media (min-width: 1024px) {
+    .jmm-tile {
+        height:45vh;
+    }
+    .jmm-tile a  {
+        font-size:1rem;
+    }
+}

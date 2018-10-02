@@ -16,7 +16,7 @@
 }
 .jmm-footer {
     color:#999;
-    margin:2rem 0 2rem 0;
+    margin:1rem 0 1rem 0;
     line-height:0.8;
 }
 
@@ -33,14 +33,20 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
     color:#555;
 }
 
+.jmm-content-section--full .jmm-header-back {
+    padding:1rem;
+}
+
 @media (min-width: 1024px) {
     .jmm-header  {
-        /*position:fixed;
+        position:absolute;
         top:0;
         left:0;
-        bottom:0;*/
-        //width:32%;
-        float:left;
+        bottom:0;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         max-width:380px;
         padding:2rem 3rem;
         overflow-y:auto;
@@ -52,7 +58,10 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
     }
 
     .jmm-footer {
-
+      
+    }
+    .jmm-header-wrap {
+        flex: 1;
     }
 
     .jmm-header-wrap, .jmm-footer-wrap  {
@@ -90,6 +99,11 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
     font-size:1.5rem;
     margin-bottom:0;
     color:#555;
+
+    /*text-transform: uppercase;
+    font-weight:200;
+    letter-spacing:2px;
+    font-size:1.25rem;*/
 }
 
 

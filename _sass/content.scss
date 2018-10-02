@@ -8,10 +8,6 @@
 .jmm-content-section {
     padding: 1rem 1rem 4rem 1rem;
 }
-.jmm-content-section--full {
-    padding:0;
-}
-
 .jmm-content-section img {
     width:100%;
 }
@@ -19,6 +15,16 @@
 .jmm-content-section {
     max-width:512px;
     margin:0 auto 0 auto;
+}
+
+.jmm-content-section--full {
+    padding:0;
+    max-width:100%;
+    font-size: 0;
+}
+
+.jmm-content a:hover img, .jmm-content a:active img {
+    opacity:0.75;
 }
 
 
@@ -42,6 +48,12 @@
      padding:2rem 3rem 8rem 3rem;
     }
 
+
+    .jmm-content-section {
+        max-width:720px;
+        margin:0;
+    }
+
     .jmm-content-section--full {
         position:absolute;
         top:0;
@@ -55,17 +67,12 @@
         -o-background-size: cover;
         background-size: cover;
         display:block;
+        max-width:100%;
     }
 
     .jmm-content--dark {
         background:#333;
         color:#fefefe;
-    }
-
-
-    .jmm-content-section {
-        max-width:720px;
-        margin:0;
     }
 
     .jmm-content h1 {
