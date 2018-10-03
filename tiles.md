@@ -31,21 +31,21 @@ full: true
 
 
 <div class="jmm-tile" style="display:inline-block;background:url(/images/stock/1.jpeg) no-repeat center center;background-size:cover;width:50%;">
-<a data-fancybox href="/images/stock/1.jpeg"><span>British Airways Case Study Video</span></a>
+<a data-fancybox href="/images/stock/1.jpeg"><span><svg><use xlink:href="#film" /></svg>British Airways Case Study Video</span></a>
 </div>
 
 <div class="jmm-tile" style="display:inline-block;background:url(/images/stock/5.jpeg) no-repeat center center;background-size:cover;width:50%;">
-<a data-fancybox href="/images/stock/1.jpeg"><span>My Method</span></a>
+<a data-fancybox href="/images/stock/1.jpeg"><div>My Method</div></a>
 </div>
 
 
 
 <div class="jmm-tile" style="display:inline-block;background:url(/images/stock/6.jpeg) no-repeat center center;background-size:cover;width:40%;">
-<a data-fancybox href="/images/stock/1.jpeg"><span>Fancy Picture</span></a>
+<a data-fancybox href="/images/stock/1.jpeg"><div>Fancy Picture</div></a>
 </div>
 
 <div class="jmm-tile" style="display:inline-block;background:url(/images/stock/7.jpeg) no-repeat center center;background-size:cover;width:60%;">
-<a data-fancybox href="/images/stock/1.jpeg"><span>Fancy Photo</span></a>
+<a data-fancybox href="/images/stock/1.jpeg"><div>Fancy Photo</div></a>
 </div>
 
 
