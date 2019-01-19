@@ -9,6 +9,7 @@ sass:
     style: compressed
 plugins:
   - jekyll-sitemap
+  - jekyll-last-modified-at
 defaults:
   -
     scope:
