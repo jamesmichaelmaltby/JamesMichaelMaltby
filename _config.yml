@@ -9,3 +9,9 @@ sass:
     style: compressed
 plugins:
   - jekyll-sitemap
+defaults:
+  -
+    scope:
+      path:            "files/*"
+    values:
+      sitemap:         false
