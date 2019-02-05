@@ -1,9 +1,9 @@
 
 .jmm-header {
-    padding:2rem 2rem;
+    padding:2rem 1rem;
     text-align: center;
     color:#777;
-    max-width:380px;
+    max-width:320px;
     width:100%;
     box-sizing: border-box;
     margin:0 auto 0 auto;
@@ -11,11 +11,11 @@
 
 
 .jmm-footer small {
-    font-size:0.6rem;
+    font-size:0.7rem;
     line-height:0;
 }
 .jmm-footer {
-    color:#999;
+    color:#777;
     margin:1rem 0 1rem 0;
     line-height:0.8;
 }
@@ -47,8 +47,8 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        max-width:380px;
-        padding:2rem 3rem;
+        max-width:320px;
+        padding:2rem 2rem;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
     }
@@ -95,7 +95,7 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
 }
 
 .jmm-header-title {
-    font-weight:700;
+    font-weight:400;
     font-size:1.5rem;
     margin-bottom:0;
     color:#555;
@@ -149,10 +149,9 @@ a.jmm-header-navlink, .jmm-header-navlink {
     font-size:0.8rem;
     line-height: 1.5;
     font-weight: 400;
-    padding:1rem 0 0.5rem 0;
+    padding:0.5rem 0 0.5rem 0;
     margin:0;
     color:#777;
-    /*border-bottom:1px solid #f0f0f0;*/
 }
 .jmm-header-subtitle strong {
     color:#444;
@@ -163,7 +162,7 @@ a.jmm-header-navlink, .jmm-header-navlink {
     font-size: 0.8rem;
     font-weight: 400;
     line-height:1.5;
-    padding:1rem 0;
+    padding:1rem 0.5rem;
     border-top:1px solid #e0e0e0;
     border-bottom:1px solid #e0e0e0;
     text-align: left;

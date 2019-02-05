@@ -1,25 +1,153 @@
-@keyframes zoomIn {
-    0% {
-        transform:scale(0);
-        opacity:0;
-    }
-    100% { 
-        transform:scale(1);
-        opacity:1;
-    }
+.hero {
+    position:relative;
+    overflow:auto;
+    margin-bottom:2%;
 }
-.jmm-tile { 
-    border:0.25rem solid #fdfdfd;
-    box-sizing: border-box;
-    transition: transform 0.2s ease;
-    //transform:scale(1.0) translateZ(0);
-    /*z-index: 9999999;*/
-    position: relative;
-    height:45vh;
-    animation: zoomIn 1s forwards;
-    animation-delay: 0s;
+.hero img {
+    /*width:62.2%;*/
+    float:right;
+    border:1px solid #777;
 }
 
+.hero .overlay {
+    position:absolute;
+    right:0;
+    bottom:0;
+    top:0;
+    left:36.2%;
+    z-index:99999;
+    box-shadow: 75px 0 50px 0 white inset, -75px -0 50px 0 white inset; 
+}
+
+.jmm-tiles {
+    box-sizing: border-box;
+    padding:1% 1% 4% 1%;
+    margin:0 0 0 0;
+    overflow:auto;
+    font-size:0.8rem;
+    max-width:1060px;
+}
+
+.jmm-tiles .jmm-tile:first-of-type h2 {
+    font-size:2rem;
+}
+
+.jmm-tiles .jmm-tile:first-of-type .jmm-tile__image {
+    height:40vh;
+}
+
+
+.jmm-tile__image svg {
+    position:absolute;
+    background:rgba(0,0,0,0.8);
+    color:white;
+    bottom:0;
+    left:0;
+    width:5rem;
+    height:5rem;
+    padding:1.75rem;
+    box-sizing:border-box;
+    transition:background 0.5s ease, fill 0.5s ease;
+    fill:#fff;
+}
+.jmm-tile:hover .jmm-tile__image svg {
+    background:darken(#1A73E8,20%);;
+    fill:white;
+}
+
+.jmm-tile a:hover h2 {
+    color:darken(#1A73E8,20%);
+}
+
+.jmm-tile { 
+    -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+   -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;
+
+   float:left;
+   display:inline-block;
+
+    margin:1% 1% 1% 1%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+    position: relative;
+    overflow:auto;
+}
+.jmm-tile:hover {
+    transform:scale(1.05);
+}
+.jmm-tile__subtitle {
+    display:block;
+    color:#777;
+    font-size:0.8rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.jmm-tile--majorgolden {
+    width:58.8%;
+}
+
+.jmm-tile--minorgolden {
+    width:37.2%;
+}
+
+
+.jmm-tile--whole {
+    width:96%;
+}
+.jmm-tile--half {
+    width:48%;
+}
+.jmm-tile--third {
+    width:31.333333%;
+}
+.jmm-tile--twothirds {
+    width:64.666666%;
+}
+.jmm-tile--quarter {
+    width:23%;
+}
+.jmm-tile--threequarters {
+    width:73%;
+}
+
+
+.jmm-tile__image {
+    background:url(/images/stock/1.jpeg) no-repeat center center;
+    background-size:cover;
+    width:100%;
+    height:25vh;
+    box-sizing: border-box;
+    position:relative;
+    /*max-height:15vh;*/
+}
+
+.jmm-tile__image--half {
+    height:50vh;
+    max-height:50vh;
+}
+
+.jmm-tile__caption {
+    padding:1rem;
+    box-sizing: border-box;
+    text-align: left;
+}
 
 
 /*
@@ -31,76 +159,21 @@
 */
 
 .jmm-tile a {
-    position: absolute;
-    top:0; bottom:0;
-    left:0;right:0;
-    background-color:rgba(0,0,0,0);
-    color:transparent;
-    
-    transition:background 0.2s ease;
-    text-align: center;
-    font-size:0.8rem;
-    text-transform: uppercase;
-    font-weight:200;
-    display: block;
-
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing:4px;
-    text-decoration: none;
+display:block;
+overflow:auto;
+text-decoration: none;
 }
 
-.jmm-tile a svg {
-    fill:transparent;
-    width:2rem;
-    height:2rem;
-    display:block;
-    margin:0 auto 1rem auto;
-    opacity:0.9;
+.jmm-tile a div {
+padding:1rem;
 }
-.jmm-tile a span {
-    text-align: center;
-}
-
-.jmm-tile a:hover {
-    background-color:rgba(0,0,0,0.5);
-    color:#fff;
-    text-decoration: none;
-}
-
-.jmm-tile a:visited {
-    background-color:rgba(0,0,0,0.5);
-    color:#fff;
-    text-decoration: none;
-}
-
-.jmm-tile a:hover svg {
-    fill:#fff;
-}
-
-
-.jmm-tile:hover {
-    /*transform:scale(1.1) translateZ(100px);
-    z-index: 9999999;*/
-}
-
-.jmm-tiles {
-    /*border:0.25rem solid #fdfdfd;*/
-    /*position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;*/
-}
-
 
 
 @media (min-width: 1024px) {
     .jmm-tile {
-        height:45vh;
+       
     }
-    .jmm-tile a  {
-        font-size:1rem;
+    .jmm-tiles {
+        font-size:0.9rem;
     }
 }
