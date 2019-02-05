@@ -8,3 +8,12 @@ enforce_ssl: www.jamesmichaelmaltby.com
 email: hello@jamesmichaelmaltby.com
 sass:
     style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+defaults:
+  -
+    scope:
+      path:            "files/*"
+    values:
+      sitemap:         false
