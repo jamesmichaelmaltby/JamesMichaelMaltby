@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Graphic
+title: Homepage
 full: true
 permalink: /
 ---
@@ -34,7 +34,7 @@ James is a learning technologist on a mission to help everyone learn and work sm
 
 
 <div class="jmm-tile jmm-tile--minorgolden">
-<a data-fancybox href="/images/stock/1.jpeg">
+<a data-fancybox href="https://vimeo.com/307455230">
 
 <div class="jmm-tile__image" style="background-image:url(/images/stock/5.jpeg);">
 <svg><use xlink:href="#arrow" /></svg>
@@ -62,6 +62,7 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <svg><use xlink:href="#link-1" /></svg>
 </div>
 <div class="jmm-tile__caption">
+<span class="jmm-tile__subtitle">17 February 2019</span>
 <h2>
 Teaching with Virtual Reality
 </h2>
@@ -79,7 +80,7 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <a data-fancybox href="/images/stock/1.jpeg">
 
 <div class="jmm-tile__image" style="background-image:url(/images/stock/7.jpeg);">
-<svg><use xlink:href="#downloading-from-computing-cloud" /></svg>
+<svg><use xlink:href="#cloud-download-symbol" /></svg>
 </div>
 <div class="jmm-tile__caption">
 <h2>
