@@ -2,7 +2,7 @@
 layout: default
 title: Graphic
 full: true
-permalink: /tiles
+permalink: /homepage
 ---
 <div class="jmm-tiles">
 
