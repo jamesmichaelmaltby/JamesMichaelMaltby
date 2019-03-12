@@ -1,6 +1,6 @@
 ---
 layout: default
-title: James Michael Maltby
+title: James Michael Maltby!
 permalink: /
 full: true
 ---
