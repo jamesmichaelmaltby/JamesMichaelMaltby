@@ -2,7 +2,7 @@
 layout: default
 title: James Michael Maltby
 full: true
-permalink: /
+permalink: /homepage
 ---
 <div class="jmm-tiles">
 
