@@ -1,0 +1,23 @@
+
+- date: 2019-01-01
+  title: Example post
+  excerpt: Example excerpt
+  type: video
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+
+- date: 2015-01-02
+  title: Example post 2
+  excerpt: Example excerpt
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2012-01-02
+  pinned: 1
+  title: Example post 2
+  excerpt: Example excerpt
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
