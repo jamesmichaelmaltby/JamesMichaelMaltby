@@ -28,12 +28,19 @@
     max-width:1060px;
 }
 
+hr {
+    clear:both;
+    border:none;
+   // border-bottom:1px solid #e0e0e0;
+    margin:3rem 0;
+}
+
 .jmm-tiles .jmm-tile:first-of-type h2 {
-    font-size:2rem;
+    font-size:2.25rem;
 }
 
 .jmm-tiles .jmm-tile:first-of-type .jmm-tile__image {
-    height:40vh;
+    // height:40vh;
 }
 
 
@@ -101,6 +108,12 @@
 
 .jmm-tile--majorgolden {
     width:58.8%;
+}
+
+.jmm-tile--majorgolden .jmm-tile__image {
+
+ height:40vh;
+
 }
 
 .jmm-tile--minorgolden {

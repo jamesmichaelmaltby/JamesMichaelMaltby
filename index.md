@@ -19,13 +19,56 @@ November 18:	SET Conference
 November 18:	British Airways
 September 18:	Beacon Award 
 September 18:	Swansea University Virtual Reality
-August 18:		Teaching with Virtual Reality
+September 18:	Teaching with Virtual Reality
+August 18:		Virtual Reality in Archeology
 July 18:		Independence Learning Day
 May 18:			Practical Blended Learning
 March 18:		Digifest Workshop
 ??: Landex Teaching & Learning
 ??: Association of Colleges
 -->
+
+
+
+<div class="jmm-tile jmm-tile--half">
+<a data-fancybox href="/images/stock/1.jpeg">
+
+<div class="jmm-tile__image" style="background-image:url(/images/stock/3.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
+<div class="jmm-tile__caption">
+<span class="jmm-tile__subtitle">17 February 2019</span>
+<h2>
+Teaching with Virtual Reality
+</h2>
+<p>
+James is a learning technologist on a mission to help everyone learn and work smarter through technology. Current areas of research are the use of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.
+</p>
+</div>
+</a>
+</div>
+
+
+
+
+<div class="jmm-tile jmm-tile--half">
+<a data-fancybox href="/images/stock/1.jpeg">
+
+<div class="jmm-tile__image" style="background-image:url(/images/stock/7.jpeg);">
+<svg><use xlink:href="#cloud-download-symbol" /></svg>
+</div>
+<div class="jmm-tile__caption">
+<h2>
+Immersive Learning Research Commended by Assocation of College's Beacon Awards
+</h2>
+<p>
+James is a learning technologist on a mission to help everyone learn and work smarter through technology. Current areas of research are the use of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.
+</p>
+</div>
+</a>
+</div>
+
+
 
 
 
@@ -109,7 +152,66 @@ James is a learning technologist on a mission to help everyone learn and work sm
 </a>
 </div>
 
+<!--
+******************************
 
+-->
+
+
+
+
+
+<div class="jmm-tile jmm-tile--third">
+<a data-fancybox href="/images/stock/1.jpeg">
+
+<div class="jmm-tile__image" style="background-image:url(/images/stock/5.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
+<div class="jmm-tile__caption">
+<h2>
+British Airways Case Study Video
+</h2>
+<p>
+James is a learning technologist on a mission to help everyone learn and work smarter through technology. Current areas of research are the use of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.
+</p>
+</div>
+</a>
+</div>
+
+<div class="jmm-tile jmm-tile--third">
+<a data-fancybox href="https://www.youtube.com/watch?v=OD-GGUIsXSs">
+
+<div class="jmm-tile__image" style="background-image:url(/images/stock/4.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
+<div class="jmm-tile__caption">
+<h2>
+British Airways Case Study Video
+</h2>
+<p>
+James is a learning technologist on a mission to help everyone learn and work smarter through technology. Current areas of research are the use of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.
+</p>
+</div>
+</a>
+</div>
+
+
+<div class="jmm-tile jmm-tile--third">
+<a data-fancybox href="/images/stock/1.jpeg">
+
+<div class="jmm-tile__image" style="background-image:url(/images/stock/2.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
+<div class="jmm-tile__caption">
+<h2>
+British Airways Case Study Video
+</h2>
+<p>
+James is a learning technologist on a mission to help everyone learn and work smarter through technology. Current areas of research are the use of blended learning and virtual reality in the classroom. Recent speaking engagements include the Association of Colleges, Blended Learning Consortium and JISC.
+</p>
+</div>
+</a>
+</div>
 
 
 
@@ -167,6 +269,8 @@ James is a learning technologist on a mission to help everyone learn and work sm
 </div>
 </a>
 </div>
+
+
 
 
 
