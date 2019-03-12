@@ -168,3 +168,13 @@ a.jmm-header-navlink, .jmm-header-navlink {
     border-bottom:1px solid #e0e0e0;
     text-align: left;
 }
+
+
+.jmm-header h1 {
+ padding:0;       
+}
+@media (min-width: 1024px) {
+    .jmm-header h1 {
+
+    }
+}
