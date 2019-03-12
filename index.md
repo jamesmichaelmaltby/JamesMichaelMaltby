@@ -1,16 +1,32 @@
 ---
 layout: default
-title: Homepage
+title: James Michael Maltby
 full: true
 permalink: /
 ---
 <div class="jmm-tiles">
 
 <!--
-<div class="hero">
-<img src="/images/stock/1.jpeg" />
-</div>
+April 19:		...
+March 19:		Infographics
+February 19: 	Sussex Council of Training Providers
+February 19: 	BBC Countryfile
+				Student Created VR
+February 19:	CAFRE College Visit
+January 19: 	Royal Fellowship Award
+December 18:	Equine Dissection
+November 18:	SET Conference
+November 18:	British Airways
+September 18:	Beacon Award 
+September 18:	Swansea University Virtual Reality
+August 18:		Teaching with Virtual Reality
+July 18:		Independence Learning Day
+May 18:			Practical Blended Learning
+March 18:		Digifest Workshop
+??: Landex Teaching & Learning
+??: Association of Colleges
 -->
+
 
 
 <div class="jmm-tile jmm-tile--majorgolden">
@@ -19,7 +35,7 @@ permalink: /
 <svg><use xlink:href="#media-play-symbol" /></svg>
 </div>
 <div class="jmm-tile__caption">
-<span class="jmm-tile__subtitle">17 February 2019</span>
+<span class="jmm-tile__subtitle">Featured from the 17 January 2019</span>
 <h2>
 Immersive Learning on BBC Countryfile
 </h2>
@@ -40,7 +56,7 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <svg><use xlink:href="#arrow" /></svg>
 </div>
 <div class="jmm-tile__caption">
-<span class="jmm-tile__subtitle">18 January 2019</span>
+<span class="jmm-tile__subtitle">Featured from the  18 January 2019</span>
 <h2>
 Student Create Virtual Reality
 </h2>
@@ -104,7 +120,7 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <a data-fancybox href="/images/stock/1.jpeg">
 
 <div class="jmm-tile__image" style="background-image:url(/images/stock/5.jpeg);">
-
+<svg><use xlink:href="#link-1" /></svg>
 </div>
 <div class="jmm-tile__caption">
 <h2>
@@ -120,7 +136,9 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <div class="jmm-tile jmm-tile--third">
 <a data-fancybox href="https://www.youtube.com/watch?v=OD-GGUIsXSs">
 
-<div class="jmm-tile__image" style="background-image:url(/images/stock/4.jpeg);"></div>
+<div class="jmm-tile__image" style="background-image:url(/images/stock/4.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
 <div class="jmm-tile__caption">
 <h2>
 British Airways Case Study Video
@@ -136,7 +154,9 @@ James is a learning technologist on a mission to help everyone learn and work sm
 <div class="jmm-tile jmm-tile--third">
 <a data-fancybox href="/images/stock/1.jpeg">
 
-<div class="jmm-tile__image" style="background-image:url(/images/stock/2.jpeg);"></div>
+<div class="jmm-tile__image" style="background-image:url(/images/stock/2.jpeg);">
+<svg><use xlink:href="#link-1" /></svg>
+</div>
 <div class="jmm-tile__caption">
 <h2>
 British Airways Case Study Video
