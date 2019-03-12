@@ -87,8 +87,10 @@ hr {
    -ms-perspective: 1000;
    perspective: 1000;
 
-   float:left;
-   display:inline-block;
+   /*float:left;
+   display:inline-block;*/
+
+   display: inline-block; vertical-align: top;
 
     margin:1% 1% 1% 1%;
     box-sizing: border-box;
@@ -143,7 +145,7 @@ hr {
 
 
 .jmm-tiles .jmm-tile {width:23%;}
-.jmm-tiles .jmm-tile h2 {font-size:1.2rem;}
+.jmm-tiles .jmm-tile h2 {font-size:1.15rem;}
 .jmm-tiles .jmm-tile:first-of-type {width:58.8%;}
 .jmm-tiles .jmm-tile:first-of-type .jmm-tile__image {height:40vh;}
 .jmm-tiles .jmm-tile:nth-of-type(2) {width:37.2%;}
@@ -153,10 +155,16 @@ hr {
 .jmm-tiles .jmm-tile:nth-of-type(4) {width:48%;}
 .jmm-tiles .jmm-tile:nth-of-type(4) h2 {font-size:1.5rem;}
 .jmm-tiles .jmm-tile:nth-of-type(5) {width:31.333333%;}
+
+.jmm-tiles .jmm-tile:nth-of-type(5) h2 {font-size:1.25rem;}
 .jmm-tiles .jmm-tile:nth-of-type(6) {width:31.333333%;}
+.jmm-tiles .jmm-tile:nth-of-type(6) h2 {font-size:1.25rem;}
 .jmm-tiles .jmm-tile:nth-of-type(7) {width:31.333333%;}
+.jmm-tiles .jmm-tile:nth-of-type(7) h2 {font-size:1.25rem;}
 .jmm-tiles .jmm-tile:nth-of-type(8) {width:37.2%;}
+.jmm-tiles .jmm-tile:nth-of-type(8) h2 {font-size:1.25rem;}
 .jmm-tiles .jmm-tile:nth-of-type(9) {width:58.8%;}
+.jmm-tiles .jmm-tile:nth-of-type(9) h2 {font-size:1.25rem;}
 
 .jmm-tile__image {
     background:url(/images/stock/1.jpeg) no-repeat center center;

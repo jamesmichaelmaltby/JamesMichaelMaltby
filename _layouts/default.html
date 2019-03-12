@@ -19,7 +19,6 @@
         <!-- Document Meta -->
         <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
         <meta charset="utf-8">
-        <base href="{{ site.url }}">
 
         <!-- Page Meta -->
         <title>
@@ -27,7 +26,10 @@
         </title>
         <meta name="description" content="{{ page.description }}">
         <meta name="robots" content="index, follow">
+        {% comment %}
+        <base href="{{ site.url }}">
         <link rel="canonical" href="{{ site.url }}{{page.permalink}}"/>
+        {% endcomment %}
 
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -63,30 +65,7 @@
 
 </head>
 <body>
-    <main class="jmm-content">
-        {%if page.background %}
-        <div class="jmm-content-full" style="background-image:url({{page.background}});"></div>
-        {% endif %}
 
-
-        
-
-        {% assign content = content | strip_newlines %}
-        {% if content != "" %}
-        <section class="jmm-content-section">
-		
-	{% if page.url != '/' %}
-        <a href='/' class="jmm-header-back">
-            &larr; Back to Homepage
-        </a>
-        {% endif %}
-		
-        {{content}}
-        </section>
-        {% endif %}
-
-    </main>
-            
     <header class="jmm-header">
         <div class="jmm-header-wrap">
             <div class="jmm-header-headshot">
@@ -124,6 +103,32 @@
         </div>
     </footer>
 </header>
+
+
+<main class="jmm-content">
+    {%if page.background %}
+    <div class="jmm-content-full" style="background-image:url({{page.background}});"></div>
+    {% endif %}
+
+
+    
+
+    {% assign content = content | strip_newlines %}
+    {% if content != "" %}
+    <section class="jmm-content-section">
+    
+{% if page.url != '/' %}
+    <a href='/' class="jmm-header-back">
+        &larr; Back to Homepage
+    </a>
+    {% endif %}
+    
+    {{content}}
+    </section>
+    {% endif %}
+
+</main>
+        
 
 </body>
 

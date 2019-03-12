@@ -1,116 +1,134 @@
-8 March 19:		  OTLA4 Infographics
-28 February 19:   Sussex Council of Training Providers
-17 February 19:   BBC Countryfile & Student Created VR
-12 February 19:	  CAFRE College Visit
-31 January 19: 	  Royal Fellowship Award
-18 January:       Bookers Wholesale Butchers
-11 December 18:   InTutition Edtech
-? December 18:	  Equine Dissection
-6 November 18:	  SET Conference
-? November 18:	  British Airways
-? October 18:	  Teaching with Virtual Reality.com
-24 September 18:  Feltag Report
-13 September 18:  Beacon Award
-12 September 18:  Swansea University Virtual Reality
-? August 18:	  Virtual Reality in Archeology
-4 July 18:		  Independence Learning Day
-26 June 18:       Association of Colleges South East
-? June 18:        Three-point trailer Teaching & Learning)
-23 May 18:		  Landex conference
-? May 18:         Countryside virtual reality video
-1 April 18:       Blended Learning Spectrums
-7 March 18:		  Digifest Workshop
-? February 18:    Interactive Presentations
-? January 18:	  Practical Blended Learning
 
 
 - date: 2019-03-08
   title: OTLA4 Infographics
   excerpt: OTLA4 Infographics
-  type: photo
+  type: download
   url: https://vimeo.com/319178025/ef3d60fc6c
   image: /images/homepage/bbccountryfile.png
 
-- date: 2015-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2019-02-28
+  title: Sussex Council of Training Providers
+  excerpt: Sussex Council of Training Providers
   type: link
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2019-02-17
+  title: BBC Countryfile & Student Created VR
+  excerpt: BBC Countryfile & Student Created VR
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2019-02-12
+  title: CAFRE College Visit
+  excerpt: CAFRE College Visit
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2019-01-31
+  title: Royal Fellowship Award
+  excerpt: Royal Fellowship Award
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2019-01-01
-  title: Example post
-  excerpt: Example excerpt
+- date: 2019-01-18
+  title: Bookers Wholesale Butchers
+  excerpt: Bookers Wholesale Butchers
   type: video
   url: https://vimeo.com/319178025/ef3d60fc6c
   image: /images/homepage/bbccountryfile.png
 
-- date: 2015-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-12-11
+  title: InTutition Edtech
+  excerpt: InTutition Edtech
   type: link
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-12-01
+  title: Equine Dissection
+  excerpt: Equine Dissection
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-11-06
+  title: SET Conference
+  excerpt: SET Conference
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-11-01
+  title: British Airways
+  excerpt: British Airways
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-10-01
+  title: Teaching with Virtual Reality.com
+  excerpt: Teaching with Virtual Reality.com
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-09-24
+  title: Feltag Report
+  excerpt: Feltag Report
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
-- date: 2012-01-02
-  title: Example post 2
-  excerpt: Example excerpt
+- date: 2018-09-13
+  title: Beacon Award
+  excerpt: Beacon Award
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-09-12
+  title: Swansea University Virtual Reality
+  excerpt: Swansea University Virtual Reality
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-08-01
+  title: Swansea University Virtual Reality
+  excerpt: Swansea University Virtual Reality
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-07-04
+  title: Independence Learning Day
+  excerpt: Independence Learning Day
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-05-26
+  title: Association of Colleges South East
+  excerpt: Association of Colleges South East
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-03-07
+  title: Digifest Workshop
+  excerpt: Digifest Workshop
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-01-01
+  title: Practical Blended Learning
+  excerpt: Practical Blended Learning
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
