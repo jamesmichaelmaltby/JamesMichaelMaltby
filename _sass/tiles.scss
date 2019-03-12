@@ -40,7 +40,7 @@ hr {
 }
 
 .jmm-tiles .jmm-tile:first-of-type .jmm-tile__image {
-    // height:40vh;
+    height:40vh;
 }
 
 
@@ -58,12 +58,13 @@ hr {
     fill:#f0f0f0;
 }
 .jmm-tile:hover .jmm-tile__image svg {
-    background:darken(#1A73E8,20%);;
-    fill:#eee;
+    background:darken(#1A73E8,20%);
+    background:white;
+    fill:#222;
 }
 
 .jmm-tile a:hover h2 {
-    color:darken(#1A73E8,20%);
+    /*color:darken(#1A73E8,20%);*/
 }
 
 .jmm-tile { 
@@ -140,6 +141,22 @@ hr {
     width:73%;
 }
 
+
+.jmm-tiles .jmm-tile {width:23%;}
+.jmm-tiles .jmm-tile h2 {font-size:1.2rem;}
+.jmm-tiles .jmm-tile:first-of-type {width:58.8%;}
+.jmm-tiles .jmm-tile:first-of-type .jmm-tile__image {height:40vh;}
+.jmm-tiles .jmm-tile:nth-of-type(2) {width:37.2%;}
+.jmm-tiles .jmm-tile:nth-of-type(2) h2 {font-size:1.5rem;}
+.jmm-tiles .jmm-tile:nth-of-type(3) {width:48%;}
+.jmm-tiles .jmm-tile:nth-of-type(3) h2 {font-size:1.5rem;}
+.jmm-tiles .jmm-tile:nth-of-type(4) {width:48%;}
+.jmm-tiles .jmm-tile:nth-of-type(4) h2 {font-size:1.5rem;}
+.jmm-tiles .jmm-tile:nth-of-type(5) {width:31.333333%;}
+.jmm-tiles .jmm-tile:nth-of-type(6) {width:31.333333%;}
+.jmm-tiles .jmm-tile:nth-of-type(7) {width:31.333333%;}
+.jmm-tiles .jmm-tile:nth-of-type(8) {width:37.2%;}
+.jmm-tiles .jmm-tile:nth-of-type(9) {width:58.8%;}
 
 .jmm-tile__image {
     background:url(/images/stock/1.jpeg) no-repeat center center;

@@ -5,10 +5,10 @@ permalink: /
 ---
 
 <div class="jmm-tiles">
-{% assign newsitems = site.data.news | sort: 'date' reversed %}
+{% assign newsitems = site.data.news | sort: 'date' | reverse %}
 {% for news in newsitems %}
 
-<div class="jmm-tile jmm-tile--third">
+<div class="jmm-tile jmm-tile--quarter">
 <a {% if news.type != nil and news.type !='link' %}data-fancybox{% endif %}  href="{{ news.url }}">
 
 <div class="jmm-tile__image" style="background-image:url({{ news.image }});">
