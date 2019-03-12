@@ -34,8 +34,8 @@
     color:white;
     bottom:0;
     left:0;
-    width:3.5rem;
-    height:3.5rem;
+    width:4rem;
+    height:4rem;
     padding:1.25rem;
     box-sizing:border-box;
     transition:background 0.5s ease, fill 0.5s ease;
@@ -86,7 +86,7 @@
 .jmm-tile__subtitle {
     display:block;
     color:#777;
-    font-size:0.8rem;
+    font-size:0.7rem;
     text-transform: uppercase;
     margin: 0;
 }
@@ -226,5 +226,8 @@ padding:1rem;
     }
     .jmm-tiles {
         font-size:0.9rem;
+    }
+    .jmm-tile__subtitle {
+        font-size:0.8rem;
     }
 }
