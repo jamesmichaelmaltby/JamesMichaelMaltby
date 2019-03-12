@@ -1,6 +1,7 @@
 ---
 layout: default
 title: James Michael Maltby
+permalink: /
 full: true
 ---
 
