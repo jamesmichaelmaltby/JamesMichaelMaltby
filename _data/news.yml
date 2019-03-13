@@ -2,14 +2,14 @@
 
 - date: 2019-03-08
   title: OTLA4 Infographics
-  excerpt: OTLA4 Infographics
+  excerpt: Finally, we might like to add some content to our .square element. The above solution relies on both .square and .square:after having a height of 0, so adding content to either of them would break our solution.
   type: download
   url: https://vimeo.com/319178025/ef3d60fc6c
   image: /images/homepage/bbccountryfile.png
 
 - date: 2019-02-28
   title: Sussex Council of Training Providers
-  excerpt: Sussex Council of Training Providers
+  excerpt: Fortunately, this problem is easily solved by creating an absolutely positioned element and placing it within .square. The new element can be sized to match the square, but since it is absolutely positioned, its content will not affect the dimensions of our square.
   type: link
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
@@ -51,14 +51,14 @@
 
 - date: 2018-12-01
   title: Equine Dissection
-  excerpt: Equine Dissection
+  excerpt: Fortunately, this problem is easily solved by creating an absolutely positioned element and placing it within .square. The new element can be sized to match the square, but since it is absolutely positioned, its content will not affect the dimensions of our square.
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
 
 - date: 2018-11-06
   title: SET Conference
-  excerpt: SET Conference
+  excerpt: Finally, we might like to add some content to our .square element. The above solution relies on both .square and .square:after having a height of 0, so adding content to either of them would break our solution.
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
