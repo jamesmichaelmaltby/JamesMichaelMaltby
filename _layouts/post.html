@@ -2,17 +2,26 @@
 layout: default
 ---
 
-
+<div style="max-width:800px;padding:0 40px;">
 {% for category in page.categories %}
+    <ul>
     {% for post in site.posts %}
         {% if post.categories contains category %} 
+            <li>
+            <a href="{{post.url}}">
             {% if post.title == page.title %} 
             <strong>{{ post.title }}</strong>
             {% else %}
             {{ post.title }}
             {% endif %}
+            </a>
+            </li>
         {% endif %}
+    
     {% endfor %}
+    </ul>
 {% endfor %}
 
 {{ content }}
+
+</div>
