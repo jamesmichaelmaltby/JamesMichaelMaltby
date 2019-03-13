@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+
+{% for category in page.categories %}
+    {% for post in site.posts %}
+        {% if post.categories contains category %} 
+            {% if post.title == page.title %} 
+            <strong>{{ post.title }}</strong>
+            {% else %}
+            {{ post.title }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+{{ content }}

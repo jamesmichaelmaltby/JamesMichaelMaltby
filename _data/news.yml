@@ -99,8 +99,8 @@
   image: /images/homepage/bbccountryfile.png
 
 - date: 2018-08-01
-  title: Swansea University Virtual Reality
-  excerpt: Swansea University Virtual Reality
+  title: Archeology
+  excerpt: Archeology
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
@@ -108,6 +108,13 @@
 - date: 2018-07-04
   title: Independence Learning Day
   excerpt: Independence Learning Day
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-06-01
+  title: Three point linkage
+  excerpt: Three point linkage
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
