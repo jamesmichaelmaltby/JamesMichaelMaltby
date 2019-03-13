@@ -1,17 +1,43 @@
+sidebar {
+    float:right;
+    width:35%;
+}
+sidebar h3 {
+    padding:0 0.5rem 0.5rem 0.5rem;
+    font-size:1.5rem;
+    margin:0 0 0.5rem 0;
+    border-bottom:1px solid #222;
+}
 sidebar nav ul {
     margin:0;
     padding:0;
+    font-size: 1rem;
 }
 
 sidebar nav ul li {
     list-style: none;
-    margin:0 0 0.2rem 0;
-    padding:0 0 0 0;
-    background:#f0f0f0;
+    padding:0.5rem 0.5rem;
 }
 
 sidebar nav ul li a,
 sidebar nav ul li a:active,
-sidebar nav ul li a:link {
+sidebar nav ul li a:link,
+sidebar nav ul li a:visited {
     text-decoration: none;
+    /*color:#0678be;*/
+    color:#555;
+}
+
+sidebar nav ul li a:hover {
+   /* color:#064771;*/
+   color:#222;
+}
+
+sidebar nav ul li.active {
+    font-weight: 700;
+    background:#f0f0f0;
+}
+
+sidebar nav ul li.active a {
+    color:inherit;
 }

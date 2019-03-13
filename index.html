@@ -7,7 +7,7 @@ permalink: /
 <div class="jmm-tiles">
 {% assign allitems = site.data.news | concat: site.posts %}
 {% assign sorteditems = allitems | sort: 'date' | reverse %}
-{% for news in sorteditems %}
+{% for news in sorteditems | where: listed != false %}
 
 <div class="jmm-tile">
 <a {% if news.type != nil and news.type !='link' %}data-fancybox{% endif %}  href="{{ news.url }}">
