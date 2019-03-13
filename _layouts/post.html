@@ -2,7 +2,14 @@
 layout: default
 ---
 
+
+
 <div style="max-width:800px;padding:0 40px;">
+
+<h1>{{ page.title}}</h1>
+
+<sidebar>
+<nav>
 {% for category in page.categories %}
     <ul>
     {% for post in site.posts %}
@@ -21,7 +28,8 @@ layout: default
     {% endfor %}
     </ul>
 {% endfor %}
-
+</nav>
+</sidebar>
 {{ content }}
 
 </div>

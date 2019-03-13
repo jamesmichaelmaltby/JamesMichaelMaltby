@@ -6,7 +6,7 @@ permalink: /
 
 <div class="jmm-tiles">
 {% assign allitems = site.data.news | concat: site.posts %}
-{% assign sorteditems = allitems | reverse %}
+{% assign sorteditems = allitems | sort: 'date' | reverse %}
 {% for news in sorteditems %}
 
 <div class="jmm-tile">
@@ -33,6 +33,7 @@ permalink: /
 </div>
 </a>
 </div>
+
 
 {% endfor %}
 </div>
