@@ -9,9 +9,11 @@ layout: default
         {% assign primary_category = page.categories[0] %}
         <h3>{{ site.data.categorymeta[primary_category] }}</h3>
         
+        
         {% for category in page.categories %}
             <ul>
-            {% for post in site.posts %}
+            {% assign sortedposts = site.posts | sort : 'order' %}
+            {% for post in sortedposts %}
                 {% if post.categories contains category %} 
                     <li class="{% if post.title == page.title %}active{% endif %}"">
                     <a class="{% if post.title == page.title %}active{% endif %}"href="{{post.url}}">
