@@ -5,7 +5,7 @@ permalink: /
 ---
 
 <div class="jmm-tiles">
-{% assign newsitems = site.data.news | sort: 'date' | reverse %}
+{% assign newsitems = (site.data.news) | sort: 'date' | reverse %}
 {% for news in newsitems %}
 
 <div class="jmm-tile">
@@ -35,3 +35,6 @@ permalink: /
 
 {% endfor %}
 </div>
+
+
+{{ site.time }}
