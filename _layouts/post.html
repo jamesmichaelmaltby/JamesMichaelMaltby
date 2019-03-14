@@ -53,6 +53,21 @@ layout: default
 {% endif %}
 
 {% endif %}
+
+
+{% assign allitems = site.data.news | concat: site.posts %}
+{% assign sorteditems = allitems | sort: 'date' | reverse %}
+{% if page.tags %}
+        {{page.url }}<br/>
+        {% for item in sorteditems | where: url != page.url %}
+            {% for tag in page.tags %}
+            {% if item.tags contains tag %}
+            {{item}}<br/>
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+{% endif %}
+
 </div>
 
 </div>
