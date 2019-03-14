@@ -26,6 +26,7 @@
     overflow:auto;
     font-size:0.8rem;
     max-width:1060px;
+    clear:both;
 }
 
 .jmm-tile__image svg {
@@ -73,7 +74,7 @@
 
    display: inline-block; vertical-align: top;
 
-    margin:1% 1% 2% 1%;
+    margin:1% 1% 1% 1%;
     box-sizing: border-box;
     transition: transform 0.5s ease;
     overflow:auto;
@@ -122,6 +123,7 @@
 
 .jmm-tiles .jmm-tile h2 {font-size:1.1rem;}
 
+.homepage {
 .jmm-tiles .jmm-tile:first-of-type {width:98%;}
 .jmm-tiles .jmm-tile:first-of-type .jmm-tile__image:after {padding-bottom:56.25%;}
 .jmm-tiles .jmm-tile:first-of-type h2 {font-size:1.4rem;}
@@ -129,6 +131,7 @@
 .jmm-tiles .jmm-tile:nth-of-type(2) h2 {font-size:1.4rem;}
 .jmm-tiles .jmm-tile:nth-of-type(3) {width:98%;}
 .jmm-tiles .jmm-tile:nth-of-type(3) h2 {font-size:1.4rem;}
+}
 
 @media (min-width: 1024px) {
 
@@ -142,6 +145,7 @@
 .jmm-tiles .jmm-tile {width:23%;}
 .jmm-tiles .jmm-tile h2 {font-size:1.2rem;}
 
+.homepage {
 .jmm-tiles .jmm-tile:first-of-type {width:58.8%;}
 .jmm-tiles .jmm-tile:first-of-type h2 {font-size:2rem;}
 .jmm-tiles .jmm-tile:nth-of-type(2) {width:37.2%;}
@@ -174,6 +178,7 @@
 .jmm-tiles .jmm-tile:nth-of-type(8) {width:37.2%;}
 .jmm-tiles .jmm-tile:nth-of-type(8) .jmm-tile__image:after {padding-bottom:56.25%;}
 .jmm-tiles .jmm-tile:nth-of-type(8) h2 {font-size:1.5rem;}
+}
 
 /*
 .jmm-tiles .jmm-tile:nth-of-type(8) {width:37.2%;}

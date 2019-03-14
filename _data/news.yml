@@ -28,6 +28,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2019-01-31 00:00:00 +0000
   title: Royal Fellowship Award
@@ -49,6 +50,7 @@
   type: link
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-12-01 00:00:00 +0000
   title: Equine Dissection
@@ -77,6 +79,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-09-24 00:00:00 +0000
   title: Feltag Report
@@ -84,6 +87,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-09-13 00:00:00 +0000
   title: Beacon Award
@@ -91,6 +95,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-09-12 00:00:00 +0000
   title: Swansea University Virtual Reality
@@ -98,6 +103,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-08-01 00:00:00 +0000
   title: Archeology
@@ -105,6 +111,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-07-04 00:00:00 +0000
   title: Independence Learning Day
@@ -119,6 +126,7 @@
   type: 
   url: https://www.teachingwithvirtualreality.com
   image: /images/homepage/bbccountryfile.png
+  tags: [vr]
 
 - date: 2018-05-26 00:00:00 +0000
   title: Association of Colleges South East

@@ -2,12 +2,15 @@
 layout: default
 title: James Michael Maltby
 permalink: /
+classes: homepage
 ---
 
 <div class="jmm-tiles">
 {% assign allitems = site.data.news | concat: site.posts %}
 {% assign sorteditems = allitems | sort: 'date' | reverse %}
 {% for news in sorteditems %}
+
+
 {% if news.listed != false %}
 
 <div class="jmm-tile">
@@ -36,5 +39,8 @@ permalink: /
 </div>
 
 {% endif %}
+
+
+
 {% endfor %}
 </div>
