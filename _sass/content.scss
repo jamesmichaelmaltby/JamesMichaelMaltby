@@ -95,17 +95,34 @@ img[src*="#poster"] {
     float:left;
     text-align: left;
     width:33.3333%;
-    margin-top:2rem;
+    margin-top:3rem;
 }
 .pages--center {
     float:left;
     text-align: center;
     width:33.3333%;
-    margin-top:2rem;
+    margin-top:3rem;
 }
 .pages--next {
     float:right;
     text-align: right;
     width:33.3333%;
-    margin-top:2rem;
+    margin-top:3rem;
+}
+.pages--titles--previous {
+    color:#777;
+    float:left;
+    text-align: left;
+    width:40%;
+    font-size:0.9rem;
+    margin-top:1rem;
+}
+
+.pages--titles--next {
+    color:#777;
+    float:right;
+    text-align: right;
+    width:40%;
+    font-size:0.9rem;
+    margin-top:1rem;
 }
