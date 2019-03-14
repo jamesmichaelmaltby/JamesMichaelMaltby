@@ -2,45 +2,49 @@
 layout: default
 ---
 
+{% assign primary_category = page.categories[0] %}
+{% assign filteredposts = site.posts | where: 'categories', primary_category %}
+{% assign sortedposts = filteredposts | sort : 'page' %}
 
 <div style="max-width:1024px;width:100%;padding:3rem 2rem; position: relative;">
-
-        <sidebar style="position: absolute;width:240px;right:0;top:3rem;bottom:0;">
+{%if sortedposts !=nil %}
+        <sidebar style="position: absolute;width:250px;right:0;top:3rem;bottom:0;">
                 <nav>
-                {% assign primary_category = page.categories[0] %}
                 <h3>{{ site.data.categorymeta[primary_category] }}</h3>
-                
-                
-                {% for category in page.categories %}
                     <ul>
-                    {% assign sortedposts = site.posts | sort : 'page' %}
                     {% for post in sortedposts %}
-                        {% if post.categories contains category %} 
                             <li class="{% if post.title == page.title %}active{% endif %}"">
                             <a class="{% if post.title == page.title %}active{% endif %}"href="{{post.url}}">
                             {{ post.title }}
                             </a>
                             </li>
-                        {% endif %}
-                    
                     {% endfor %}
                     </ul>
-                {% endfor %}
                 </nav>
                 </sidebar>
+                {% endif %}
+    <div style="padding-right:250px;">
 
-    <div style="padding-right:240px;">
 
 <h1>{{ page.title}}</h1>
 {{ content }}
 
+
 {% if page.page %}
 
-{% assign previous = page.page | minus: 1  %}
-{{ previous }}
+{% assign previous = page.page | minus: 2  %}
+{% assign next = page.page %}
 
+{% if page.page > 1 %}
+<a href="{{ sortedposts[previous].url }}">&larr; Previous &ndash; {{sortedposts[previous].title}}</a>
+<a href="{{ sortedposts[0].url }}">Back to Start</a>
 {% endif %}
 
+{% if sortedposts[next] != nil %}
+<a href="{{ sortedposts[next].url }}">Next &ndash; {{sortedposts[next].title}} &rarr;</a>
+{% endif %}
+
+{% endif %}
 </div>
 
 </div>
