@@ -60,6 +60,7 @@ layout: default
 {% assign allitems = site.data.news | concat: site.posts %}
 {% assign sorteditems = allitems | sort: 'date' | reverse %}
 {% if page.tags %}
+<h1>Related Stories</h1>
         {% for news in sorteditems %}
             {% if news.url != page.url %}
                 {% for tag in page.tags %}
@@ -93,7 +94,7 @@ layout: default
 </div>
 </a>
 </div>
-{% continue %}
+{% break %}
 {% endif %}
 
 
