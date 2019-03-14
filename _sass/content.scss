@@ -88,3 +88,24 @@ img[src*="#poster"] {
     box-shadow:0 0 1rem rgba(0,0,0,0.25);
     box-sizing: border-box;
 }
+
+
+
+.pages--previous {
+    float:left;
+    text-align: left;
+    width:33.3333%;
+    margin-top:2rem;
+}
+.pages--center {
+    float:left;
+    text-align: center;
+    width:33.3333%;
+    margin-top:2rem;
+}
+.pages--next {
+    float:right;
+    text-align: right;
+    width:33.3333%;
+    margin-top:2rem;
+}

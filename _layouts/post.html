@@ -6,7 +6,7 @@ layout: default
 {% assign filteredposts = site.posts | where: 'categories', primary_category %}
 {% assign sortedposts = filteredposts | sort : 'page' %}
 
-<div style="max-width:1024px;width:100%;padding:3rem 2rem; position: relative;">
+<div style="max-width:1024px;width:100%;padding:3rem 2rem; margin-bottom:4rem;position: relative;">
 {%if sortedposts !=nil %}
         <sidebar style="position: absolute;width:250px;right:0;top:3rem;bottom:0;">
                 <nav>
@@ -36,12 +36,13 @@ layout: default
 {% assign next = page.page %}
 
 {% if page.page > 1 %}
-<a href="{{ sortedposts[previous].url }}">&larr; Previous &ndash; {{sortedposts[previous].title}}</a>
-<a href="{{ sortedposts[0].url }}">Back to Start</a>
+
+<a class="pages--previous" href="{{ sortedposts[previous].url }}">&larr; {{sortedposts[previous].title}}</a>
+<a class="pages--center" href="{{ sortedposts[0].url }}">Back to Start</a>
 {% endif %}
 
 {% if sortedposts[next] != nil %}
-<a href="{{ sortedposts[next].url }}">Next &ndash; {{sortedposts[next].title}} &rarr;</a>
+<a class="pages--next" href="{{ sortedposts[next].url }}">{{sortedposts[next].title}} &rarr;</a>
 {% endif %}
 
 {% endif %}
