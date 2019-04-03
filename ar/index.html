@@ -4,6 +4,8 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
 <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
 <script>
+  var canvasElement = document.createElement("canvas");
+  var canvasContext = canvasElement.getContext("2d");
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
       console.log("registering");
@@ -30,7 +32,6 @@
           );
           var qrCode = jsQR(imageData.data, imageData.width, imageData.height);
           if (qrCode && qrCode.data !== "") {
-            myBox.setAttribute("color", qrCode.data);
             console.log("QR Code Data - " + qrCode.data);
           } else {
             console.log("no qr code found");
