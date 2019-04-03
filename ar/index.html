@@ -14,14 +14,14 @@
 			marker.addEventListener('markerLost', function() {
 				var markerId = marker.id;
 				alert('markerLost' + markerId);
-		
 			});
 		}
 	});
+  alert('test');
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene stats embedded arjs='trackingMethod: best;sourceType: webcam; debugUIEnabled: false;'>
+    <a-scene embedded arjs='trackingMethod: best;sourceType: webcam; debugUIEnabled: false;'>
       <a-marker preset="hiro">
       <a-plane color="#7BC8A4" width="1" height="1" position='0 0 0' material='color: blue;'>
       </a-plane>
