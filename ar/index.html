@@ -3,12 +3,27 @@
 <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
-<script src="https://rawgit.com/ngokevin/aframe-look-at-component/master/dist/aframe-look-at-component.min.js"></script>
-  
+<script>
+	AFRAME.registerComponent('registerevents', {
+		init: function () {
+			var marker = this.el;
+			marker.addEventListener('markerFound', function() {
+				var markerId = marker.id;
+				alert('markerFound'+ markerId);
+			});
+			marker.addEventListener('markerLost', function() {
+				var markerId = marker.id;
+				alert('markerLost' + markerId);
+		
+			});
+		}
+	});
+</script>
+
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene stats embedded arjs='trackingMethod: best;'>
       <a-marker preset="hiro">
-      <a-plane look-at="[camera]" color="#7BC8A4" width="1" height="1" position='0 0 0' material='color: blue;'>
+      <a-plane color="#7BC8A4" width="1" height="1" position='0 0 0' material='color: blue;'>
       </a-plane>
       </a-marker>
       <a-entity camera></a-entity>
