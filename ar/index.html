@@ -5,7 +5,7 @@
 <script>
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
-      console.log("registering: "+JSON.stringify(this));
+      console.log("registering");
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
         console.log('markerFound');
@@ -17,7 +17,7 @@
 			});
 		}
 	});
-  alert("Last build 19:19");
+  alert("Last build 19:22");
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
