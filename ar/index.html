@@ -10,12 +10,12 @@
 			marker.addEventListener('markerFound', function() {
         console.log('markerFound');
 				var markerId = marker.id;
-        console.log(markerId);
+        console.log(this.id);
 			});
 			marker.addEventListener('markerLost', function() {
         console.log('markerLost');
 				var markerId = marker.id;
-        console.log(markerId);
+        console.log(this.id);
 			});
 		}
 	});
