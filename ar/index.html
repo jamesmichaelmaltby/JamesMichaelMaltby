@@ -5,16 +5,19 @@
 <script>
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
+      console.log("registering: "+JSON.stringify(this));
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
+        console.log('markerFound');
 				var markerId = marker.id;
 			});
 			marker.addEventListener('markerLost', function() {
+        console.log('markerLost');
 				var markerId = marker.id;
 			});
 		}
 	});
-  alert("Last build 19:15");
+  alert("Last build 19:19");
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
