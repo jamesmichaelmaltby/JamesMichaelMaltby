@@ -9,10 +9,8 @@
   var canvasContext = canvasElement.getContext("2d");
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
-      console.log("registering");
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
-        console.log('markerFound');
 				var markerId = marker.id;
         return;
         video = document.querySelector("video");
@@ -35,7 +33,6 @@
           var qrCode = jsQR(imageData.data, imageData.width, imageData.height);
           if (qrCode && qrCode.data !== "") {
             console.log("QR Code Data - " + qrCode.data);
-            alert(qrCode.data);
           } else {
             console.log("no qr code found");
           }
@@ -51,13 +48,13 @@
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='detectionType:mono_and_matrix; matrixCodeType: 3x3; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+    <a-scene embedded arjs='detectionType:mono_and_matrix; matrixCodeType: 5x5; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
          <a-marker id="number5" type='barcode' value='5' emitevents="true" registerevents>
           <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="0.5" rotation='-90 0 0' position='0 0 0'>
           </a-circle>
         </a-marker>
 
-        <a-marker id="hiro" preset="hiro">
+        <a-marker id="hiro" preset="hiro" registerevents>
             <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="0.5" rotation='-90 0 0' position='0 0 0'>
             </a-circle>
         </a-marker>
