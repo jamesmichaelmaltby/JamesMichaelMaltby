@@ -51,21 +51,19 @@
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs='detectionType:mono; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
-      <a-marker id="default" preset="hiro" emitevents="true" registerevents>
-          <a-entity geometry="primitive: box" material="shader: html; target: #htmlElement" rotation='-90 0 0' position='0 0 0'></a-entity>
-      </a-circle>
-      </a-marker>
+    <a-scene embedded arjs='detectionType:mono_and_matrix; matrixCodeType: 3x3; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+        <a-assets>
+            <a-asset-item id="smiley" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/9176d098/1.0/SmilingFace/glTF/SmilingFace.gltf"></a-asset-item>
+      </a-assets>
+      <a-marker id="default" type='barcode' value='5' emitevents="true" registerevents>
+          <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="0.5" rotation='-90 0 0' position='0 0 0'>
+          <a-entity gltf-model="#smiley" position="0 0.5 0" rotation= "0 0 0"> </a-entity>
+        </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
 
-    <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
-        <div id="htmlElement" style="background: #F8F8F8; color: #333; font-size: 48px">Hello, HTML!</div>
-      </div>
+ 
   </body>
 </html>
 
 
-<!--
-    <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="1" rotation='-90 0 0' position='0 0 0'>
--->
