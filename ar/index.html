@@ -10,19 +10,21 @@
 			marker.addEventListener('markerFound', function() {
         console.log('markerFound');
 				var markerId = marker.id;
+        console.log(markerId);
 			});
 			marker.addEventListener('markerLost', function() {
         console.log('markerLost');
 				var markerId = marker.id;
+        console.log(markerId);
 			});
 		}
 	});
-  alert("Last build 19:22");
+  alert("Last build 19:38");
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='detectionType:mono; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
-      <a-marker id="default" preset="hiro" registerevents>
+      <a-marker id="default" preset="hiro" emitevents="true" registerevents>
       <a-plane color="#7BC8A4" width="1" height="0.5" rotation='0 0 0' position='0 0.5 0' material='color: blue;'>
       </a-plane>
       </a-marker>
