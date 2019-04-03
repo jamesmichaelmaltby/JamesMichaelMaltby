@@ -3,6 +3,7 @@
 <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
 <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
+<script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
 <script>
   var canvasElement = document.createElement("canvas");
   var canvasContext = canvasElement.getContext("2d");
@@ -13,6 +14,7 @@
 			marker.addEventListener('markerFound', function() {
         console.log('markerFound');
 				var markerId = marker.id;
+        return;
         video = document.querySelector("video");
         if (video && video.readyState === video.HAVE_ENOUGH_DATA) {
           canvasElement.height = video.videoHeight;
@@ -33,6 +35,7 @@
           var qrCode = jsQR(imageData.data, imageData.width, imageData.height);
           if (qrCode && qrCode.data !== "") {
             console.log("QR Code Data - " + qrCode.data);
+            alert(qrCode.data);
           } else {
             console.log("no qr code found");
           }
@@ -50,10 +53,19 @@
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='detectionType:mono; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
       <a-marker id="default" preset="hiro" emitevents="true" registerevents>
-      <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="1" rotation='-90 0 0' position='0 0 0'>
+          <a-entity geometry="primitive: box" material="shader: html; target: #htmlElement" rotation='-90 0 0' position='0 0 0'></a-entity>
       </a-circle>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+
+    <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: -1; overflow: hidden">
+        <div id="htmlElement" style="background: #F8F8F8; color: #333; font-size: 48px">Hello, HTML!</div>
+      </div>
   </body>
 </html>
+
+
+<!--
+    <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="1" rotation='-90 0 0' position='0 0 0'>
+-->
