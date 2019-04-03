@@ -19,7 +19,6 @@
         <!-- Document Meta -->
         <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
         <meta charset="utf-8">
-        <base href="{{ site.url }}">
 
         <!-- Page Meta -->
         <title>
@@ -27,7 +26,10 @@
         </title>
         <meta name="description" content="{{ page.description }}">
         <meta name="robots" content="index, follow">
+        {% comment %}
+        <base href="{{ site.url }}">
         <link rel="canonical" href="{{ site.url }}{{page.permalink}}"/>
+        {% endcomment %}
 
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -62,31 +64,8 @@
         <meta name="twitter:image:alt" content="Thumbnail">
 
 </head>
-<body>
-    <main class="jmm-content">
-        {%if page.background %}
-        <div class="jmm-content-full" style="background-image:url({{page.background}});"></div>
-        {% endif %}
+<body class="{{page.classes}}">
 
-
-        
-
-        {% assign content = content | strip_newlines %}
-        {% if content != "" %}
-        <section class="jmm-content-section {%if page.full %}jmm-content-section--full{%endif%}">
-		
-	{% if page.url != '/' %}
-        <a href='/' class="jmm-header-back">
-            &larr; Back to Homepage
-        </a>
-        {% endif %}
-		
-        {{content}}
-        </section>
-        {% endif %}
-
-    </main>
-            
     <header class="jmm-header">
         <div class="jmm-header-wrap">
             <div class="jmm-header-headshot">
@@ -101,12 +80,14 @@
             <a rel="me" alt="LinkedIn" class="jmm-header-navlink " href="https://www.linkedin.com/in/jamesmichaelmaltby">
             <svg class="jmm-header-navlink__icon"><use xlink:href="#linkedin-logo" /></svg><span class="jmm-header-navlink__caption">LinkedIn</span>
             </a>
+            {% comment %}
             <a rel="me" alt="Twitter" class="jmm-header-navlink " href="/cmalt">
             <svg class="jmm-header-navlink__icon"><use xlink:href="#twitter-logo-on-black-background" /></svg><span class="jmm-header-navlink__caption">Twitter</span>
             </a>
             <a rel="me" alt="Instagram" class="jmm-header-navlink " href="/cmalt">
                 <svg class="jmm-header-navlink__icon"><use xlink:href="#instagram" /></svg><span class="jmm-header-navlink__caption">Instagram</span>
                 </a>
+            {% endcomment %}
             </nav>
             <p class="jmm-header-summary">
             {{ site.summary }}
@@ -122,6 +103,32 @@
         </div>
     </footer>
 </header>
+
+
+<main class="jmm-content">
+    {%if page.background %}
+    <div class="jmm-content-full" style="background-image:url({{page.background}});"></div>
+    {% endif %}
+
+
+    
+
+    {% assign content = content | strip_newlines %}
+    {% if content != "" %}
+    <section class="jmm-content-section">
+    
+{% if page.url != '/' %}
+    <a href='/' class="jmm-header-back">
+        &larr; Back to Homepage
+    </a>
+    {% endif %}
+    
+    {{content}}
+    </section>
+    {% endif %}
+
+</main>
+        
 
 </body>
 

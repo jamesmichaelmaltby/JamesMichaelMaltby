@@ -2,39 +2,9 @@
 layout: default
 title: James Michael Maltby
 full: true
-permalink: /homepage
+permalink: /
 ---
 <div class="jmm-tiles">
-
-<!--
-Actor, technology, outcome
-
-8 March 19:		  OTLA4 Infographics
-28 February 19:   Sussex Council of Training Providers
-17 February 19:   BBC Countryfile & Student Created VR
-12 February 19:	  CAFRE College Visit
-31 January 19: 	  Royal Fellowship Award
-18 January:       Bookers Wholesale Butchers
-11 December 18:   InTutition Edtech
-? December 18:	  Equine Dissection
-6 November 18:	  SET Conference
-? November 18:	  British Airways
-? October 18:	  Teaching with Virtual Reality.com
-24 September 18:  Feltag Report
-13 September 18:  Beacon Award
-12 September 18:  Swansea University Virtual Reality
-? August 18:	  Virtual Reality in Archeology
-4 July 18:		  Independence Learning Day
-26 June 18:       Association of Colleges South East
-? June 18:        Three-point trailer Teaching & Learning)
-23 May 18:		  Landex conference
-? May 18:         Countryside virtual reality video
-1 April 18:       Blended Learning Spectrums
-7 March 18:		  Digifest Workshop
-? February 18:    Interactive Presentations
-? January 18:	  Practical Blended Learning
--->
-
 
 
 <div class="jmm-tile jmm-tile--half">
