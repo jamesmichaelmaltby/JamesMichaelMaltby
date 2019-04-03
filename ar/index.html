@@ -6,14 +6,8 @@
   <body style='margin : 0px; overflow: hidden;'>
     <a-scene stats embedded arjs='trackingMethod: best;'>
       <a-marker preset="hiro">
-      <a-box position='0 0 0' material='color: blue;'>
-        <a-animation attribute="rotation"
-        dur="2000"
-        fill="forwards"
-        from="0 0 0"
-        to="360 360 360"
-        repeat="indefinite"></a-animation>
-      </a-box>
+      <a-plane color="#7BC8A4" width="50" height="50" position='0 0 0' material='color: blue;'>
+      </a-plane>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
