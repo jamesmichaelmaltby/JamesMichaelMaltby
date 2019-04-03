@@ -2,7 +2,10 @@
 <html>
 <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
+<script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
 <script>
+  var canvasElement = document.createElement("canvas");
+  var canvasContext = canvasElement.getContext("2d");
 	AFRAME.registerComponent('registerevents', {
 		init: function () {
       console.log("registering");
@@ -10,7 +13,30 @@
 			marker.addEventListener('markerFound', function() {
         console.log('markerFound');
 				var markerId = marker.id;
-        console.log(this.id);
+        video = document.querySelector("video");
+        if (video && video.readyState === video.HAVE_ENOUGH_DATA) {
+          canvasElement.height = video.videoHeight;
+          canvasElement.width = video.videoWidth;
+          canvasContext.drawImage(
+            video,
+            0,
+            0,
+            canvasElement.width,
+            canvasElement.height
+          );
+          var imageData = canvasContext.getImageData(
+            0,
+            0,
+            canvasElement.width,
+            canvasElement.height
+          );
+          var qrCode = jsQR(imageData.data, imageData.width, imageData.height);
+          if (qrCode && qrCode.data !== "") {
+            console.log("QR Code Data - " + qrCode.data);
+          } else {
+            console.log("no qr code found");
+          }
+        }
 			});
 			marker.addEventListener('markerLost', function() {
         console.log('markerLost');
