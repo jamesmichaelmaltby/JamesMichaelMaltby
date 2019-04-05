@@ -11,7 +11,7 @@
 		init: function () {
 			var marker = this.el;
 			marker.addEventListener('markerFound', function() {
-				var markerId = marker.id;
+        console.log('Marker found: ' + this.id);
         return;
         video = document.querySelector("video");
         if (video && video.readyState === video.HAVE_ENOUGH_DATA) {
@@ -39,9 +39,7 @@
         }
 			});
 			marker.addEventListener('markerLost', function() {
-        console.log('markerLost');
-				var markerId = marker.id;
-        console.log(this.id);
+        console.log('Marker lost: ' + this.id);
 			});
 		}
 	});
@@ -49,16 +47,12 @@
 
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='detectionType:mono_and_matrix; matrixCodeType: 4x4; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
-        <a-assets>
-            <video id="example-video" playsinline autoplay loop="true" src="video.mp4"></video>
-          </a-assets>  
- 
+       
         <a-marker id="hiro" preset="hiro" registerevents>
           
-          <a-plane material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" width="1" height="1" rotation='-90 0 0' position='0 0 0'>
-            </a-plane>
+            <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="0.5" rotation='-90 0 0' position='0 0 0'>
+              </a-circle>
           
-            <a-video src="#example-video" width="5" height="3" rotation='-90 0 0' position="0 0 0"></a-video>
         </a-marker>
 
       <a-entity camera></a-entity>
