@@ -1,5 +1,6 @@
 <!doctype HTML>
 <html>
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
 <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
 <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
@@ -49,15 +50,15 @@
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='detectionType:mono_and_matrix; matrixCodeType: 4x4; sourceType: webcam; debugUIEnabled: false;' vr-mode-ui="enabled: false">
         <a-assets>
-            <video id="example-video" autoplay loop="true" src="video.mp4"></video>
+            <video id="example-video" playsinline autoplay loop="true" src="video.mp4"></video>
           </a-assets>  
  
         <a-marker id="hiro" preset="hiro" registerevents>
-          <!--
-          <a-circle material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" radius="0.5" rotation='-90 0 0' position='0 0 0'>
-            </a-circle>
-          -->
-            <a-video src="#example-video" width="1" height="0.5625" rotation='-90 0 0' position="0 0 0"></a-video>
+          
+          <a-plane material="side: double; color: #EF2D5E; transparent: true; opacity: 0.5" color="#7BC8A4" width="1" height="1" rotation='-90 0 0' position='0 0 0'>
+            </a-plane>
+          
+            <a-video src="#example-video" width="5" height="3" rotation='-90 0 0' position="0 0 0"></a-video>
         </a-marker>
 
       <a-entity camera></a-entity>
