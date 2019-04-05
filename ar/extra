@@ -1,0 +1,5 @@
+ <a-assets>
+            <video id="example-video" playsinline autoplay loop="true" src="video.mp4"></video>
+          </a-assets>  
+          <a-video src="#example-video" width="5" height="3" rotation='-90 0 0' position="0 0 0"></a-video>
+ 
