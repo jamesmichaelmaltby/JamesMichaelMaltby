@@ -15,7 +15,7 @@
 }
 .jmm-footer {
     color:#777;
-    margin:1rem 0 1rem 0;
+    margin:1rem 0 0 0;
     line-height:1;
 }
 
@@ -178,7 +178,7 @@ a.jmm-header-navlink, .jmm-header-navlink {
 }
 @media (min-width: 1024px) {
     .jmm-header {
-        padding:2rem;
+        /*padding:2rem;*/
     }
     .jmm-header h1 {
         padding:0;  
