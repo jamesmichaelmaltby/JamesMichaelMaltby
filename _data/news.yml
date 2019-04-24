@@ -1,0 +1,150 @@
+
+
+- date: 2019-03-08 00:00:00 +0000
+  title: OTLA4 Infographics
+  excerpt: Finally, we might like to add some content to our .square element. The above solution relies on both .square and .square:after having a height of 0, so adding content to either of them would break our solution.
+  type: download
+  url: https://vimeo.com/319178025/ef3d60fc6c
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2019-02-28 00:00:00 +0000
+  title: Sussex Council of Training Providers
+  excerpt: Fortunately, this problem is easily solved by creating an absolutely positioned element and placing it within .square. The new element can be sized to match the square, but since it is absolutely positioned, its content will not affect the dimensions of our square.
+  type: link
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2019-02-17 00:00:00 +0000
+  title: BBC Countryfile & Student Created VR
+  excerpt: BBC Countryfile & Student Created VR
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2019-02-12 00:00:00 +0000
+  title: CAFRE College Visit
+  excerpt: CAFRE College Visit
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr,training]
+
+- date: 2019-01-31 00:00:00 +0000
+  title: Royal Fellowship Award
+  excerpt: Royal Fellowship Award
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2019-01-18 00:00:00 +0000
+  title: Bookers Wholesale Butchers
+  excerpt: Bookers Wholesale Butchers
+  type: video
+  url: https://vimeo.com/319178025/ef3d60fc6c
+  image: /images/homepage/bbccountryfile.png
+ 
+- date: 2018-12-11 00:00:00 +0000
+  title: InTutition Edtech
+  excerpt: InTutition Edtech
+  type: link
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-12-01 00:00:00 +0000
+  title: Equine Dissection
+  excerpt: Fortunately, this problem is easily solved by creating an absolutely positioned element and placing it within .square. The new element can be sized to match the square, but since it is absolutely positioned, its content will not affect the dimensions of our square.
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-11-06 00:00:00 +0000
+  title: SET Conference
+  excerpt: Finally, we might like to add some content to our .square element. The above solution relies on both .square and .square:after having a height of 0, so adding content to either of them would break our solution.
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-11-01 00:00:00 +0000
+  title: British Airways
+  excerpt: British Airways
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-10-01 00:00:00 +0000
+  title: Teaching with Virtual Reality.com
+  excerpt: Teaching with Virtual Reality.com
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-09-24 00:00:00 +0000
+  title: Feltag Report
+  excerpt: Feltag Report
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-09-13 00:00:00 +0000
+  title: Beacon Award
+  excerpt: Beacon Award
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-09-12 00:00:00 +0000
+  title: Swansea University Virtual Reality
+  excerpt: Swansea University Virtual Reality
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-08-01 00:00:00 +0000
+  title: Archeology
+  excerpt: Archeology
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-07-04 00:00:00 +0000
+  title: Independence Learning Day
+  excerpt: Independence Learning Day
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-06-01 00:00:00 +0000
+  title: Three point linkage
+  excerpt: Three point linkage
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+  tags: [vr]
+
+- date: 2018-05-26 00:00:00 +0000
+  title: Association of Colleges South East
+  excerpt: Association of Colleges South East
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-03-07 00:00:00 +0000
+  title: Digifest Workshop
+  excerpt: Digifest Workshop
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png
+
+- date: 2018-01-01 00:00:00 +0000
+  title: Practical Blended Learning
+  excerpt: Practical Blended Learning
+  type: 
+  url: https://www.teachingwithvirtualreality.com
+  image: /images/homepage/bbccountryfile.png

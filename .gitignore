@@ -66,8 +66,6 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.komodoproject
-.vscode/
-.autogit/
 
 # ignore log files and databases
 *.log
