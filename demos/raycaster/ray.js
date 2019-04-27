@@ -123,10 +123,15 @@ function LightenDarkenColor(col,amt) {
     return (((col & 0x0000FF) + amt) | ((((col>> 8) & 0x00FF) + amt) << 8) | (((col >> 16) + amt) << 16)).toString(16);
 }
 
-function drawSlither(slither, wallheight, texture, tx) {
+function drawSlither(slither, wallheight, texture, tx, flag) {
     tx = (tx * 8) | 0;
     //console.log(texture);
+    con.fillStyle="#000";
+    con.fillRect(slither,height/2-wallheight/2,1,wallheight);
+    
     if(imagesLoaded) {
+        if(flag) con.globalAlpha = 0.75;
+        else con.globalAlpha = 1.0;
         con.drawImage(
             images[texture-1].image, 
                 tx, 0, 
@@ -134,10 +139,7 @@ function drawSlither(slither, wallheight, texture, tx) {
                 slither, height/2-wallheight/2,
                     1, wallheight
             );
-    } else {
-        con.fillStyle="#777";
-        con.fillRect(slither,height/2-wallheight/2,1,wallheight);
-    }  
+    } 
 }
 
 function lineDistance( x1,y1, x2,y2 )
@@ -171,10 +173,17 @@ function drawView() {
 
    // con.clearRect(0,0,width,height);
 
-   con.fillStyle ="#0000ff";
+   var gradient1 = con.createLinearGradient(0,0,0,height);
+   gradient1.addColorStop(0, 'rgb(196,196,255)');
+   gradient1.addColorStop(1, 'rgb(128,128,128)');
+   con.fillStyle = gradient1;
    con.fillRect(0, 0, width, height/2);
 
-   con.fillStyle ="#000000";
+   var gradient2 = con.createLinearGradient(0,0,0,height);
+   gradient2.addColorStop(0, 'rgb(225,225,225)');
+   gradient2.addColorStop(1, 'rgb(64,64,64)');
+
+   con.fillStyle = gradient2;
    con.fillRect(0, height/2, width, height/2)
 
 
@@ -327,12 +336,15 @@ function drawView() {
     }
 
     texture=htexture;
+    flag = false;
+
     if(hray && vray) {
       // $("#debug4").html("Horizontal Distance: " + hdist + "<br/>Vertical Distance: " + vdist);
         if(vdist<hdist) {
             dist=vdist;
             tx = vtx;
             texture=vtexture;
+            flag=true;
         } else {
             dist=hdist;
             tx=htx;
@@ -343,12 +355,12 @@ function drawView() {
         dist = hdist;
         tx = htx;
        // $("#debug4").html("Distance: " + hdist);
-
     } else if (vray) {
         dist = vdist;
        // $("#debug4").html("Distance: " + vdist);
        texture=vtexture;
        tx=vtx;
+       flag=true;
     }
 
     $("#debug4").html("Distance: " + dist);
@@ -356,7 +368,7 @@ function drawView() {
     dist = dist * Math.cos(ang-CameraAngle);
     wallheight = 64/dist * ((width/2) / Math.tan(fov/2));
 
-    drawSlither(i,wallheight,texture,tx);
+    drawSlither(i,wallheight,texture,tx, flag);
 
     ang +=dangle;
 }
