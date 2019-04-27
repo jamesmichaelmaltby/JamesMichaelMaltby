@@ -245,7 +245,7 @@ function drawView() {
         gx = -1 * gy * Math.tan(ang);
 
         while(1) {
-     //       mapPoints.push( {"x":rx,"y":ry} );
+            mapPoints.push( {"x":rx,"y":ry} );
 
             rgx = rx/MapTileSize | 0;
             rgy = ry/MapTileSize | 0;
@@ -264,11 +264,17 @@ function drawView() {
 
        // $("#debug2").html(""+ "HRay: " + rx + ", " + ry);
 
-       // mapHits.push( {"x":rgx,"y":rgy} );
+        //mapHits.push( {"x":rgx,"y":rgy} );
         hdist = lineDistance(CameraX,CameraY,rx,ry);
         htx = rx%MapTileSize;
     }
+    
+    /*westflag = true;
+    if(rx % ) {
+        westflag = false;
+    }*/
 
+   //console.log(rgx%MapTileSize);
 
 
 /* Vertical Collisions */ 
@@ -309,7 +315,7 @@ function drawView() {
         gy = gx / Math.tan(ang);
 
         while(1) {
-           // mapVPoints.push( {"x":rx,"y":ry} );
+           mapVPoints.push( {"x":rx,"y":ry} );
 
             rgx = rx/MapTileSize | 0;
             rgy = ry/MapTileSize | 0;
@@ -329,7 +335,7 @@ function drawView() {
 
          // $("#debug3").html(""+ "VRay: " + rx + ", " + ry);
 
-        // mapHits.push( {"x":rgx,"y":rgy} );
+        //mapHits.push( {"x":rgx,"y":rgy} );
 
         vdist = lineDistance(CameraX,CameraY,rx,ry);
         vtx = ry%MapTileSize;
@@ -430,7 +436,10 @@ function drawMap() {
          map.beginPath();
          map.moveTo(rayx, rayy - mapCanvasGrid/5);
          map.lineTo(rayx, rayy + mapCanvasGrid/5);
-         map.strokeStyle="#f06";
+         
+         if( ((xy.x-1)%MapTileSize) < 32 ) map.strokeStyle="#000";
+         else map.strokeStyle="#999";
+
          map.lineWidth=1;
          map.stroke();
          map.closePath();
