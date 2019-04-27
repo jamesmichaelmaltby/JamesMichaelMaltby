@@ -3,13 +3,16 @@
 var width;
 var height;
 var con;
+var maincon;
+var inMemoryCanvas = document.createElement('canvas');
 var canvas;
-var mapCanvas;
+
+/*var mapCanvas;
 var map;
 var mapCanvasWidth = 256;
 var mapCanvasHeight = 256;
 var mapCanvasGrid = 16;
-
+*/
 
 var images = [
     {
@@ -50,13 +53,12 @@ var loadImages = function(cb, imageURLarray, currentIndex){
         loadImages(cb, images, currentIndex+1);
     };
     imageURLarray[currentIndex].image.src=imageURLarray[currentIndex].src;
-    console.log(currentIndex+1 + " of " + imageURLarray.length + " " + imageURLarray[currentIndex].src);
+   //  console.log(currentIndex+1 + " of " + imageURLarray.length + " " + imageURLarray[currentIndex].src);
 }
 
 loadImages(function() { 
     imagesLoaded=true;
 }, images);
-
 
 
 function SetupScreen() {
@@ -75,10 +77,14 @@ function SetupScreen() {
     canvas.width = width; 
     canvas.height = height;
 
-    con=canvas.getContext("2d");
+    inMemoryCanvas.width = width;
+    inMemoryCanvas.height = height;
+
+    maincon=canvas.getContext("2d");
+    con=inMemoryCanvas.getContext("2d");
     
-    mapCanvas.width = mapCanvas.height = mapCanvasWidth; 
-    map=mapCanvas.getContext("2d");
+    /*mapCanvas.width = mapCanvas.height = mapCanvasWidth; 
+    map=mapCanvas.getContext("2d");*/
 
 
 }
@@ -101,12 +107,12 @@ var world = [
     ['1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111','1111'],
     ['1111',000000,'3333',000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,'1111'],
     ['1111',000000,'3333',000000,000000,000000,000000,000000,000000,000000,000000,000000,'3333',000000,000000,'1111'],
-    ['1111',000000,'3333',000000,'2222','4444','4444','4444','4244',000000,000000,000000,'3333',000000,000000,'1111'],
-    ['1111',000000,000000,000000,'2222','4444',000000,000000,'4244',000000,000000,000000,'3333','3333','3333','1111'],
-    ['1111',000000,'3333',000000,'2222','6666',000000,000000,'4244',000000,000000,000000,'3333',000000,000000,'1111'],
-    ['1111',000000,'3333',000000,'2222','5555',000000,000000,'4244',000000,000000,000000,'3333',000000,000000,'1111'],
-    ['1111',000000,'3333',000000,'2222','4444',000000,000000,000000,000000,000000,000000,'3333',000000,000000,'1111'],
-    ['1111',000000,'3333',000000,'2222','4444','4444','4444','4244',000000,000000,000000,000000,000000,000000,'1111'],
+    ['1111',000000,'3333',000000,000000,'2442','2444','2444','2244',000000,000000,000000,'3333',000000,000000,'1111'],
+    ['1111',000000,000000,000000,000000,'4442',000000,000000,'4244',000000,000000,000000,'3333','3333','3333','1111'],
+    ['1111',000000,'3333',000000,000000,'6662',000000,000000,'4244',000000,000000,000000,'3333',000000,000000,'1111'],
+    ['1111',000000,'3333',000000,000000,'5552',000000,000000,'4224',000000,000000,000000,'3333',000000,000000,'1111'],
+    ['1111',000000,'3333',000000,000000,'4442',000000,000000,000000,000000,000000,000000,'3333',000000,000000,'1111'],
+    ['1111',000000,'3333',000000,000000,'4422','4424','4424','2224',000000,000000,000000,000000,000000,000000,'1111'],
     ['1111',000000,'3333',000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,000000,'1111'],
     ['1111',000000,'3333',000000,000000,000000,000000,000000,000000,000000,000000,000000,'3333',000000,000000,'1111'],
     ['1111','3333','3333','3333','3333','3333',000000,'3333','3333','3333','3333','3333','3333',000000,000000,'1111'],
@@ -139,7 +145,7 @@ function drawSlither(slither, wallheight, texture, tx, flag) {
                 slither, height/2-wallheight/2,
                     1, wallheight
             );
-    } 
+    }
 }
 
 function lineDistance( x1,y1, x2,y2 )
@@ -269,9 +275,9 @@ function drawView() {
         htx = rx%MapTileSize;
     }
     
-    southflag = false;
+    southflag = true;
     if( gy>0 ) {
-        southflag = true;
+        southflag = false;
     }
 
 
@@ -399,6 +405,7 @@ function drawView() {
 
 
 function drawMap() {
+    
     map.fillStyle="#fcfcfc";
     map.fillRect(0,0,mapCanvasWidth,mapCanvasHeight);
     
@@ -610,8 +617,10 @@ function draw() {
 
     }
 
-    drawMap();
+    //drawMap();
     drawView();
+    maincon.drawImage(inMemoryCanvas, 0, 0);
+    requestAnimationFrame(draw);
 }
 
 
@@ -639,15 +648,40 @@ $(document).on('keydown', function(e) {
 
 
 
-function main() {
+
+
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+
+(function() {
 
     canvas = document.getElementById('mainCanvas');
-    mapCanvas = document.getElementById('map');
+    // mapCanvas = document.getElementById('map');
     SetupScreen();
-    frame = setInterval( draw , 33 );
-    
-}
-
-main();
-
+    requestAnimationFrame(draw);
+}());
 
