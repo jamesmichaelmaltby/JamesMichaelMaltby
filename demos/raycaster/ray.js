@@ -507,10 +507,10 @@ var key_back = false;
 function draw() {
 
     if ( key_left ) { 
-        CameraAngle-=Math.PI/16;
+        CameraAngle-=Math.PI/32;
         if(CameraAngle < 0) CameraAngle+=Math.PI*2;
     } else if ( key_right ) { 
-        CameraAngle+=Math.PI/16;
+        CameraAngle+=Math.PI/32;
         if(CameraAngle > Math.PI*2) CameraAngle-=Math.PI*2;
     }
 
