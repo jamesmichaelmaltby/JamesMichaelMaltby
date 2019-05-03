@@ -137,14 +137,14 @@ function drawSlither(slither, wallheight, texture, tx, flag) {
     con.fillRect(slither,height/2-wallheight/2,1,wallheight);
     
     if(imagesLoaded) {
-        con.globalAlpha = 0.75;
-        /*con.drawImage(
+        con.globalAlpha = 0.5;
+        con.drawImage(
             images[texture-1].image, 
                 tx, 0, 
                     1, 512, 
                 slither, height/2-wallheight/2,
                     1, wallheight
-            );*/
+            );
     }
 }
 
