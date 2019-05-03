@@ -131,20 +131,20 @@ function LightenDarkenColor(col,amt) {
 
 function drawSlither(slither, wallheight, texture, tx, flag) {
     tx = (tx * 8) | 0;
-    //console.log(texture);
-    con.fillStyle="#000";
+    if(flag) con.fillStyle="#333";
+    else con.fillStyle="#111";
+    con.globalAlpha = 1.0;
     con.fillRect(slither,height/2-wallheight/2,1,wallheight);
     
     if(imagesLoaded) {
-        if(flag) con.globalAlpha = 0.75;
-        else con.globalAlpha = 1.0;
-        con.drawImage(
+        con.globalAlpha = 0.75;
+        /*con.drawImage(
             images[texture-1].image, 
                 tx, 0, 
                     1, 512, 
                 slither, height/2-wallheight/2,
                     1, wallheight
-            );
+            );*/
     }
 }
 
@@ -619,7 +619,7 @@ function draw() {
 
     //drawMap();
     drawView();
-    maincon.drawImage(inMemoryCanvas, 0, 0);
+    maincon.drawImage(inMemoryCanvas, 0, 0, width, height, 0, 0, width, height);
     requestAnimationFrame(draw);
 }
 
