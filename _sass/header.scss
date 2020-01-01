@@ -1,9 +1,9 @@
 
 .jmm-header {
-    padding:2rem 1rem;
+    padding:1.5rem;
     text-align: center;
-    color:#777;
-    max-width:512px;
+    color:#555;
+   /* max-width:512px;*/
     width:100%;
     box-sizing: border-box;
     margin:0 auto 0 auto;
@@ -17,10 +17,14 @@
     color:#777;
     margin:1rem 0 1rem 0;
     line-height:1;
+    padding:2rem;
+    box-sizing: border-box;
+    width:100%;
+    /*max-width:512px;*/
 }
 
 .jmm-header-back, a.jmm-header-back {
-    padding:1rem 0;
+    padding:1.5rem;
     display: block;
     font-size:0.8rem;
     color:#aaa;
@@ -33,13 +37,33 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
 }
 
 .jmm-content-section--full .jmm-header-back {
-    padding:1rem;
+    padding:1.5rem;
+}
+
+body.homepage a.jmm-header-back {
+    display: none;
 }
 
 @media (min-width: 1024px) {
+
     .jmm-header  {
         position:absolute;
         top:0;
+        left:0;
+        bottom:0;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width:380px;
+        padding:2rem;
+        overflow-y:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .jmm-footer  {
+        position:absolute;
+        bottom:0;
         left:0;
         bottom:0;
         display:flex;
@@ -96,7 +120,7 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
 
 .jmm-header-title {
     font-weight:400;
-    font-size:1.25rem;
+    font-size:1.5rem;
     margin-bottom:0;
     color:#555;
 
@@ -168,7 +192,21 @@ a.jmm-header-navlink, .jmm-header-navlink {
     border-top:1px solid #e0e0e0;
     border-bottom:1px solid #e0e0e0;
     text-align: left;
+    display:none;
+    position:relative;
+    z-index:100;
+    background:#fdfdfd;
 }
+body.homepage .jmm-header-summary {
+    display:block;
+}
+
+@media (min-width: 1024px) {
+    .jmm-header-summary {
+        display:block;
+    }
+}
+
 
 .jmm-header {
     padding:1rem 2rem;

@@ -64,7 +64,7 @@
         <meta name="twitter:image:alt" content="Thumbnail">
 
 </head>
-<body class="{{page.classes}}">
+<body class="{{page.classes}} {{page.slug}}">
 
     <header class="jmm-header">
         <div class="jmm-header-wrap">
@@ -97,16 +97,7 @@
             {{ site.summary }}
             </p>
         </div>
-    <footer class="jmm-footer">
-        <div class="jmm-footer-wrap">
-            
-            <small>
-                Designed by {{ site.title }} &copy; {{ "now" | date: "%Y" }}<br/>
-                Site uses cookies to anonymously track usage
-            </small>
-        </div>
-    </footer>
-</header>
+    </header>
 
 
 <main class="jmm-content">
@@ -133,6 +124,16 @@
 
 </main>
         
+<footer class="jmm-footer">
+    <div class="jmm-footer-wrap">
+        
+        <small>
+            Designed by {{ site.title }} &copy; {{ "now" | date: "%Y" }}<br/>
+            Site uses cookies to anonymously track usage
+        </small>
+    </div>
+</footer>
+
 
 </body>
 
