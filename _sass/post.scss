@@ -1,6 +1,6 @@
 .jmm-post {
     box-sizing:border-box;
-max-width:1024px;width:100%;padding:3rem 2rem;position: relative;
+max-width:1024px;width:100%;padding:1 3rem;position: relative;
 }
 
 .jmm-post__sidebar {
@@ -8,7 +8,8 @@ max-width:1024px;width:100%;padding:3rem 2rem;position: relative;
 }
 
 .jmm-post__content {
-    padding:2rem 0;
+    margin:0;
+    padding:0;
     max-width:640px;
 }
 
@@ -34,4 +35,11 @@ max-width:1024px;width:100%;padding:3rem 2rem;position: relative;
     .jmm-post__content {
         padding-right:200px;
     }
+
+    .jmm-post {
+        padding:2rem 3rem;
+    }
 }
+
+
+.jmm-post img[alt=signature] { width: 256px; }

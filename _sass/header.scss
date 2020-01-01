@@ -18,7 +18,7 @@
     color:#777;
     margin:1rem 0 1rem 0;
     line-height:1;
-    padding:2rem;
+    padding:3rem;
     box-sizing: border-box;
     width:100%;
     /*max-width:512px;*/
@@ -214,7 +214,7 @@ body.homepage .jmm-header-summary {
 
 
 .jmm-header {
-    padding:1rem 2rem;
+    padding:1rem 3rem;
 }
 .jmm-header h1 {
  padding:0;  
@@ -222,7 +222,7 @@ body.homepage .jmm-header-summary {
 }
 @media (min-width: 1024px) {
     .jmm-header {
-        /*padding:2rem;*/
+        padding:1rem 2rem;
     }
     .jmm-header h1 {
         padding:0;  

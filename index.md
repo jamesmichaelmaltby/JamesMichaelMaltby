@@ -11,4 +11,4 @@ In 2019, I was awarded a awarded a fellowship from the 1851 Royal Commission and
 
 Before specialising in learning technology, I was a special educational needs teacher supporting students on the autistic spectrum.
 
-![James Michael Maltby](/sign.png "James Michael Maltby")
+![signature](/sign.png "James Michael Maltby")
