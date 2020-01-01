@@ -7,6 +7,7 @@ layout: default
 {% assign sortedposts = filteredposts | sort : 'page' %}
 
 <div class="jmm-post">
+
 {%if sortedposts !=nil %}
         <sidebar class="jmm-post__sidebar">
                 <nav>
@@ -31,7 +32,7 @@ layout: default
 
 
 {% if page.page %}
-
+<div class="jmm-post__pagination">
 {% assign previous = page.page | minus: 2  %}
 {% assign next = page.page %}
 
@@ -51,7 +52,7 @@ layout: default
 {% if sortedposts[next] != nil %}
 <div class="pages--titles--next" >{{sortedposts[next].title}}</div>
 {% endif %}
-
+</div>
 {% endif %}
 
 </div>

@@ -66,8 +66,15 @@
 </head>
 <body class="{{page.classes}} {{page.slug}}">
 
-    <header class="jmm-header">
+    <header class="jmm-header">.
         <div class="jmm-header-wrap">
+
+    {% if page.url != '/' %}
+    <a href='/' class="jmm-header-back">
+        &larr; Back to Homepage
+    </a>
+    {% endif %}
+    
             <div class="jmm-header-headshot">
             <a href="/"><img src="/logo.png" /></a>
             </div>
@@ -111,12 +118,6 @@
     {% assign content = content | strip_newlines %}
     {% if content != "" %}
     <section class="jmm-content-section">
-    
-{% if page.url != '/' %}
-    <a href='/' class="jmm-header-back">
-        &larr; Back to Homepage
-    </a>
-    {% endif %}
     
     {{content}}
     </section>

@@ -7,6 +7,7 @@
 }
 .jmm-content-section {
     padding: 0;
+    max-width: 720px;
 }
 .jmm-content-section img {
     width:100%;
@@ -44,15 +45,6 @@
         box-sizing: border-box;
     }
     
-    .jmm-content-section {
-     padding:2rem 3rem 8rem 3rem;
-    }
-
-
-    .jmm-content-section {
-        max-width:720px;
-        margin:0;
-    }
 
     .jmm-content-section {
         position:absolute;
@@ -68,6 +60,7 @@
         background-size: cover;
         display:block;
         max-width:100%;
+        margin:0;
     }
 
     .jmm-content--dark {
@@ -95,21 +88,21 @@ img[src*="#poster"] {
     float:left;
     text-align: left;
     width:33.3333%;
-    margin-top:3rem;
+    margin-top:2rem;
     clear:left;
 }
 .pages--center {
     float:left;
     text-align: center;
     width:33.3333%;
-    margin-top:3rem;
+    margin-top:2rem;
     
 }
 .pages--next {
     float:right;
     text-align: right;
     width:33.3333%;
-    margin-top:3rem;
+    margin-top:2rem;
     clear:right;
 }
 .pages--titles--previous {
