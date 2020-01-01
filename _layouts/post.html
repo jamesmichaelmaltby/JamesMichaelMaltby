@@ -9,6 +9,7 @@ layout: default
 <div class="jmm-post">
 
 {%if sortedposts !=nil %}
+{%if primary_category !=nil %}
         <sidebar class="jmm-post__sidebar">
                 <nav>
                 <h3>{{ site.data.categorymeta[primary_category] }}</h3>
@@ -23,6 +24,7 @@ layout: default
                     </ul>
                 </nav>
                 </sidebar>
+                {% endif %}
                 {% endif %}
     <div class="jmm-post__content">
 
@@ -57,11 +59,12 @@ layout: default
 
 </div>
 
+<!--
 <div class="jmm-tiles">
 {% assign allitems = site.data.news | concat: site.posts %}
 {% assign sorteditems = allitems | sort: 'date' | reverse %}
 {% if page.tags %}
-<h1>Related Stories</h1>
+<h2>Related Stories</h2>
         {% for news in sorteditems %}
             {% if news.url != page.url %}
                 {% for tag in page.tags %}
@@ -107,3 +110,4 @@ layout: default
 
 
 </div>
+-->
