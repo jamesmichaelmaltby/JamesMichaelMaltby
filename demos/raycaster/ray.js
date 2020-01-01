@@ -136,7 +136,7 @@ function drawSlither(slither, wallheight, texture, tx, flag) {
     con.globalAlpha = 1.0;
     con.fillRect(slither,height/2-wallheight/2,1,wallheight);
     
-    if(imagesLoaded) {
+    if(imagesLoaded && 0 ) {
         con.globalAlpha = 0.5;
         con.drawImage(
             images[texture-1].image, 
@@ -394,7 +394,7 @@ function drawView() {
     $("#debug4").html("Distance: " + dist);
 
     dist = dist * Math.cos(ang-CameraAngle);
-    wallheight = 64/dist * ((width/2) / Math.tan(fov/2));
+    wallheight = MapTileSize/dist * ((width/2) / Math.tan(fov/2));
 
     drawSlither(i,wallheight,texture,tx, flag);
 
@@ -507,16 +507,16 @@ var key_back = false;
 function draw() {
 
     if ( key_left ) { 
-        CameraAngle-=Math.PI/32;
+        CameraAngle-=Math.PI/72;
         if(CameraAngle < 0) CameraAngle+=Math.PI*2;
     } else if ( key_right ) { 
-        CameraAngle+=Math.PI/32;
+        CameraAngle+=Math.PI/72;
         if(CameraAngle > Math.PI*2) CameraAngle-=Math.PI*2;
     }
 
     if ( key_forward ) {
-        var dx = MapTileSize/8 * Math.sin(CameraAngle);
-        var dy = MapTileSize/8 * Math.cos(CameraAngle);
+        var dx = MapTileSize/16 * Math.sin(CameraAngle);
+        var dy = MapTileSize/16 * Math.cos(CameraAngle);
 
         var dx1 = MapTileSize/8 * Math.sin(CameraAngle + Math.PI/6);
         var dy1 = MapTileSize/8 * Math.cos(CameraAngle + Math.PI/6);
