@@ -136,7 +136,7 @@ function drawSlither(slither, wallheight, texture, tx, flag) {
     con.globalAlpha = 1.0;
     con.fillRect(slither,height/2-wallheight/2,1,wallheight);
     
-    if(imagesLoaded && 0 ) {
+    if(imagesLoaded && 1 ) {
         con.globalAlpha = 0.5;
         con.drawImage(
             images[texture-1].image, 
@@ -394,7 +394,7 @@ function drawView() {
     $("#debug4").html("Distance: " + dist);
 
     dist = dist * Math.cos(ang-CameraAngle);
-    wallheight = MapTileSize/dist * ((width/2) / Math.tan(fov/2));
+    wallheight = MapTileSize/dist * ((height/2) / Math.tan(fov/2));
 
     drawSlither(i,wallheight,texture,tx, flag);
 

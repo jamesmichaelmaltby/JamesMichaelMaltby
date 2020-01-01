@@ -3,7 +3,7 @@
     padding:2rem 1rem;
     text-align: center;
     color:#777;
-    max-width:380px;
+    max-width:512px;
     width:100%;
     box-sizing: border-box;
     margin:0 auto 0 auto;
@@ -84,7 +84,8 @@ a.jmm-header-back:hover,a.jmm-header-back:active {
 
 .jmm-header-headshot {
     border-radius: 50%;
-    width:6rem;
+    width:8rem;
+    height:8rem;
     overflow: hidden;
     margin:0 auto 1rem auto;
 }
