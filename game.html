@@ -10,13 +10,14 @@ full: true
 </div>
 
 <script>
-var console = document.getElementById('console');
+var gameconsole = document.getElementById('console');
 var gamescreen = document.getElementById('gamescreen');
 var main = document.getElementById('main');
 var hover = document.getElementById('hover');
 
 var currentTimeout;
 var currentMessages = 0;
+var interfaceLocked = false;
 
 function logKey(e) {
     if (e.code == 'Space') {
@@ -27,6 +28,7 @@ document.addEventListener('keypress', logKey);
 
 
 function mouseMove(e) {
+    if( interfaceLocked ) return;
     var x = (e.clientX - main.offsetLeft);
     var y = (e.clientY - main.offsetTop);
     hover.style.left = x + "px";
@@ -36,54 +38,36 @@ gamescreen.addEventListener('mousemove', mouseMove);
 
 
 function say(message, id) {
-    var promise, ms, timeout;
+    var promise, ms;
     ms = Math.max(2000,message.length*125);
-    console.innerHTML = message;
-    currentMessages ++;
+    gameconsole.innerHTML = message;
+    currentMessages++;
     promise = new Promise(function(resolve, reject) {
-        timeout = setTimeout(function() {
-            currentMessages--;
-            if(currentMessages==0) console.innerHTML = "";
+       
+        currentTimeout = setTimeout(function() {
+           currentMessages--;
+            if(currentMessages==0) gameconsole.innerHTML = '';
             resolve('timeout done');
-            if(resetConversation) {
-                resetConversation=false;
-            }
-            resolve('resolve');
-
         }, ms);
     });
-
-    currentTimeout = timeout;
-
     return promise;
 }
 
 
 async function mouseDown(e) {
-    gamescreen.style.background = 'red';
-    await say( 'hello' );
-    await say( 'hello 2' );
-    gamescreen.style.background = 'blue';
+    if( interfaceLocked ) return;
+    interfaceLocked = true;
+    gamescreen.className += " nointerface";
+    await darkness();
+    interfaceLocked = false;
+    gamescreen.className = gamescreen.className.replace(" nointerface", " interface");
 }
 gamescreen.addEventListener('mousedown', mouseDown);
 
 
-async function conversation1() {
-    await say("Hello");
-    await say("Welcome to my game");
-    await say("This is a test of talking");
+async function darkness() {
+    await say("It is so black...");
+    await say("...I can barely see anything.");
 }
-
-async function conversation2() {
-    await say("But wait...");
-    await say("...there's more...");
-    await say("...shall we talk some more?");
-}
-
-async function game() {
-    await conversation1();
-    await conversation2();
-}
-
 
 </script>
