@@ -6,7 +6,7 @@ full: true
 
 <div id="gamescreen" class="game">
 <div id="console"></div>
-<div id="hover" class="hover">Peer into darkness</div>
+<div id="hover" class="hover"></div>
 </div>
 
 <script>
@@ -19,6 +19,8 @@ var hover = document.getElementById('hover');
 var currentTimeout;
 var currentMessages = 0;
 var interfaceLocked = false;
+
+var message = "Peer into darkness";
 
 function logKey(e) {
     if (e.code == 'Space') {
@@ -34,13 +36,14 @@ function mouseMove(e) {
     var y = (e.clientY - main.offsetTop);
     hover.style.left = x + "px";
     hover.style.top = y + "px";
+    hover.innerHTML = message;
 }
 gamescreen.addEventListener('mousemove', mouseMove);
 
 
 function say(message, id) {
     var promise, ms;
-    ms = Math.max(1000,message.length*50);
+    ms = Math.max(1500,message.length*50);
     gameconsole.innerHTML = message;
     currentMessages++;
     promise = new Promise(function(resolve, reject) {
@@ -69,6 +72,8 @@ gamescreen.addEventListener('mousedown', mouseDown);
 async function darkness() {
     await say("It is so black...");
     await say("...I can barely see anything.");
+    message = "Threaten rhinoceros";
+    hover.innerHTML = '';
 }
 
 </script>
