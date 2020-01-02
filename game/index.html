@@ -197,7 +197,7 @@ async function HotspotClick( room, name) {
 
 async function HotspotDisable( room, name) {
     if( rooms[room] && rooms[room].hotspots[name] ) {
-        rooms[room].hotspots[name].active = false;
+        globals.rooms[room].hotspots[name].active = false;
         var id = document.getElementById(name);
         id.style.display = "none";
     }
@@ -205,7 +205,7 @@ async function HotspotDisable( room, name) {
 
 async function HotspotEnable( room, name) {
     if( rooms[room] && rooms[room].hotspots[name] ) {
-        rooms[room].hotspots[name].active = true;
+        globals.rooms[room].hotspots[name].active = true;
         var id = document.getElementById(name);
         id.style.display = "block";
     }
