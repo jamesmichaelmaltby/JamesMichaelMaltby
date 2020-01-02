@@ -131,10 +131,42 @@ function Hotspot(name,defaults) {
 }
 
 
-function HotspotClick( room, name) {
+var overHotspot;
+function mouseMove(e) {
+    if( interfaceLocked ) return;
+    var x = (e.clientX - main.offsetLeft);
+    var y = (e.clientY - main.offsetTop);
+    hover.style.left = x + "px";
+    hover.style.top = y + "px";
+    hover.innerHTML = overHotspot;
+    overHotspot = '';
+}
+gamescreen.addEventListener('mousemove', mouseMove);
+
+
+
+function WaitMiliseconds(ms) { 
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('done');
+    }, ms);
+  });
+}
+function WaitSeconds(s) { 
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('done');
+    }, s*1000);
+  });
+}
+
+async function HotspotClick( room, name) {
     if( rooms[room] && rooms[room].hotspots[name] ) {
         if( rooms[room].hotspots[name].click ) {
-            rooms[room].hotspots[name].click( globals.rooms[room].hotspots[name], globals.rooms[room] );
+            DisableInterface();
+            await WaitSeconds(0.75);
+            await rooms[room].hotspots[name].click( globals.rooms[room].hotspots[name], globals.rooms[room] );
+            EnableInterface();
         }
     }
 }
@@ -143,16 +175,24 @@ async function EnterRoom(name) {
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
         for(hotspot in rooms[name].hotspots) {
-            alert(hotspot);
             var hotspotdiv = document.createElement("div");
             
             hotspotdiv.className = "game__hotspot";
             hotspotdiv.style.position = "absolute";
             hotspotdiv.style.left = globals.rooms[name].hotspots[hotspot].x;
             hotspotdiv.style.top = globals.rooms[name].hotspots[hotspot].y;
-            hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width + "px";
-            hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height + "px";
-            hotspotdiv.style.background = "red";
+            hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width;
+            hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height;
+
+            hotspotdiv.id = hotspot;
+
+            hotspotdiv.onclick = function() {
+                HotspotClick(globals.currentRoom,this.id);
+            };
+            hotspotdiv.onmousemove = function(e) {
+                overHotspot = globals.rooms[globals.currentRoom].hotspots[this.id].description;
+            };
+            /* hotspotdiv.attr( 'onclick', 'HotspotClick('+name+','+hotspot+')' ); */
             
             gamescreen.appendChild(hotspotdiv);
         }
