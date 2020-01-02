@@ -22,11 +22,12 @@ document.addEventListener('keypress', logKey);
 
 function say(message) {
     var promise, ms, timeout;
-    ms = Math.max(2000,message.length*150);
+    ms = Math.max(2000,message.length*125);
     console.innerHTML = message;
 
     promise = new Promise(function(resolve, reject) {
         timeout = setTimeout(function() {
+            console.innerHTML = "";
             resolve('timeout done');
         }, ms);
     });
