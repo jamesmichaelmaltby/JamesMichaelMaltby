@@ -112,31 +112,44 @@ var globals = {
     rooms : {}
 };
 
-function NewRoom(name) {
-    rooms[name] = {
+var LastCreatedRoom;
+
+function Room(name) {
+    LastCreatedRoom = name;
+    globals.rooms[name] = {
         hotspots : {}
     };
-
-    globals.rooms[name] = {
+    return rooms[name] = {
         hotspots : {}
     };
 }
 
-function NewHotspot(room,name,defaults) {
-    globals[room][name] = defaults;
-    room[room][name] = {};
+function Hotspot(name,defaults) {
+    room = LastCreatedRoom;
+    globals.rooms[room].hotspots[name] = defaults;
+    return rooms[room].hotspots[name] = {};
+}
+
+
+function HotspotClick( room, name) {
+    if( rooms[room] && rooms[room].hotspots[name] ) {
+        if( rooms[room].hotspots[name].click ) {
+            rooms[room].hotspots[name].click( globals.rooms[room].hotspots[name], globals.rooms[room] );
+        }
+    }
 }
 
 async function EnterRoom(name) {
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
-        await rooms[name].enter( globals.rooms[name], globals.rooms[name].hotspots );
+        await rooms[name].enter( globals.rooms[name] );
     }
 }
 
 
-{% include_relative example.js %}
-
+(function() {
+    {% include_relative example.js %}
+})();
 
 EnterRoom('start');
 
