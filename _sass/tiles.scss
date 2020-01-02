@@ -123,7 +123,7 @@
 
 .jmm-tiles .jmm-tile h2 {font-size:1.1rem;}
 
-
+.homepage {
 .jmm-tiles .jmm-tile:first-of-type {width:98%;}
 .jmm-tiles .jmm-tile:first-of-type .jmm-tile__image:after {padding-bottom:56.25%;}
 .jmm-tiles .jmm-tile:first-of-type h2 {font-size:1.4rem;}
@@ -131,6 +131,7 @@
 .jmm-tiles .jmm-tile:nth-of-type(2) h2 {font-size:1.4rem;}
 .jmm-tiles .jmm-tile:nth-of-type(3) {width:98%;}
 .jmm-tiles .jmm-tile:nth-of-type(3) h2 {font-size:1.4rem;}*/
+}
 
 
 @media (min-width: 1366px) {
@@ -232,7 +233,8 @@ padding:1rem;
 }
 
 
-@media (min-width: 1366px) {
+
+@media (min-width: 1024px) {
     .jmm-tile {
        
     }

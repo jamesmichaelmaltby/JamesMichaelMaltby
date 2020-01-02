@@ -79,6 +79,7 @@ body.homepage a.jmm-header-back {
         padding:2rem;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
+        margin-left:1.5rem;
     }
 
     a.jmm-header-back {
@@ -225,6 +226,7 @@ body.homepage .jmm-header-summary {
 @media (min-width: 1024px) {
     .jmm-header {
         padding:1rem 2rem;
+        margin-left:1.5rem;
     }
     .jmm-header h1 {
         padding:0;  
