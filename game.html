@@ -1,0 +1,26 @@
+---
+layout: post
+title: Game
+---
+
+<div id="console"></div>
+
+<script>
+var console = document.getElementById('console');
+
+
+function say(message) {
+    console.innerHTML = message + "<br/>";
+    return new Promise(resolve => setTimeout(resolve, 1000));
+}
+
+async function game() {
+    await say("Hello");
+    await say("Welcome to my game");
+    await say("This is a test of talking");
+}
+
+
+game();
+
+</script>
