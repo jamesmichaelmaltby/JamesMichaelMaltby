@@ -14,6 +14,6 @@ Thank you for visiting my website.
 
 Merry Christmas and a Happy New Decade!
 
-![signature](/sign.png "James Michael Maltby")
+![signature](/images/sign.png "James Michael Maltby")
 
 [Continue to Homepage &rarr;](/new)

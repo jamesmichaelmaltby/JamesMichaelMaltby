@@ -18,7 +18,7 @@
     color:#777;
     margin:0;
     line-height:1;
-    padding:3rem;
+    padding:1rem;
     box-sizing: border-box;
     width:100%;
     /*max-width:512px;*/
@@ -86,7 +86,7 @@ body.homepage a.jmm-header-back {
     }
 
     .jmm-footer {
-      
+      padding:2rem;
     }
     .jmm-header-wrap {
         flex: 1;
@@ -201,7 +201,7 @@ a.jmm-header-navlink, .jmm-header-navlink {
     position:relative;
     z-index:100;
     background:#fdfdfd;
-    max-width:720px;
+    max-width:640px;
     margin:1rem auto;
 }
 body.homepage .jmm-header-summary {
@@ -216,7 +216,7 @@ body.homepage .jmm-header-summary {
 
 
 .jmm-header {
-    padding:1rem 3rem;
+    padding:1rem 1rem;
 }
 .jmm-header h1 {
  padding:0;  

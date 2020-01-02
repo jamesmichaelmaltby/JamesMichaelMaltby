@@ -21,7 +21,7 @@
 
 .jmm-tiles {
     box-sizing: border-box;
-    padding:2rem;
+    padding:1rem;
     margin:0 0 0 0;
     overflow:auto;
     font-size:0.8rem;
@@ -133,7 +133,7 @@
 .jmm-tiles .jmm-tile:nth-of-type(3) h2 {font-size:1.4rem;}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1366px) {
 
     .jmm-tile__image svg {
         width:4.5rem;
@@ -232,12 +232,13 @@ padding:1rem;
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1366px) {
     .jmm-tile {
        
     }
     .jmm-tiles {
         font-size:0.9rem;
+        padding:2rem;
     }
     .jmm-tile__subtitle {
         font-size:0.8rem;
