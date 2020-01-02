@@ -4,11 +4,15 @@ title: Game
 full: true
 ---
 
+<div id="gamescreen" class="game">
 <div id="console"></div>
+<div id="hover" class="hover">Test</div>
+</div>
 
 <script>
 var console = document.getElementById('console');
-
+var gamescreen = document.getElementById('gamescreen');
+var hover = document.getElementById('hover');
 
 var currentTimeout;
 
@@ -18,6 +22,14 @@ function logKey(e) {
     }
 }
 document.addEventListener('keypress', logKey);
+
+
+function mouseMove(e) {
+    hover.style.left = e.clientX + "px";
+    hover.style.top = e.clientY + "px";
+}
+gamescreen.addEventListener('mousemove', mouseMove);
+
 
 
 function say(message) {
