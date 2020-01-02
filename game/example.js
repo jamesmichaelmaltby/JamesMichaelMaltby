@@ -204,12 +204,21 @@ room.exit = async function( locals ) {
 };
 
 scripts.clock = async function( locals ) {
-    await Say( 1 );
+    if(globals.clocktick === undefined || globals.clocktick == '*tock*' ) globals.clocktick = '*tick*';
+    else globals.clocktick = '*tock*';
+    Say( globals.clocktick );
+    DelaySeconds(scripts.clock,1);
 };
+function Loop(script) {
+    setTimeout(script,0);
+}
+function DelaySeconds(script, seconds) {
+    setTimeout(script,seconds*1000);
+}
 
 scripts.main = async function( ) {
     
-    await scripts.clock();
+    scripts.clock();
 
     /*EnterRoom('start');
     DisableInterface();
@@ -219,8 +228,5 @@ scripts.main = async function( ) {
     EnableInterface();*/
 };
 
-function rs() {
-    setInterval(function() {
-       await scripts.clock();
-    }, 1000);
-}
+
+
