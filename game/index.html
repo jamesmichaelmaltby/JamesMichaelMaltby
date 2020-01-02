@@ -4,22 +4,25 @@ title: Game
 full: true
 ---
 
+
+
 <div id="gamescreen" class="game">
 <div id="console"></div>
 <div id="hover" class="hover"></div>
 </div>
 
 <script>
-
 var gameconsole = document.getElementById('console');
 var gamescreen = document.getElementById('gamescreen');
 var main = document.getElementById('main');
 var hover = document.getElementById('hover');
 
+
+
+/*
 var currentTimeout;
 var currentMessages = 0;
 var interfaceLocked = false;
-
 var message = "Peer into darkness";
 
 function logKey(e) {
@@ -75,5 +78,67 @@ async function darkness() {
     message = "Threaten rhinoceros";
     hover.innerHTML = '';
 }
+*/
+
+
+var currentMessages = 0;
+function Say(message, id) {
+    var promise, ms;
+    ms = Math.max(1500,message.length*50);
+    gameconsole.innerHTML = message;
+    currentMessages++;
+    promise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+           currentMessages--;
+            if(currentMessages==0) gameconsole.innerHTML = '';
+            resolve('timeout done');
+        }, ms);
+    });
+    return promise;
+}
+
+var interfaceLocked = false;
+function EnableInterface() {
+    interfaceLocked = false;
+    gamescreen.className = gamescreen.className.replace(" nointerface", "");
+}
+function DisableInterface() {
+    interfaceLocked = true;
+    gamescreen.className += " nointerface";
+}
+
+var rooms = {};
+var globals = {
+    rooms : {}
+};
+
+function NewRoom(name) {
+    rooms[name] = {
+        hotspots : {}
+    };
+
+    globals.rooms[name] = {
+        hotspots : {}
+    };
+}
+
+function NewHotspot(room,name,defaults) {
+    globals[room][name] = defaults;
+    room[room][name] = {};
+}
+
+async function EnterRoom(name) {
+    if( rooms[name] && rooms[name].enter ) {
+        globals.currentRoom = name;
+        await rooms[name].enter( globals.rooms[name], globals.rooms[name].hotspots );
+    }
+}
+
+
+{% include_relative example.js %}
+
+
+EnterRoom('start');
+
 
 </script>
