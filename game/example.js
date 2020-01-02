@@ -18,7 +18,8 @@ let door = Hotspot('door', {
     height:"40%",
     description:'Faint light',
     active:false,
-    flag:0
+    flag:0,
+    background:"rgb(15,15,15)"
 });
 
 let lightswitch = Hotspot('lightswitch', {
@@ -47,7 +48,7 @@ let moredarkness = Hotspot('moredarkness', {
     y:"90%",
     width:"100%",
     height:"10%",
-    description:'Inspect dark area at bottom of screen',
+    description:'Inspect dark area at floor level',
     active:true,
     flag:0
 });
@@ -58,7 +59,7 @@ let moremoredarkness = Hotspot('moremoredarkness', {
     y:"0%",
     width:"100%",
     height:"10%",
-    description:'Inspect dark area at top of screen',
+    description:'Inspect dark area near ceiling',
     active:true,
     flag:0
 });
@@ -103,9 +104,9 @@ lightswitch.click = async function( hotspot, locals ) {
                 await WaitSeconds(1);
                 await Say('*rumble*');
                 await Say('*metallic noises*');
+                HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
-                HotspotEnable('start','door');
                 hotspot.description = 'Use ambiguous switch';
             } else { 
                 await Say('Here goes...');
@@ -145,9 +146,9 @@ anotherlightswitch.click = async function( hotspot, locals ) {
                 await WaitSeconds(1);
                 await Say('*rumble*');
                 await Say('*metallic noises*');
+                HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
-                HotspotEnable('start','door');
                 hotspot.description = 'Use ambiguous switch';
             } else { 
                 await Say('Here goes...');

@@ -7,16 +7,37 @@ full: true
 
 
 <div id="gamescreen" class="game">
-<div id="console" class="console"></div>
+<div id="roomarea" class="room"></div>
 <div id="hover" class="hover"></div>
+<div id="console" class="console"></div>
 </div>
 
 <script>
 var gameconsole = document.getElementById('console');
 var gamescreen = document.getElementById('gamescreen');
+var roomarea = document.getElementById('roomarea');
 var main = document.getElementById('main');
 var hover = document.getElementById('hover');
 
+
+
+
+function logKey(e) {
+    if (e.code == 'KeyS') {
+        localStorage.setItem('save', JSON.stringify(globals) );
+        console.log( JSON.parse(localStorage.getItem('save') ) );
+        alert('Saved');
+    } else if (e.code == 'KeyL') {
+        load = localStorage.getItem('save');
+        if(load) {
+            globals = JSON.parse(load);
+            console.log(globals);
+            EnterRoom( globals.currentRoom );
+            alert('Loaded');
+        }
+    }
+}
+document.addEventListener('keypress', logKey);
 
 
 /*
@@ -162,6 +183,7 @@ function WaitSeconds(s) {
 }
 
 async function HotspotClick( room, name) {
+    if( interfaceLocked ) return;
     if( rooms[room] && rooms[room].hotspots[name] ) {
         if( rooms[room].hotspots[name].click ) {
             DisableInterface();
@@ -191,10 +213,10 @@ async function HotspotEnable( room, name) {
 
 
 async function EnterRoom(name) {
+    roomarea.innerHTML = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
         for(hotspot in rooms[name].hotspots) {
-            if( globals.rooms[name].hotspots[hotspot].active == false) continue;
             var hotspotdiv = document.createElement("div");
             
             hotspotdiv.className = "game__hotspot";
@@ -203,10 +225,12 @@ async function EnterRoom(name) {
             hotspotdiv.style.top = globals.rooms[name].hotspots[hotspot].y;
             hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width;
             hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height;
-
+            if( globals.rooms[name].hotspots[hotspot].active == false) hotspotdiv.style.display = "none";
+            if( globals.rooms[name].hotspots[hotspot].background ) hotspotdiv.style.background = globals.rooms[name].hotspots[hotspot].background;
             hotspotdiv.id = hotspot;
 
             hotspotdiv.onclick = function() {
+                if( interfaceLocked ) return;
                 HotspotClick(globals.currentRoom,this.id);
             };
             hotspotdiv.onmousemove = function(e) {
@@ -214,7 +238,7 @@ async function EnterRoom(name) {
             };
             /* hotspotdiv.attr( 'onclick', 'HotspotClick('+name+','+hotspot+')' ); */
             
-            gamescreen.appendChild(hotspotdiv);
+            roomarea.appendChild(hotspotdiv);
         }
         await rooms[name].enter( globals.rooms[name] );
     }
