@@ -6,7 +6,7 @@
     //top:0;
     //bottom:0;
     color:#fefefe;
-    font-family:"Lucida Console", Monaco, monospace;
+    /*font-family:"Lucida Console", Monaco, monospace;*/
     overflow:hidden;
     padding:4rem;
     font-weight:700;
@@ -36,8 +36,8 @@
     transform: translate(-50%, -150%);
     color:#444;
     white-space:nowrap;
-    transition:opacity 0.25s linear;
-    transition-delay: 0.5s;
+    transition:opacity 0.1s linear;
+    transition-delay: 0.4s;
     opacity:1.0;
 }
 

@@ -171,10 +171,28 @@ async function HotspotClick( room, name) {
     }
 }
 
+async function HotspotDisable( room, name) {
+    if( rooms[room] && rooms[room].hotspots[name] ) {
+        rooms[room].hotspots[name].active = false;
+        var id = document.getElementById(name);
+        id.style.display = "none";
+    }
+}
+
+async function HotspotEnable( room, name) {
+    if( rooms[room] && rooms[room].hotspots[name] ) {
+        rooms[room].hotspots[name].active = true;
+        var id = document.getElementById(name);
+        id.style.display = "block";
+    }
+}
+
+
 async function EnterRoom(name) {
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
         for(hotspot in rooms[name].hotspots) {
+            if( rooms[name].hotspots[hotspot].active == false) continue;
             var hotspotdiv = document.createElement("div");
             
             hotspotdiv.className = "game__hotspot";
