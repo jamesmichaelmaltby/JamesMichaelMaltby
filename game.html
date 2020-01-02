@@ -1,6 +1,7 @@
 ---
-layout: post
+layout: default
 title: Game
+full: true
 ---
 
 <div id="console"></div>
@@ -9,18 +10,52 @@ title: Game
 var console = document.getElementById('console');
 
 
+var currentTimeout;
+
+function logKey(e) {
+    if (e.code == 'Space') {
+        if(currentTimeout) clearTimeout( currentTimeout );
+    }
+}
+document.addEventListener('keypress', logKey);
+
+
 function say(message) {
-    console.innerHTML = message + "<br/>";
-    return new Promise(resolve => setTimeout(resolve, 1000));
+    var promise, ms, timeout;
+    ms = Math.max(2000,message.length*150);
+    console.innerHTML = message;
+
+    promise = new Promise(function(resolve, reject) {
+        timeout = setTimeout(function() {
+            resolve('timeout done');
+        }, ms);
+    });
+
+    currentTimeout = timeout;
+
+    return promise;
 }
 
-async function game() {
+
+
+async function conversation1() {
     await say("Hello");
     await say("Welcome to my game");
     await say("This is a test of talking");
 }
 
+async function conversation2() {
+    await say("But wait...");
+    await say("...there's more...");
+    await say("...shall we talk some more?");
+}
+
+async function game() {
+    await conversation1();
+    await conversation2();
+}
 
 game();
+
 
 </script>

@@ -7,7 +7,7 @@
 }
 .jmm-content-section {
     padding: 0;
-    max-width: 640px;
+    /*max-width: 640px;*/
 }
 .jmm-content-section img {
     width:100%;
@@ -52,7 +52,7 @@
         right:0;
         bottom:0;
         padding:0;
-        max-width:720px;
+        max-width:100%;
         background: none no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
