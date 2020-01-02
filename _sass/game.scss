@@ -41,7 +41,7 @@
     opacity:1.0;
 }
 
-.game.nointerface {
+.game.nointerface, .game.nointerface .game__hotspot {
      cursor:none;
 }
 .game.nointerface .hover {

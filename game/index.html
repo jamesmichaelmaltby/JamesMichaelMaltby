@@ -107,6 +107,7 @@ function DisableInterface() {
     gamescreen.className += " nointerface";
 }
 
+var scripts = {};
 var rooms = {};
 var globals = {
     rooms : {}
@@ -166,6 +167,7 @@ async function HotspotClick( room, name) {
             DisableInterface();
             await WaitSeconds(0.75);
             await rooms[room].hotspots[name].click( globals.rooms[room].hotspots[name], globals.rooms[room] );
+            overHotspot = '';
             EnableInterface();
         }
     }
@@ -223,7 +225,6 @@ async function EnterRoom(name) {
     {% include_relative example.js %}
 })();
 
-EnterRoom('start');
-
+scripts.main();
 
 </script>
