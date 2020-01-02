@@ -6,15 +6,17 @@ full: true
 
 <div id="gamescreen" class="game">
 <div id="console"></div>
-<div id="hover" class="hover">Test</div>
+<div id="hover" class="hover">Peer into darkness</div>
 </div>
 
 <script>
 var console = document.getElementById('console');
 var gamescreen = document.getElementById('gamescreen');
+var main = document.getElementById('main');
 var hover = document.getElementById('hover');
 
 var currentTimeout;
+var currentMessages = 0;
 
 function logKey(e) {
     if (e.code == 'Space') {
@@ -25,22 +27,29 @@ document.addEventListener('keypress', logKey);
 
 
 function mouseMove(e) {
-    hover.style.left = e.clientX + "px";
-    hover.style.top = e.clientY + "px";
+    var x = (e.clientX - main.offsetLeft);
+    var y = (e.clientY - main.offsetTop);
+    hover.style.left = x + "px";
+    hover.style.top = y + "px";
 }
 gamescreen.addEventListener('mousemove', mouseMove);
 
 
-
-function say(message) {
+function say(message, id) {
     var promise, ms, timeout;
     ms = Math.max(2000,message.length*125);
     console.innerHTML = message;
-
+    currentMessages ++;
     promise = new Promise(function(resolve, reject) {
         timeout = setTimeout(function() {
-            console.innerHTML = "";
+            currentMessages--;
+            if(currentMessages==0) console.innerHTML = "";
             resolve('timeout done');
+            if(resetConversation) {
+                resetConversation=false;
+            }
+            resolve('resolve');
+
         }, ms);
     });
 
@@ -49,6 +58,14 @@ function say(message) {
     return promise;
 }
 
+
+async function mouseDown(e) {
+    gamescreen.style.background = 'red';
+    await say( 'hello' );
+    await say( 'hello 2' );
+    gamescreen.style.background = 'blue';
+}
+gamescreen.addEventListener('mousedown', mouseDown);
 
 
 async function conversation1() {
@@ -67,8 +84,6 @@ async function game() {
     await conversation1();
     await conversation2();
 }
-
-game();
 
 
 </script>
