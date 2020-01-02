@@ -16,9 +16,17 @@
     height:100%;
     text-shadow:-2px -2px 2px 2px 0px black;
     margin: 0;
-    cursor:pointer;
     text-align: center;
     position:relative;
+}
+
+.console {
+    z-index:500;
+    position: absolute;
+    top:2rem;
+    left:0;
+    right:0;
+    text-align: center;
 }
 
 .game .hover {
@@ -36,4 +44,8 @@
 }
 .game.nointerface .hover {
     color:#aaa;
+}
+
+.game__hotspot {
+    cursor:pointer;
 }

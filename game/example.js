@@ -9,13 +9,12 @@ let darkness = Hotspot('darkness', {
     active:true
 });
 
-
-darkness.click = async function( hotspot, room ) {
+darkness.click = async function( hotspot, locals ) {
     await Say('Hello darkness my old friend');
 };
 
 
-start.enter = async function( room ) {
+start.enter = async function( locals ) {
     DisableInterface();
     await Say('Hello World!');
     await Say('This is an example of an enter script!');
@@ -23,6 +22,6 @@ start.enter = async function( room ) {
     HotspotClick('start','darkness');
 };
 
-start.exit = async function( room ) {
+start.exit = async function( locals ) {
 
 };
