@@ -194,7 +194,7 @@ async function EnterRoom(name) {
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
         for(hotspot in rooms[name].hotspots) {
-            if( rooms[name].hotspots[hotspot].active == false) continue;
+            if( globals.rooms[name].hotspots[hotspot].active == false) continue;
             var hotspotdiv = document.createElement("div");
             
             hotspotdiv.className = "game__hotspot";

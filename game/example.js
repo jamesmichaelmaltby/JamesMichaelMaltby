@@ -11,15 +11,36 @@ let darkness = Hotspot('darkness', {
     flag:0
 });
 
+let door = Hotspot('door', {
+    x:"5%",
+    y:"5%",
+    width:"20%",
+    height:"40%",
+    description:'Faint light',
+    active:false,
+    flag:0
+});
+
 let lightswitch = Hotspot('lightswitch', {
     x:"75%",
-    y:"50%",
+    y:"30%",
     width:"20%",
     height:"20%",
     description:'Object in darkness',
     active:true,
     flag:0
 });
+
+let anotherlightswitch = Hotspot('anotherlightswitch', {
+    x:"25%",
+    y:"30%",
+    width:"20%",
+    height:"20%",
+    description:'Object in darkness',
+    active:true,
+    flag:0
+});
+
 
 let moredarkness = Hotspot('moredarkness', {
     x:"0%",
@@ -55,6 +76,7 @@ darkness.click = async function( hotspot, locals ) {
         case 2:
             await Say('There must be something here that can help me');
             hotspot.description = 'Peer into darkness';
+            HotspotDisable('start','darkness');
             break;
     }
     hotspot.flag++;
@@ -69,21 +91,97 @@ lightswitch.click = async function( hotspot, locals ) {
             break;
         case 1:
             await Say('It feels like a switch!');
+            if( locals.triedswitch ) await Say('I better not get my hopes up.');
             hotspot.description = 'Use switch';
             break;
         case 2:
-            await Say('Here goes...');
-            await Say('*klik*');
-            await Say('Nothing happened...');
-            await Say('...just my luck!');
-            hotspot.description = 'Use useless switch';
+            if( locals.triedswitch ) {
+                await Say('Deep breath...');
+                await Say('*klik*');
+                await WaitSeconds(2);
+                await Say('*sigh*');
+                await WaitSeconds(1);
+                await Say('*rumble*');
+                await Say('*metallic noises*');
+                await WaitSeconds(1);
+                await Say('Hmmm I wonder where that came from?');
+                HotspotEnable('start','door');
+                hotspot.description = 'Use ambiguous switch';
+            } else { 
+                await Say('Here goes...');
+                await Say('*klik*');
+                await WaitSeconds(2);
+                await Say('Nothing happened...');
+                await Say('...just my luck!');
+                locals.triedswitch = true;
+                hotspot.description = 'Use useless switch';
+            }
             break;
         default:
             await Say('*klik*');
-            await Say('      ');
-            await Say('Nothing');
+            await WaitSeconds(1);
+            Say('Nothing');
     }
     hotspot.flag++;
+};
+
+anotherlightswitch.click = async function( hotspot, locals ) {
+    switch( hotspot.flag ) {
+        case 0:
+            await Say('I think I can see something!');
+            hotspot.description = 'Touch object in darkness';
+            break;
+        case 1:
+            await Say('It feels like a switch!');
+            if( locals.triedswitch ) await Say('I better not get my hopes up.');
+            hotspot.description = 'Use switch';
+            break;
+        case 2:
+            if( locals.triedswitch ) {
+                await Say('Deep breath...');
+                await Say('*klik*');
+                await WaitSeconds(2);
+                await Say('*sigh*');
+                await WaitSeconds(1);
+                await Say('*rumble*');
+                await Say('*metallic noises*');
+                await WaitSeconds(1);
+                await Say('Hmmm I wonder where that came from?');
+                HotspotEnable('start','door');
+                hotspot.description = 'Use ambiguous switch';
+            } else { 
+                await Say('Here goes...');
+                await Say('*klik*');
+                await WaitSeconds(2);
+                await Say('Nothing happened...');
+                await Say('...just my luck!');
+                locals.triedswitch = true;
+                hotspot.description = 'Use useless switch';
+            }
+            break;
+        default:
+            await Say('*klik*');
+            await WaitSeconds(1);
+            Say('Nothing');
+            break;
+    }
+    hotspot.flag++;
+};
+
+
+door.click = async function( hotspot, locals ) {
+    if( locals.trieddoor ) {
+        await Say( 'Here goes!');
+        await Say( '*argh*');
+        await WaitSeconds(2);
+        await Say( 'Yes!');
+        await Say( 'Freedom! Sweet Freedom!');
+    } else {
+        await Say( 'Hang on a minute I think some light is shining through here!');
+        await Say( 'Maybe there is a door?');
+        locals.trieddoor = true;
+        hotspot.description = 'Push through void';
+    }
 };
 
 moredarkness.click = async function( hotspot, locals ) {
