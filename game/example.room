@@ -1,4 +1,68 @@
-@hotspot darkness {
 
+@hotspot darkness {
+    description:'Peer into darkness',
+    x:0,
+    y:0,
+    width:100,
+    height:100
+}
+
+@onclick darkness {
     
+}
+
+
+@enter {
+    hotspots.darkness.active = false;
+    await ego.say
+}
+
+@exit {
+
+}
+
+
+
+
+
+
+
+
+
+// Global rooms variable
+var rooms = {};
+// Global variables for state machine
+var globals = {};
+
+// A room needs to scaffolded, e.g. room 'start'
+rooms.start = {
+    hotspots : {}
+};
+globals.rooms.start = {
+    hotspots : {}
+};
+
+
+globals.rooms.start.hotspots.darkness = {
+    x:0,
+    y:0,
+    width:100,
+    height:100
+    description:'Peer into darkness',
+    active:true
+}
+
+// @onclick darkness
+rooms.start.hotspots.darkness.onclick = async function( this, hotspot, room, locals, hotspots ) {
+
+}
+
+// @enter { }
+rooms.start.enter = async function( this, room, hotspots ) {
+
+}
+
+// @exit { }
+rooms.start.exit = async function( this, room, locals, hotspots  ) {
+
 }

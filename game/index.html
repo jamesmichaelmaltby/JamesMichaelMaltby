@@ -11,63 +11,6 @@ full: true
 
 <script>
 
-// Global rooms variable
-var rooms = {};
-// Global variables for state machine
-var globals = {};
-
-// A room needs to scaffolded, e.g. room 'start'
-rooms.start = {
-    hotspots:[]
-};
-globals.rooms.start = {};
-
-// Hotspot in rooms need to be scaffolded, e.g. object 'darkness'
-
-/*
-@hotspot
-{
-
-}
-@end
-*/
-
-rooms.start.hotspots.push = {
-    title:'Peer into darkness',
-    x:0,
-    y:0,
-    width:100,
-    height:100,
-    active:true
-};
-
-// @object darkness clicked { }
-rooms.start.objects.darkness.click = async function( locals ) {
-
-}
-
-
-// @enter { }
-rooms.start.enter = async function( locals ) {
-
-}
-
-// @exit { }
-rooms.start.exit = async function( locals ) {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 var gameconsole = document.getElementById('console');
 var gamescreen = document.getElementById('gamescreen');
 var main = document.getElementById('main');
@@ -97,7 +40,7 @@ gamescreen.addEventListener('mousemove', mouseMove);
 
 function say(message, id) {
     var promise, ms;
-    ms = Math.max(2000,message.length*125);
+    ms = Math.max(1000,message.length*50);
     gameconsole.innerHTML = message;
     currentMessages++;
     promise = new Promise(function(resolve, reject) {
