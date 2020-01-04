@@ -1,0 +1,26 @@
+
+function EnableInterface() {
+    game.interfaceLocked = false;
+    gamescreen.className = gamescreen.className.replace(" nointerface", "");
+}
+
+function DisableInterface() {
+    game.interfaceLocked = true;
+    gamescreen.className += " nointerface";
+}
+
+function WaitMiliseconds(ms) { 
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('done');
+      }, ms);
+    });
+  }
+  function WaitSeconds(s) { 
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('done');
+      }, s*1000);
+    });
+  }
+  
