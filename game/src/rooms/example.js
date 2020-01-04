@@ -9,7 +9,8 @@ let darkness = Hotspot('darkness', {
     description:'Peer into darkness',
     active:true,
     flag:0,
-    svg:true
+    svg:true,
+    invisible:true
 });
 
 let door = Hotspot('door', {

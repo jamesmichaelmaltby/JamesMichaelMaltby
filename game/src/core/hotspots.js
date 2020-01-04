@@ -34,3 +34,20 @@ async function HotspotEnable( room, name) {
         id.style["pointer-events"] = "auto";
     }
 }
+
+
+async function HotspotHide( room, name) {
+    if( rooms[room] && rooms[room].hotspots[name] ) {
+        globals.rooms[room].hotspots[name].invisible = true;
+        var id = document.getElementById(name);
+        id.style.visibility = "hidden";
+    }
+}
+
+async function HotspotShow( room, name) {
+    if( rooms[room] && rooms[room].hotspots[name] ) {
+        globals.rooms[room].hotspots[name].invisible = false;
+        var id = document.getElementById(name);
+        id.style.visibility = "visible";
+    }
+}

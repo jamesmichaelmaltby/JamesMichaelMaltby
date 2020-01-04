@@ -24,6 +24,7 @@ async function EnterRoom(name) {
             if( globals.rooms[name].hotspots[hotspot].svg ) {
                 hotspotdiv = document.getElementById(hotspot);
                 hotspotdiv.style.cursor = "pointer";
+                hotspotdiv.style.display = "block";
             } else {
                 hotspotdiv = document.createElement("div");
                 hotspotdiv.className = "game__hotspot gpu";
@@ -44,6 +45,8 @@ async function EnterRoom(name) {
             hotspotdiv.onmousemove = function(e) {
                 overHotspot = globals.rooms[globals.currentRoom].hotspots[this.id].description;
             };
+            if( globals.rooms[name].hotspots[hotspot].invisible ) hotspotdiv.style.visibility = 'hidden';
+            else hotspotdiv.style.visibility = 'visible';
         }
         await rooms[name].enter( globals.rooms[name] );
     }

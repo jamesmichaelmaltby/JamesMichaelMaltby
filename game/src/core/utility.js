@@ -3,6 +3,7 @@ function EnableInterface() {
     game.interfaceLocked = false;
     gamescreen.className = gamescreen.className.replace(" nointerface", "");
     hover.innerHTML = '';
+    hover.style.display = "none";
     overHotspot = '';
 }
 
