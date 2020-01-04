@@ -29,7 +29,7 @@ let lightswitch = Hotspot('lightswitch', {
     description:'Investigate object in darkness',
     active:true,
     flag:0,
-    on : false
+    on : true
 });
 
 let anotherlightswitch = Hotspot('anotherlightswitch', {
@@ -150,6 +150,7 @@ lightswitch.click = async function( hotspot, locals ) {
 
 anotherlightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
+    locals.hotspots.lightswitch.on = !locals.hotspots.lightswitch.on;
     switch( hotspot.flag ) {
         case 0:
             await Say('I think I can see something!');
@@ -201,7 +202,10 @@ anotherlightswitch.click = async function( hotspot, locals ) {
 
 
 yetanotherlightswitch.click = async function( hotspot, locals ) {
+   
     hotspot.on = !hotspot.on;
+    locals.hotspots.lightswitch.on = !locals.hotspots.lightswitch.on;
+
     await HotspotSay('start','yetanotherlightswitch','*klik*');
     if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
         await WaitSeconds(1);

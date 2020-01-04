@@ -17,12 +17,17 @@ DefaultMessageColour();
 function Say(message, id) {
     var promise, ms;
     ms = Math.max(1500,message.length*50);
+
+    gameconsole.style.display = 'inline-block';
     gameconsole.innerHTML = message;
     currentMessages++;
     promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
            currentMessages--;
-            if(currentMessages==0) gameconsole.innerHTML = '';
+            if(currentMessages==0) {
+                gameconsole.style.display = 'none';
+                gameconsole.innerHTML = '';
+            }
             resolve('timeout done');
         }, ms);
     });
@@ -39,6 +44,7 @@ function HotspotSay(room, hotspot, message) {
     var y = parseFloat(hs.y) + parseFloat(hs.height)/2;
     hover.style.left = x + "%";
     hover.style.top = y + "%";
+    hover.style.display = 'block';
     hover.innerHTML = message;
     if(currentHotspots==0) gamescreen.className += " hoversay";
     currentHotspots++;
@@ -46,6 +52,7 @@ function HotspotSay(room, hotspot, message) {
         setTimeout(function() {
             currentHotspots--;
             if(currentHotspots==0) {
+                hover.style.display = 'none';
                 hover.innerHTML = '';
                 gamescreen.className = gamescreen.className.replace(" hoversay", "");
             }
