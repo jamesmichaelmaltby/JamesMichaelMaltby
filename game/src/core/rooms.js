@@ -12,7 +12,10 @@ function Room(name) {
 
 async function EnterRoom(name) {
     roomarea.innerHTML = '';
-    hover.innerHTML = overHotspot;
+    hover.innerHTML = '';
+    hover.style.display = 'none';
+    gameconsole.style.display = 'none';
+    gameconsole.innerHTML = '';
     overHotspot = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;

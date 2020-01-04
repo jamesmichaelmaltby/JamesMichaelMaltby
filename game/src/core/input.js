@@ -4,7 +4,7 @@ async function logKey(e) {
         localStorage.setItem('save', JSON.stringify(globals) );
         SetMessageColour('yellow');
         await Say('Saved');
-        ResetMessageColour();
+        DefaultMessageColour();
     } else if (e.code == 'KeyL') {
         load = localStorage.getItem('save');
         if(load) {
@@ -12,7 +12,7 @@ async function logKey(e) {
             EnterRoom( globals.currentRoom );
             SetMessageColour('yellow');
             await Say('Loaded');
-            ResetMessageColour();
+            DefaultMessageColour();
         }
     }
 }
@@ -25,7 +25,13 @@ function mouseMove(e) {
     var y = (e.clientY - main.offsetTop);
     hover.style.left = x + "px";
     hover.style.top = y + "px";
-    hover.innerHTML = overHotspot;
+    if( overHotspot) { 
+        hover.style.display = 'block';
+        hover.innerHTML = overHotspot;
+    } else {
+        hover.style.display = 'none';
+        hover.innerHTML = '';
+    }
     overHotspot = '';
 }
 gamescreen.addEventListener('mousemove', mouseMove);

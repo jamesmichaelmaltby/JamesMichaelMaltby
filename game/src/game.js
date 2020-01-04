@@ -11,3 +11,9 @@ scripts.main = async function( ) {
     EnableInterface();
 };
 
+
+
+var birds = document.getElementById('birds');
+birds.onclick = function() {
+    alert('birds');
+};
