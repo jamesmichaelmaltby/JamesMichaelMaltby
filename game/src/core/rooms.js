@@ -12,6 +12,8 @@ function Room(name) {
 
 async function EnterRoom(name) {
     roomarea.innerHTML = '';
+    hover.innerHTML = overHotspot;
+    overHotspot = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
         for(hotspot in rooms[name].hotspots) {

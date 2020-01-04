@@ -2,7 +2,6 @@ async function logKey(e) {
     if( game.interfaceLocked ) return;
     if (e.code == 'KeyS') {
         localStorage.setItem('save', JSON.stringify(globals) );
-        console.log( JSON.parse(localStorage.getItem('save') ) );
         SetMessageColour('yellow');
         await Say('Saved');
         ResetMessageColour();
