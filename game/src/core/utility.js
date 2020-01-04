@@ -9,6 +9,10 @@ function DisableInterface() {
     gamescreen.className += " nointerface";
 }
 
+function Random(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function WaitMiliseconds(ms) { 
     return new Promise(resolve => {
       setTimeout(() => {

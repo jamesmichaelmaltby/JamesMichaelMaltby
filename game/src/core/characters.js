@@ -13,6 +13,7 @@ function DefaultMessageColour() {
 }
 DefaultMessageColour();
 
+
 function Say(message, id) {
     var promise, ms;
     ms = Math.max(1500,message.length*50);
@@ -28,6 +29,8 @@ function Say(message, id) {
     return promise;
 }
 
+
+var currentHotspots = 0;
 function HotspotSay(room, hotspot, message) {
     var promise, ms;
     ms = Math.max(1500,message.length*50);
@@ -37,11 +40,15 @@ function HotspotSay(room, hotspot, message) {
     hover.style.left = x + "%";
     hover.style.top = y + "%";
     hover.innerHTML = message;
-    gamescreen.className += " hoversay";
+    if(currentHotspots==0) gamescreen.className += " hoversay";
+    currentHotspots++;
     promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
-            hover.innerHTML = '';
-            gamescreen.className = gamescreen.className.replace(" hoversay", "");
+            currentHotspots--;
+            if(currentHotspots==0) {
+                hover.innerHTML = '';
+                gamescreen.className = gamescreen.className.replace(" hoversay", "");
+            }
             resolve('timeout done');
         }, ms);
     });
