@@ -17,7 +17,7 @@ async function EnterRoom(name) {
         for(hotspot in rooms[name].hotspots) {
             var hotspotdiv = document.createElement("div");
             
-            hotspotdiv.className = "game__hotspot";
+            hotspotdiv.className = "game__hotspot gpu";
             hotspotdiv.style.position = "absolute";
             hotspotdiv.style.left = globals.rooms[name].hotspots[hotspot].x;
             hotspotdiv.style.top = globals.rooms[name].hotspots[hotspot].y;

@@ -39,11 +39,12 @@ async function StartScript(script, loop, resume) {
             await scripts[script]( globals.scripts[script] );
     
             globals.scripts[script].counter++;
-            if( globals.scripts[script].counter >= maxcounter ) globals.scripts[script].counter = 0;
+            if( globals.scripts[script].counter >= globals.scripts[script].maxcounter ) globals.scripts[script].counter = 0;
 
             globals.scripts[script].iterations++;
             if( globals.scripts[script].break ) stopscript = true;
-            else if( globals.scripts[script].maxiterations && globals.scripts[script].maxiterations != -1 && globals.scripts[script].iterations >= globals.scripts[script].maxiterations ) {
+            if( globals.scripts[script].maxiterations == 0 ) stopscript = true;
+            else if( globals.scripts[script].maxiterations != -1 && globals.scripts[script].iterations >= globals.scripts[script].maxiterations ) {
                 stopscript = true;
             }
 

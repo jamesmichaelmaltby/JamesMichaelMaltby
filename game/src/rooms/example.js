@@ -91,36 +91,44 @@ lightswitch.click = async function( hotspot, locals ) {
             hotspot.description = 'Touch object in darkness';
             break;
         case 1:
-            await Say('It feels like a switch!');
+            await Say('It feels like a button!');
             if( locals.triedswitch ) await Say('I better not get my hopes up.');
-            hotspot.description = 'Use switch';
+            hotspot.description = 'Use button';
             break;
         case 2:
             if( locals.triedswitch ) {
                 await Say('Deep breath...');
+                SetMessageColour('#999');
                 await Say('*klik*');
                 await WaitSeconds(2);
+                ResetMessageColour();
                 await Say('*sigh*');
                 await WaitSeconds(1);
+                SetMessageColour('#999');
                 await Say('*rumble*');
                 await Say('*metallic noises*');
+                ResetMessageColour();
                 HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
-                hotspot.description = 'Use ambiguous switch';
+                hotspot.description = 'Use ambiguous button';
             } else { 
                 await Say('Here goes...');
+                SetMessageColour('#999');
                 await Say('*klik*');
                 await WaitSeconds(2);
+                ResetMessageColour();
                 await Say('Nothing happened...');
                 await Say('...just my luck!');
                 locals.triedswitch = true;
-                hotspot.description = 'Use useless switch';
+                hotspot.description = 'Use useless button';
             }
             break;
         default:
+            SetMessageColour('#999');
             await Say('*klik*');
             await WaitSeconds(1);
+            ResetMessageColour();
             Say('Nothing');
     }
     hotspot.flag++;
@@ -133,36 +141,44 @@ anotherlightswitch.click = async function( hotspot, locals ) {
             hotspot.description = 'Touch object in darkness';
             break;
         case 1:
-            await Say('It feels like a switch!');
+            await Say('It feels like a button!');
             if( locals.triedswitch ) await Say('I better not get my hopes up.');
-            hotspot.description = 'Use switch';
+            hotspot.description = 'Use button';
             break;
         case 2:
             if( locals.triedswitch ) {
                 await Say('Deep breath...');
+                SetMessageColour('#999');
                 await Say('*klik*');
                 await WaitSeconds(2);
+                ResetMessageColour();
                 await Say('*sigh*');
                 await WaitSeconds(1);
+                SetMessageColour('#999');
                 await Say('*rumble*');
                 await Say('*metallic noises*');
+                ResetMessageColour();
                 HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
-                hotspot.description = 'Use ambiguous switch';
+                hotspot.description = 'Use ambiguous button';
             } else { 
                 await Say('Here goes...');
+                SetMessageColour('#999');
                 await Say('*klik*');
+                ResetMessageColour();
                 await WaitSeconds(2);
                 await Say('Nothing happened...');
                 await Say('...just my luck!');
                 locals.triedswitch = true;
-                hotspot.description = 'Use useless switch';
+                hotspot.description = 'Use useless button';
             }
             break;
         default:
+            SetMessageColour('#999');
             await Say('*klik*');
             await WaitSeconds(1);
+            ResetMessageColour();
             Say('Nothing');
             break;
     }
