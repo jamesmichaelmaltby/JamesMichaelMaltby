@@ -16,10 +16,9 @@ let door = Hotspot('door', {
     y:"5%",
     width:"20%",
     height:"40%",
-    description:'Faint light',
+    description:'Inspect faint shape',
     active:false,
-    flag:0,
-    background:"rgb(15,15,15)"
+    flag:0
 });
 
 let lightswitch = Hotspot('lightswitch', {
@@ -27,7 +26,7 @@ let lightswitch = Hotspot('lightswitch', {
     y:"30%",
     width:"20%",
     height:"20%",
-    description:'Object in darkness',
+    description:'Investigate object in darkness',
     active:true,
     flag:0,
     on : false
@@ -38,10 +37,22 @@ let anotherlightswitch = Hotspot('anotherlightswitch', {
     y:"30%",
     width:"20%",
     height:"20%",
-    description:'Object in darkness',
+    description:'Investigate object in darkness',
     active:true,
     flag:0,
     on : false
+});
+
+
+let yetanotherlightswitch = Hotspot('yetanotherlightswitch', {
+    x:"40%",
+    y:"60%",
+    width:"20%",
+    height:"20%",
+    description:'Use well concealed button',
+    active:false,
+    flag:0,
+    on : true
 });
 
 
@@ -105,8 +116,7 @@ lightswitch.click = async function( hotspot, locals ) {
                 await WaitSeconds(2);
                 await Say('*sigh*');
                 await WaitSeconds(1);
-                await HotspotSay('start','door','*rumble*');
-                await HotspotSay('start','door','*metallic noises*');
+                await HotspotSay('start','door','*buzzing noises*');
                 HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
@@ -122,12 +132,15 @@ lightswitch.click = async function( hotspot, locals ) {
             }
             break;
         default:
-            await HotspotSay('start','lightswitch','*klik*');
             if( locals.hotspots.door.trieddoor ) {
-                if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on ) {
-                    Say('Hey I think the buzzing stopped!');
+                await HotspotSay('start','lightswitch','*klik*');
+                if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+                    await WaitSeconds(1);
+                    await Say('Hey I think the buzzing stopped!');
+                    await Say('Maybe I should not be playing with these buttons in the dark.');
                 }
             } else {
+                await HotspotSay('start','lightswitch','*klik*');
                 await WaitSeconds(1);
                 Say('Nothing');
             }
@@ -171,14 +184,15 @@ anotherlightswitch.click = async function( hotspot, locals ) {
             }
             break;
         default:
-            await HotspotSay('start','anotherlightswitch','*klik*');
             if( locals.hotspots.door.trieddoor ) {
-                if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on ) {
+                await HotspotSay('start','anotherlightswitch','*klik*');
+                if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+                    await WaitSeconds(1);
                     await Say('Hey I think the buzzing stopped!');
-                    await Say('Maybe I should not be playing with buttons.');
+                    await Say('Maybe I should not be playing with these buttons in the dark.');
                 }
             } else {
-                await WaitSeconds(1);
+                await HotspotSay('start','anotherlightswitch','*klik*');
                 Say('Nothing');
             }
     }
@@ -186,44 +200,47 @@ anotherlightswitch.click = async function( hotspot, locals ) {
 };
 
 
+yetanotherlightswitch.click = async function( hotspot, locals ) {
+    hotspot.on = !hotspot.on;
+    await HotspotSay('start','yetanotherlightswitch','*klik*');
+    if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+        await WaitSeconds(1);
+        await Say('Hey I think the buzzing stopped!');
+        await Say('Maybe I should not be playing with these buttons in the dark.');
+    }
+};
+
 door.click = async function( hotspot, locals ) {
     if( hotspot.trieddoor ) {
-        if( locals.hotspots.lightswitch.on || locals.hotspots.anotherlightswitch.on) {
-            if( hotspot.hurtbydoor ) {
-                switch( Random(3) ) {
-                    case 0:
-                        await Say( 'I am not touching that again until I have turned off whatever is electricuting me!');
-                        break;
-                    case 1:
-                        await Say( 'I can still here it buzzing!');
-                        break;
-                    case 2
-                        await Say( 'Why is it shortcircuited?!' );
-                        break;
-                }
-            } else {
-                await Say( 'Here goes...');
-                await HotspotSay('start','door','*metallic strain*');
-                if( locals.hotspots.lightswitch.on ) {
-                    await HotspotSay('start','lightswitch','*fizzle*');
-                }
-                if( locals.hotspots.anotherlightswitch.on ) {
-                    await HotspotSay('start','anotherlightswitch','*fizzle*');
-                }
-                HotspotSay('start','door','*buzzzzzzzzz*');
-                await WaitSeconds(1);
-                await Say( 'Ouch!');
-                await Say( 'What was that?!');
-                hotspot.hurtbydoor = true;
+        if( locals.hotspots.lightswitch.on || locals.hotspots.anotherlightswitch.on || locals.hotspots.yetanotherlightswitch.on) {
+            if( !hotspot.hurtbydoor ) await Say( 'Here goes...');
+            HotspotEnable('start','yetanotherlightswitch');
+
+            if( locals.hotspots.lightswitch.on ) {
+                HotspotSay('start','lightswitch','*fizzle*');
             }
+            await WaitSeconds(0.5);
+            if( locals.hotspots.anotherlightswitch.on ) {
+                HotspotSay('start','anotherlightswitch','*fizzle*');
+            }
+            await WaitSeconds(0.5);
+            if( locals.hotspots.yetanotherlightswitch.on ) {
+                HotspotSay('start','yetanotherlightswitch','*fizzle*');
+            }
+            await WaitSeconds(0.5);
+            HotspotSay('start','door','*buzzzzzzzzz*');
+            await WaitSeconds(1);
+            await Say( 'Ouch!');
+            await Say( 'What was that?!');
+            hotspot.hurtbydoor = true;  
         } else {
             await Say( 'Game Over');
         }
     } else {
         await Say( 'Hang on a minute I think some light is shining through here!');
-        await Say( 'Maybe there is a door?');
+        await Say( 'Maybe this is a way out?!');
         hotspot.trieddoor = true;
-        hotspot.description = 'Push through void';
+        hotspot.description = 'Push shape';
     }
 };
 
