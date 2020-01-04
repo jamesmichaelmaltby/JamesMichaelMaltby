@@ -1,0 +1,56 @@
+.jmm-post {
+    box-sizing:border-box;
+max-width:640px;width:100%;padding:0 2rem;position: relative;
+margin:0 auto 0 auto;
+}
+
+.jmm-post__sidebar {
+    width:100%;
+}
+
+.jmm-post__content {
+    margin:0;
+    padding:0;
+    max-width:640px;
+}
+
+.jmm-post__pagination {
+    margin:4rem 0 0 0;
+    padding:0 0 1rem 0;
+    overflow:auto;
+    border-top:1px solid #ddd;
+}
+
+@media (min-width: 1024px) {
+    .jmm-post {
+        padding:3rem 6rem;
+        margin:0 ;
+        max-width:100%;
+    }
+}
+
+
+@media (min-width: 1366px) { 
+    .jmm-post__sidebar {
+        position: absolute;width:250px;right:2rem;top:3rem;bottom:0;
+        position:fixed;
+    }
+
+    .jmm-post__content {
+        padding-right:200px;
+    }
+
+    .jmm-post {
+       
+    }
+}
+
+@media (min-width: 1440px) {
+    .jmm-post__sidebar {
+        right:2rem;
+        left:1176px;
+    }
+}
+
+
+.jmm-post img[alt=signature] { width: 256px; padding:0.5rem 0; }

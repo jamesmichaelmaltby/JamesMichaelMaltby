@@ -6,9 +6,11 @@ layout: default
 {% assign filteredposts = site.posts | where: 'categories', primary_category %}
 {% assign sortedposts = filteredposts | sort : 'page' %}
 
-<div style="max-width:1024px;width:100%;padding:3rem 2rem;position: relative;">
+<div class="jmm-post">
+
 {%if sortedposts !=nil %}
-        <sidebar style="position: absolute;width:250px;right:0;top:3rem;bottom:0;">
+{%if primary_category !=nil %}
+        <sidebar class="jmm-post__sidebar">
                 <nav>
                 <h3>{{ site.data.categorymeta[primary_category] }}</h3>
                     <ul>
@@ -23,7 +25,8 @@ layout: default
                 </nav>
                 </sidebar>
                 {% endif %}
-    <div style="padding-right:250px;padding-bottom:8rem;">
+                {% endif %}
+    <div class="jmm-post__content">
 
 
 <h1>{{ page.title}}</h1>
@@ -31,7 +34,7 @@ layout: default
 
 
 {% if page.page %}
-
+<div class="jmm-post__pagination">
 {% assign previous = page.page | minus: 2  %}
 {% assign next = page.page %}
 
@@ -51,16 +54,17 @@ layout: default
 {% if sortedposts[next] != nil %}
 <div class="pages--titles--next" >{{sortedposts[next].title}}</div>
 {% endif %}
-
+</div>
 {% endif %}
 
 </div>
 
+<!--
 <div class="jmm-tiles">
 {% assign allitems = site.data.news | concat: site.posts %}
 {% assign sorteditems = allitems | sort: 'date' | reverse %}
 {% if page.tags %}
-<h1>Related Stories</h1>
+<h2>Related Stories</h2>
         {% for news in sorteditems %}
             {% if news.url != page.url %}
                 {% for tag in page.tags %}
@@ -106,3 +110,4 @@ layout: default
 
 
 </div>
+-->

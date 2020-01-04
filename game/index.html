@@ -1,0 +1,25 @@
+---
+layout: default
+title: Game
+full: true
+---
+
+
+
+<div id="gamescreen" class="game">
+<div id="roomarea" class="room"></div>
+<div id="hover" class="hover gpu"></div>
+<div id="console" class="console gpu"></div>
+</div>
+
+<script>
+{% include_relative src/core/main.js %}
+{% include_relative src/core/input.js %}
+{% include_relative src/core/utility.js %}
+{% include_relative src/core/rooms.js %}
+{% include_relative src/core/hotspots.js %}
+{% include_relative src/core/characters.js %}
+{% include_relative src/core/scripts.js %}
+{% include_relative src/game.js %}
+StartScript('main');
+</script>
