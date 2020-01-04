@@ -49,7 +49,7 @@ body.homepage a.jmm-header-back {
     display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
 
     .jmm-header  {
         position:absolute;
@@ -209,7 +209,7 @@ body.homepage .jmm-header-summary {
     display:block;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
     .jmm-header-summary {
         display:block;
     }
@@ -223,10 +223,10 @@ body.homepage .jmm-header-summary {
  padding:0;  
  margin:0;     
 }
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
     .jmm-header {
         padding:1rem 2rem;
-        margin-left:1.5rem;
+        margin:0 1.5rem;
     }
     .jmm-header h1 {
         padding:0;  

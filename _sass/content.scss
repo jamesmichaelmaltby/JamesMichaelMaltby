@@ -7,6 +7,7 @@
 }
 .jmm-content-section {
     padding: 0;
+    margin-left:0;
     /*max-width: 640px;*/
 }
 .jmm-content-section img {
@@ -29,19 +30,20 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
 
     .jmm-content {
         position:absolute;
         top:0;
         bottom:0;
         right:0;
-        left:380px;
+        left:424px;
         width:auto;
         overflow-y:auto;
         -webkit-overflow-scrolling:touch;
         height:100%;
         box-sizing: border-box;
+
     }
     
 
@@ -74,7 +76,7 @@
 }
 
 
-@media (min-width: 1366px) {
+@media (min-width: 1365px) {
     .jmm-content-section {
         max-width:100%;
     }
