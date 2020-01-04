@@ -207,6 +207,7 @@ scripts.clock = async function( locals ) {
     if(globals.clocktick === undefined || globals.clocktick == '*tock*' ) globals.clocktick = '*tick*';
     else globals.clocktick = '*tock*';
     Say( globals.clocktick );
+    
     DelaySeconds(scripts.clock,1);
 };
 function Loop(script) {
