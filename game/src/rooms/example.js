@@ -218,29 +218,35 @@ door.click = async function( hotspot, locals ) {
 
             if( locals.hotspots.lightswitch.on ) {
                 HotspotSay('start','lightswitch','*fizzle*');
+                await WaitSeconds(0.5);
             }
-            await WaitSeconds(0.5);
             if( locals.hotspots.anotherlightswitch.on ) {
                 HotspotSay('start','anotherlightswitch','*fizzle*');
+                await WaitSeconds(0.5);
             }
-            await WaitSeconds(0.5);
             if( locals.hotspots.yetanotherlightswitch.on ) {
                 HotspotSay('start','yetanotherlightswitch','*fizzle*');
+                await WaitSeconds(0.5);
             }
-            await WaitSeconds(0.5);
             HotspotSay('start','door','*buzzzzzzzzz*');
             await WaitSeconds(1);
             await Say( 'Ouch!');
             await Say( 'What was that?!');
             hotspot.hurtbydoor = true;  
         } else {
-            await Say( 'Game Over');
+            await Say( 'Congratulations! You escaped the room!');
+            await Say( 'FOR NOW');
+            await Say( 'Thank you for playing my game.');
+            await Say( 'That bits with the three-headed dragon and the Amazonian warrier women were good right?');
+            await Say( 'Anyway... please feel free to stay in the darkness and play with buttons...');
+            await Say( '...or maybe you now feel brave enough for the real world...');
+            await Say( '...either way I hope you enjoyed it and please check out the rest of my website.');
         }
     } else {
-        await Say( 'Hang on a minute I think some light is shining through here!');
+        await Say( 'Hang on a minute I think some faint light is shining through here!');
         await Say( 'Maybe this is a way out?!');
         hotspot.trieddoor = true;
-        hotspot.description = 'Push shape';
+        hotspot.description = 'Venture into void';
     }
 };
 

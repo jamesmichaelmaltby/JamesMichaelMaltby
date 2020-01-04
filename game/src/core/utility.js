@@ -2,6 +2,8 @@
 function EnableInterface() {
     game.interfaceLocked = false;
     gamescreen.className = gamescreen.className.replace(" nointerface", "");
+    hover.innerHTML = '';
+    overHotspot = '';
 }
 
 function DisableInterface() {
