@@ -20,7 +20,9 @@ let door = Hotspot('door', {
     height:"40%",
     description:'Inspect faint shape',
     active:false,
-    flag:0
+    flag:0,
+    invisible:true,
+    svg:true
 });
 
 let lightswitch = Hotspot('lightswitch', {
@@ -31,7 +33,9 @@ let lightswitch = Hotspot('lightswitch', {
     description:'Investigate object in darkness',
     active:true,
     flag:0,
-    on : false
+    on : false,
+    svg:true,
+    invisible:true
 });
 
 let anotherlightswitch = Hotspot('anotherlightswitch', {
@@ -42,7 +46,9 @@ let anotherlightswitch = Hotspot('anotherlightswitch', {
     description:'Investigate object in darkness',
     active:true,
     flag:0,
-    on : false
+    on : false,
+    svg:true,
+    invisible:true
 });
 
 
@@ -54,28 +60,34 @@ let yetanotherlightswitch = Hotspot('yetanotherlightswitch', {
     description:'Use well concealed button',
     active:false,
     flag:0,
-    on : true
+    on : true,
+    svg:true,
+    invisible:true
 });
 
 
-let moredarkness = Hotspot('moredarkness', {
+let floor = Hotspot('floor', {
     x:"0%",
     y:"90%",
     width:"100%",
     height:"10%",
     description:'Inspect dark area at floor level',
     active:true,
+    invisible:true,
+    svg:true,
     flag:0,
 });
 
 
-let moremoredarkness = Hotspot('moremoredarkness', {
+let ceiling = Hotspot('ceiling', {
     x:"0%",
     y:"0%",
     width:"100%",
     height:"10%",
     description:'Inspect dark area near ceiling',
     active:true,
+    invisible:true,
+    svg:true,
     flag:0
 });
 
@@ -251,14 +263,14 @@ door.click = async function( hotspot, locals ) {
     }
 };
 
-moredarkness.click = async function( hotspot, locals ) {
+floor.click = async function( hotspot, locals ) {
     await Say( 'Nope cannot see anything');
-    HotspotDisable('start','moredarkness');
+    HotspotDisable('start','floor');
 };
 
-moremoredarkness.click = async function( hotspot, locals ) {
+ceiling.click = async function( hotspot, locals ) {
     await Say( 'Nope nothing here');
-    HotspotDisable('start','moremoredarkness');
+    HotspotDisable('start','ceiling');
 };
 
 room.enter = async function( locals ) {

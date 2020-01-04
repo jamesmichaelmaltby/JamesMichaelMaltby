@@ -27,6 +27,7 @@
     position:absolute;
     top:0;
     left:0;
+    height:100%;
 }
 
 @media (min-width: 1023px) {
@@ -38,8 +39,8 @@
     .game svg {
         min-height: 100%;
         min-width: 100%;
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
         max-width: none;
         max-height: none;
         display: block;
@@ -74,8 +75,8 @@
     transition-delay: 0.4s;
     opacity:1.0;
     z-index:250;
-    background-color:rgba(0,0,0,0.8);
-    padding:0.75rem 1.75rem;
+    background-color:rgba(14,14,14,0.8);
+    padding:0.5rem 1.5rem;
     border-radius:2rem;
 }
 
@@ -88,8 +89,8 @@
     transition-delay: 0.4s;
     opacity:1.0;
     z-index:250;
-    background-color:rgba(0,0,0,0.75);
-    padding:0.75rem 1.75rem;
+    background-color:rgba(14,14,14,0.8);
+    padding:0.5rem 1.5rem;
     border-radius:2rem;
 }
 
