@@ -5,13 +5,13 @@ function Hotspot(name,defaults) {
 }
 
 async function HotspotClick( room, name) {
+    overHotspot = '';
     if( game.interfaceLocked ) return;
     if( rooms[room] && rooms[room].hotspots[name] ) {
         if( rooms[room].hotspots[name].click ) {
             DisableInterface();
             await WaitSeconds(0.75);
             await rooms[room].hotspots[name].click( globals.rooms[room].hotspots[name], globals.rooms[room] );
-            overHotspot = '';
             EnableInterface();
         }
     }

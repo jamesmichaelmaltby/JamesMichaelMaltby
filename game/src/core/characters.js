@@ -27,3 +27,23 @@ function Say(message, id) {
     });
     return promise;
 }
+
+function HotspotSay(room, hotspot, message) {
+    var promise, ms;
+    ms = Math.max(1500,message.length*50);
+    var hs = globals.rooms[room].hotspots[hotspot];
+    var x = parseFloat(hs.x) + parseFloat(hs.width)/2;
+    var y = parseFloat(hs.y) + parseFloat(hs.height)/2;
+    hover.style.left = x + "%";
+    hover.style.top = y + "%";
+    hover.innerHTML = message;
+    gamescreen.className += " hoversay";
+    promise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            hover.innerHTML = '';
+            gamescreen.className = gamescreen.className.replace(" hoversay", "");
+            resolve('timeout done');
+        }, ms);
+    });
+    return promise;
+}
