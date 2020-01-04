@@ -81,8 +81,6 @@
             <h1 class="jmm-header-title">{{site.title}}</h1>
             <h2 class="jmm-header-subtitle">{{site.subtitle}}</h2>
             <nav class="jmm-header-nav">
-            <!-- <a alt="Contact" class="jmm-header-navlink" href="mailto:{{ site.email }}"> -->
-
                 <a alt="Contact" class="typeform-share link jmm-header-navlink" href="https://jamesmaltby.typeform.com/to/QgBPOM" data-mode="drawer_left" data-hide-headers=true data-hide-footer=true data-submit-close-delay="0">
                     <svg class="jmm-header-navlink__icon"><use xlink:href="#email-filled-closed-envelope" /></svg><span class="jmm-header-navlink__caption">Contact</span>
                 </a>
@@ -100,9 +98,16 @@
                 </a>
             {% endcomment %}
             </nav>
+
+            {%if page.hidebio != true %}
             <p class="jmm-header-summary">
             {{ site.summary }}
             </p>
+            {% else %}
+            <p class="jmm-header-summary">
+                {{ site.description }}
+            </p>
+            {% endif %}
         </div>
     </header>
 

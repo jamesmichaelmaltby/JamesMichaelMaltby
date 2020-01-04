@@ -1,7 +1,7 @@
 ---
 layout: default
 title: James Michael Maltby
-permalink: /new
+permalink: /homepage
 classes: homepage
 ---
 

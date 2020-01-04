@@ -1,3 +1,5 @@
+
+
 function Hotspot(name,defaults) {
     room = LastCreatedRoom;
     globals.rooms[room].hotspots[name] = defaults;
@@ -5,7 +7,6 @@ function Hotspot(name,defaults) {
 }
 
 async function HotspotClick( room, name) {
-    overHotspot = '';
     if( game.interfaceLocked ) return;
     if( rooms[room] && rooms[room].hotspots[name] ) {
         if( rooms[room].hotspots[name].click ) {
