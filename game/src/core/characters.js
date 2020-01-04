@@ -39,11 +39,14 @@ var currentHotspots = 0;
 function HotspotSay(room, hotspot, message) {
     var promise, ms;
     ms = Math.max(1500,message.length*50);
-    var hs = globals.rooms[room].hotspots[hotspot];
-    var x = parseFloat(hs.x) + parseFloat(hs.width)/2;
-    var y = parseFloat(hs.y) + parseFloat(hs.height)/2;
-    hover.style.left = x + "%";
-    hover.style.top = y + "%";
+    
+    var hs = document.getElementById(hotspot);
+    var bounds = hs.getBoundingClientRect();
+    var x = parseFloat(bounds.x) + parseFloat(bounds.width)/2;
+    var y = parseFloat(bounds.y) + parseFloat(bounds.height)/2;
+
+    hover.style.left = x + "px";
+    hover.style.top = y + "px";
     hover.style.display = 'block';
     hover.innerHTML = message;
     if(currentHotspots==0) gamescreen.className += " hoversay";

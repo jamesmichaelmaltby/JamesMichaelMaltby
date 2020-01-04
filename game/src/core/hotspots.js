@@ -29,9 +29,12 @@ async function HotspotDisable( room, name) {
 async function HotspotEnable( room, name) {
     if( rooms[room] && rooms[room].hotspots[name] ) {
         globals.rooms[room].hotspots[name].active = true;
+
+        console.log( globals.rooms[room].hotspots[name] );
+        
         var id = document.getElementById(name);
         if(globals.rooms[room].hotspots[name].svg) id.style["pointer-events"] = "all";
-        id.style["pointer-events"] = "auto";
+        else id.style["pointer-events"] = "auto";
     }
 }
 
