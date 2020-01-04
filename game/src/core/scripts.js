@@ -1,4 +1,5 @@
 
+
 async function StartScript(script, loop, resume) {
     if( scripts.running[script] ) return;
     if( scripts[script] ) {
@@ -31,7 +32,7 @@ async function StartScript(script, loop, resume) {
             globals.scripts[script].maxiterations = 0;
         }
 
-        function RunScript() {
+        async function RunScript() {
             var stopscript = false;
             globals.scripts.running[script] = true;
             scripts.running[script] = true;

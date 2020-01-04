@@ -204,30 +204,9 @@ room.exit = async function( locals ) {
 };
 
 scripts.clock = async function( locals ) {
-    if(globals.clocktick === undefined || globals.clocktick == '*tock*' ) globals.clocktick = '*tick*';
-    else globals.clocktick = '*tock*';
-    Say( globals.clocktick );
-    
-    DelaySeconds(scripts.clock,1);
+    if(locals.clocktick === undefined || locals.clocktick == '*tock*' ) locals.clocktick = '*tick*';
+    else locals.clocktick = '*tock*';
+    Say( locals.clocktick );
 };
-function Loop(script) {
-    setTimeout(script,0);
-}
-function DelaySeconds(script, seconds) {
-    setTimeout(script,seconds*1000);
-}
-
-scripts.main = async function( ) {
-    
-    scripts.clock();
-
-    /*EnterRoom('start');
-    DisableInterface();
-    await Say('Typical...');
-    await Say('...I enter the one escape room where there is no light...');
-    await Say('...there must be a light switch somewhere?');
-    EnableInterface();*/
-};
-
 
 
