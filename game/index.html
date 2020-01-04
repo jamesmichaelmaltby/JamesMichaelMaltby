@@ -131,8 +131,20 @@ function DisableInterface() {
 var scripts = {};
 var rooms = {};
 var globals = {
-    rooms : {}
+    rooms : {},
+    scripts: {
+        running: []
+    }
 };
+
+async function StartScript(script) {
+    if( scripts[script] ) {
+        if( globals.scripts[script] === undefined ) globals.scripts[script] = {};
+        globals.scripts.running.push( script );
+        await scripts[script]( globals.scripts[script] );
+        setTimeout()
+    }
+}
 
 var LastCreatedRoom;
 
