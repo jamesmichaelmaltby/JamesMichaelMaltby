@@ -8,7 +8,8 @@ let darkness = Hotspot('darkness', {
     height:"100%",
     description:'Peer into darkness',
     active:true,
-    flag:0
+    flag:0,
+    svg:true
 });
 
 let door = Hotspot('door', {
