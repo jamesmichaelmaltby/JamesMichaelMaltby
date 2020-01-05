@@ -1,19 +1,14 @@
+
+
 async function logKey(e) {
     if( game.interfaceLocked ) return;
-    if (e.code == 'KeyS') {
-        localStorage.setItem('save', JSON.stringify(globals) );
-        SetMessageColour('yellow');
-        await Say('Saved');
-        DefaultMessageColour();
-    } else if (e.code == 'KeyL') {
-        load = localStorage.getItem('save');
-        if(load) {
-            newglobals = JSON.parse(load);
-            globals = Object.assign(globals,newglobals);
-            EnterRoom( globals.currentRoom );
-            SetMessageColour('yellow');
-            await Say('Loaded');
-            DefaultMessageColour();
+    var code = e.code;
+    if( code.startsWith('Digit') ) {
+        code = code.replace('Digit','');
+        if (e.shiftKey) {
+            SaveGame(code);
+        } else {
+            LoadGame(code);
         }
     }
 }

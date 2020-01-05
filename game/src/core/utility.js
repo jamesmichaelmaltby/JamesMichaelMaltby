@@ -31,3 +31,34 @@ function WaitMiliseconds(ms) {
     });
   }
   
+
+
+  async function SaveGame(n) {
+    localStorage.setItem('save'+n, JSON.stringify(globals) );
+    SetMessageColour('yellow');
+    await Say('Saved');
+    DefaultMessageColour();
+    localStorage.setItem('lastSave',n);
+}
+
+async function LoadGame(n) {
+   load = localStorage.getItem('save'+n);
+   if(load) {
+       newglobals = JSON.parse(load);
+       globals = Object.assign(globals,newglobals);
+       EnterRoom( globals.currentRoom );
+       SetMessageColour('yellow');
+       await Say('Loaded');
+       DefaultMessageColour();
+       localStorage.setItem('lastSave',n);
+   }
+}
+
+function LoadLastSave() {
+  var lastSave = localStorage.getItem('lastSave');
+  if(lastSave) {
+    LoadGame(lastSave);
+    return true;
+  }
+  else return false;
+}
