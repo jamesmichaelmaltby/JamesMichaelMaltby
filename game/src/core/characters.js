@@ -13,10 +13,8 @@ async function DefaultMessageColour() {
     await WaitMiliseconds(250);
     SetMessageColour("#fefefe");
 }
-/*DefaultMessageColour();*/
 
-
-function Say(message, id) {
+function Say(message) {
     var promise, ms;
     ms = Math.max(1500,message.length*50);
 
@@ -39,6 +37,11 @@ function Say(message, id) {
 
 var currentHotspots = 0;
 function HotspotSay(room, hotspot, message) {
+    if(message === undefined) {
+        message = hotspot;
+        hotspot = room;
+        room = globals.currentRoom;
+    }
     var promise, ms;
     ms = Math.max(1500,message.length*50);
     
@@ -52,6 +55,10 @@ function HotspotSay(room, hotspot, message) {
     hover.style.top = y + "px";
     hover.style.display = 'block';
     hover.innerHTML = message;
+
+    if(globals.rooms[room].hotspots[hotspot].messageColour) {
+        hover.style.color = globals.rooms[room].hotspots[hotspot].messageColour;
+    }
     if(currentHotspots==0) gamescreen.className += " hoversay";
     currentHotspots++;
     promise = new Promise(function(resolve, reject) {
@@ -60,6 +67,7 @@ function HotspotSay(room, hotspot, message) {
             if(currentHotspots==0) {
                 hover.style.display = 'none';
                 hover.innerHTML = '';
+                hover.style.color = null;
                 gamescreen.className = gamescreen.className.replace(" hoversay", "");
             }
             resolve('timeout done');

@@ -18,6 +18,10 @@ function Hotspot(name,values) {
 }
 
 async function HotspotClick( room, name) {
+    if(name === undefined) {
+        name = room;
+        room = globals.currentRoom;
+    }
     if( game.interfaceLocked ) return;
     if( rooms[room] && rooms[room].hotspots[name] ) {
         if( rooms[room].hotspots[name].click ) {
@@ -30,6 +34,10 @@ async function HotspotClick( room, name) {
 }
 
 async function HotspotDisable( room, name) {
+    if(name === undefined) {
+        name = room;
+        room = globals.currentRoom;
+    }
     if( rooms[room] && rooms[room].hotspots[name] ) {
         globals.rooms[room].hotspots[name].active = false;
         var id = document.getElementById(name);
@@ -38,6 +46,10 @@ async function HotspotDisable( room, name) {
 }
 
 async function HotspotEnable( room, name) {
+    if(name === undefined) {
+        name = room;
+        room = globals.currentRoom;
+    }
     if( rooms[room] && rooms[room].hotspots[name] ) {
         globals.rooms[room].hotspots[name].active = true;
 
@@ -51,6 +63,10 @@ async function HotspotEnable( room, name) {
 
 
 async function HotspotHide( room, name) {
+    if(name === undefined) {
+        name = room;
+        room = globals.currentRoom;
+    }
     if( rooms[room] && rooms[room].hotspots[name] ) {
         globals.rooms[room].hotspots[name].invisible = true;
         var id = document.getElementById(name);
@@ -59,6 +75,10 @@ async function HotspotHide( room, name) {
 }
 
 async function HotspotShow( room, name) {
+    if(name === undefined) {
+        name = room;
+        room = globals.currentRoom;
+    }
     if( rooms[room] && rooms[room].hotspots[name] ) {
         globals.rooms[room].hotspots[name].invisible = false;
         var id = document.getElementById(name);

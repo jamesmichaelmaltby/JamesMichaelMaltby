@@ -11,11 +11,11 @@ function Room(name) {
 }
 
 async function EnterRoom(name) {
-    roomarea.innerHTML = '';
     hover.innerHTML = '';
     hover.style.display = 'none';
-    gameconsole.style.display = 'none';
+    roomarea.style.display = 'none';
     gameconsole.innerHTML = '';
+
     overHotspot = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
@@ -56,6 +56,8 @@ async function EnterRoom(name) {
             if( globals.rooms[name].hotspots[hotspot].invisible ) hotspotdiv.style.visibility = 'hidden';
             else hotspotdiv.style.visibility = 'visible';
         }
+        DefaultMessageColour();
         await rooms[name].enter( globals.rooms[name] );
+        roomarea.style.display = 'block';
     }
 }

@@ -61,17 +61,17 @@ async function LoadGame(n) {
    if(load) {
        newglobals = JSON.parse(load);
        globals = Object.assign(globals,newglobals);
-       EnterRoom( globals.currentRoom );
        SetMessageColour('yellow');
        await Say('Loaded Save ' + n);
        DefaultMessageColour();
        localStorage.setItem('lastSave',n);
+       EnterRoom( globals.currentRoom );
    }
 }
 
-async function LoadLastSave() {
+function LoadLastSave() {
   var lastSave = localStorage.getItem('lastSave');
-  if(lastSave) {
+  if(lastSave !=null ) {
     LoadGame(lastSave);
     return true;
   }

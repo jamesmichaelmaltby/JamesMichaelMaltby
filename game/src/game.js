@@ -3,8 +3,6 @@
 
 
 scripts.main = async function( ) {
-    if( LoadLastSave() ) return;
-
     EnterRoom('start');
     DisableInterface();
     await Say('Typical...');

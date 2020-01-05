@@ -7,12 +7,13 @@ full: true
 
 
 <div id="gamescreen" class="game">
-    {% include_relative bg.svg %}
-<div id="roomarea" class="room"></div>
-<div id="hover" class="hover gpu"></div>
-<div class="console">
-    <div id="console" class="message gpu"></div>
-</div>
+    <div id="roomarea" class="room">
+        {% include_relative bg.svg %}
+    </div>
+    <div id="hover" class="hover gpu"></div>
+    <div class="console">
+        <div id="console" class="message gpu"></div>
+    </div>
 </div>
 
 <script>
@@ -24,5 +25,7 @@ full: true
 {% include_relative src/core/characters.js %}
 {% include_relative src/core/scripts.js %}
 {% include_relative src/game.js %}
-StartScript('main');
+if( !LoadLastSave() ) {
+    StartScript('main');
+}
 </script>
