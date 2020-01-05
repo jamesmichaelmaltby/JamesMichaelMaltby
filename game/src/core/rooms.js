@@ -22,9 +22,11 @@ async function EnterRoom(name) {
         for(hotspot in rooms[name].hotspots) {
             var hotspotdiv;
             if( globals.rooms[name].hotspots[hotspot].svg ) {
-                hotspotdiv = document.getElementById(hotspot);
+                hotspotdiv = document.getElementById( globals.rooms[name].hotspots[hotspot].svg );
                 hotspotdiv.style.cursor = "pointer";
                 hotspotdiv.style.display = "block";
+                hotspotdiv.style['data-id']=hotspot;
+                console.log( hotspotdiv );
             } else {
                 /*hotspotdiv = document.createElement("div");
                 hotspotdiv.className = "game__hotspot gpu";
@@ -34,7 +36,8 @@ async function EnterRoom(name) {
                 hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width;
                 hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height;
                        hotspotdiv.id = hotspot;          
-                roomarea.appendChild(hotspotdiv);*/
+                roomarea.appendChild(hotspotdiv);
+                */
             }
             
             if( globals.rooms[name].hotspots[hotspot].active == false) {

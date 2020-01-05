@@ -2,94 +2,44 @@
 let room = Room('start');
 
 let darkness = Hotspot('darkness', {
-    x:"0%",
-    y:"0%",
-    width:"100%",
-    height:"100%",
     description:'Peer into darkness',
-    active:true,
-    flag:0,
-    svg:true,
-    invisible:true
+    invisible:true,
+    svg:'darkness1'
 });
 
 let door = Hotspot('door', {
-    x:"5%",
-    y:"5%",
-    width:"20%",
-    height:"40%",
     description:'Inspect faint shape',
     active:false,
-    flag:0,
-    invisible:true,
-    svg:true
+    invisible:true
 });
 
 let lightswitch = Hotspot('lightswitch', {
-    x:"75%",
-    y:"30%",
-    width:"20%",
-    height:"20%",
     description:'Investigate object in darkness',
-    active:true,
-    flag:0,
-    on : false,
-    svg:true,
     invisible:true
 });
 
 let anotherlightswitch = Hotspot('anotherlightswitch', {
-    x:"25%",
-    y:"30%",
-    width:"20%",
-    height:"20%",
     description:'Investigate object in darkness',
-    active:true,
-    flag:0,
-    on : false,
-    svg:true,
     invisible:true
 });
-
 
 let yetanotherlightswitch = Hotspot('yetanotherlightswitch', {
-    x:"40%",
-    y:"60%",
-    width:"20%",
-    height:"20%",
     description:'Use well concealed button',
     active:false,
-    flag:0,
     on : true,
-    svg:true,
     invisible:true
 });
 
-
 let floor = Hotspot('floor', {
-    x:"0%",
-    y:"90%",
-    width:"100%",
-    height:"10%",
     description:'Inspect dark area at floor level',
-    active:true,
-    invisible:true,
-    svg:true,
-    flag:0,
+    invisible:true
 });
-
 
 let ceiling = Hotspot('ceiling', {
-    x:"0%",
-    y:"0%",
-    width:"100%",
-    height:"10%",
     description:'Inspect dark area near ceiling',
-    active:true,
-    invisible:true,
-    svg:true,
-    flag:0
+    invisible:true
 });
+
 
 darkness.click = async function( hotspot, locals ) {
     switch( hotspot.flag ) {

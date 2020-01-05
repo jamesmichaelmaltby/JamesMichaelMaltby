@@ -8,7 +8,8 @@ async function logKey(e) {
     } else if (e.code == 'KeyL') {
         load = localStorage.getItem('save');
         if(load) {
-            globals = JSON.parse(load);
+            newglobals = JSON.parse(load);
+            globals = Object.assign(globals,newglobals);
             EnterRoom( globals.currentRoom );
             SetMessageColour('yellow');
             await Say('Loaded');

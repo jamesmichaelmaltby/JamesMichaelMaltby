@@ -1,8 +1,18 @@
 
 
-function Hotspot(name,defaults) {
+function Hotspot(name,values) {
     room = LastCreatedRoom;
-    globals.rooms[room].hotspots[name] = defaults;
+    var defaults = {
+        description:'Untitled Hotspot',
+        active:true,
+        invisible:false,
+        flag:false,
+        on:false,
+        svg:name,
+        name:name,
+        id:name
+    };
+    globals.rooms[room].hotspots[name] = Object.assign(defaults,values);
     return rooms[room].hotspots[name] = {};
 }
 

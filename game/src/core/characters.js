@@ -42,8 +42,9 @@ function HotspotSay(room, hotspot, message) {
     
     var hs = document.getElementById(hotspot);
     var bounds = hs.getBoundingClientRect();
-    var x = parseFloat(bounds.x) + parseFloat(bounds.width)/2;
+    var x = parseFloat(bounds.x) - main.offsetLeft + parseFloat(bounds.width)/2;
     var y = parseFloat(bounds.y) + parseFloat(bounds.height)/2;
+    console.log(bounds);
 
     hover.style.left = x + "px";
     hover.style.top = y + "px";
