@@ -5,13 +5,15 @@ function SetMessageColour(colour) {
     lastColour = gameconsole.style.color;
     gameconsole.style.color = colour;
 }
-function ResetMessageColour(colour) {
+async function ResetMessageColour(colour) {
+    await WaitMiliseconds(250);
     gameconsole.style.color = lastColour;
 }
-function DefaultMessageColour() {
+async function DefaultMessageColour() {
+    await WaitMiliseconds(250);
     SetMessageColour("#fefefe");
 }
-DefaultMessageColour();
+/*DefaultMessageColour();*/
 
 
 function Say(message, id) {

@@ -6,9 +6,13 @@ async function logKey(e) {
     if( code.startsWith('Digit') ) {
         code = code.replace('Digit','');
         if (e.shiftKey) {
-            SaveGame(code);
+            await SaveGame(code);
         } else {
-            LoadGame(code);
+            await LoadGame(code);
+        }
+    } else {
+        if( e.shiftKey && code == 'Escape' ) {
+            ClearAllSavedData();
         }
     }
 }

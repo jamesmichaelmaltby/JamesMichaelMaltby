@@ -31,12 +31,27 @@ function WaitMiliseconds(ms) {
     });
   }
   
-
+async function ClearAllSavedData() {
+  localStorage.removeItem('lastSave');
+  localStorage.removeItem('save0');
+  localStorage.removeItem('save1');
+  localStorage.removeItem('save2');
+  localStorage.removeItem('save3');
+  localStorage.removeItem('save4');
+  localStorage.removeItem('save5');
+  localStorage.removeItem('save6');
+  localStorage.removeItem('save7');
+  localStorage.removeItem('save8');
+  localStorage.removeItem('save9');
+  SetMessageColour('red');
+  await Say('Cleared all saved data');
+  DefaultMessageColour();
+}
 
   async function SaveGame(n) {
     localStorage.setItem('save'+n, JSON.stringify(globals) );
     SetMessageColour('yellow');
-    await Say('Saved');
+    await Say('Saved to slot ' + n);
     DefaultMessageColour();
     localStorage.setItem('lastSave',n);
 }
@@ -48,13 +63,13 @@ async function LoadGame(n) {
        globals = Object.assign(globals,newglobals);
        EnterRoom( globals.currentRoom );
        SetMessageColour('yellow');
-       await Say('Loaded');
+       await Say('Loaded Save ' + n);
        DefaultMessageColour();
        localStorage.setItem('lastSave',n);
    }
 }
 
-function LoadLastSave() {
+async function LoadLastSave() {
   var lastSave = localStorage.getItem('lastSave');
   if(lastSave) {
     LoadGame(lastSave);

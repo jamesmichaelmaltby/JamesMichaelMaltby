@@ -177,23 +177,42 @@ door.click = async function( hotspot, locals ) {
         if( locals.hotspots.lightswitch.on || locals.hotspots.anotherlightswitch.on || locals.hotspots.yetanotherlightswitch.on) {
             if( !hotspot.hurtbydoor ) await Say( 'Here goes...');
             HotspotEnable('start','yetanotherlightswitch');
-
+            hotspot.i++;
             if( locals.hotspots.lightswitch.on ) {
-                HotspotSay('start','lightswitch','*fizzle*');
+                switch( Random(4) ) {
+                    case 0: HotspotSay('start','lightswitch','*fizzle*'); break;
+                    case 1: HotspotSay('start','lightswitch','*buzz*'); break;
+                    case 2: HotspotSay('start','lightswitch','*spark*'); break;
+                    case 3: HotspotSay('start','lightswitch','*zzzzz*'); break;
+                }
                 await WaitSeconds(0.5);
             }
             if( locals.hotspots.anotherlightswitch.on ) {
-                HotspotSay('start','anotherlightswitch','*fizzle*');
+                switch( Random(4) ) {
+                    case 0: HotspotSay('start','anotherlightswitch','*fizzle*'); break;
+                    case 1: HotspotSay('start','anotherlightswitch','*buzz*'); break;
+                    case 2: HotspotSay('start','anotherlightswitch','*spark*'); break;
+                    case 3: HotspotSay('start','anotherlightswitch','*zzzzz*'); break;
+                }
                 await WaitSeconds(0.5);
             }
             if( locals.hotspots.yetanotherlightswitch.on ) {
-                HotspotSay('start','yetanotherlightswitch','*fizzle*');
+                switch( Random(4) ) {
+                    case 0: HotspotSay('start','yetanotherlightswitch','*fizzle*'); break;
+                    case 1: HotspotSay('start','yetanotherlightswitch','*buzz*'); break;
+                    case 2: HotspotSay('start','yetanotherlightswitch','*spark*'); break;
+                    case 3: HotspotSay('start','yetanotherlightswitch','*zzzzz*'); break;
+                }
                 await WaitSeconds(0.5);
             }
-            HotspotSay('start','door','*buzzzzzzzzz*');
+            HotspotSay('start','door','*buzz*');
             await WaitSeconds(1);
             await Say( 'Ouch!');
             if( !hotspot.hurtbydoor ) await Say( 'What was that?!');
+            if( hotspot.i == 3 ) await Say( 'Hey please cut that out?!');
+            else if( hotspot.i == 6 ) await Say( 'I know this must be the way out but it hurts!');
+            else if( hotspot.i == 9 ) await Say( 'I must be masocistic.');
+            
             hotspot.hurtbydoor = true;  
         } else {
             await Say( 'Congratulations! You escaped the room!');
