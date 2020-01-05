@@ -16,7 +16,6 @@
 	.st8{display:inline;}
 	.st9{display:inline;fill:#1D1D1B;}
 	.st10{fill:#1D1D1B;}
-	.st11{fill:#FFFFFF;}
 </style>
 <g id="background">
 	<g id="landscape" class="st0">
@@ -11252,14 +11251,8 @@
 	<rect x="215.6" y="64.6" class="st10" width="31.4" height="27.4"/>
 </g>
 <g id="door">
-	<g>
-		<circle class="st11" cx="41.7" cy="94.6" r="1.9"/>
-		<rect x="5.4" y="27.9" class="st11" width="72.7" height="41"/>
-	</g>
-	<g>
-		<circle class="hotspot" cx="41.7" cy="94.6" r="1.9"/>
-		<rect x="5.4" y="27.9" class="st10" width="72.7" height="41"/>
-	</g>
+	<circle class="hotspot" cx="41.7" cy="94.6" r="1.9"/>
+	<rect x="5.4" y="27.9" class="st10" width="72.7" height="41"/>
 </g>
 <g id="paths" class="st0">
 	<g class="st8">
