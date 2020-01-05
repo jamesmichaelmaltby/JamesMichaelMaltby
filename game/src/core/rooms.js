@@ -25,8 +25,7 @@ async function EnterRoom(name) {
                 hotspotdiv = document.getElementById( globals.rooms[name].hotspots[hotspot].svg );
                 hotspotdiv.style.cursor = "pointer";
                 hotspotdiv.style.display = "block";
-                hotspotdiv.style['data-id']=hotspot;
-                console.log( hotspotdiv );
+                hotspotdiv.id = hotspot;
             } else {
                 /*hotspotdiv = document.createElement("div");
                 hotspotdiv.className = "game__hotspot gpu";

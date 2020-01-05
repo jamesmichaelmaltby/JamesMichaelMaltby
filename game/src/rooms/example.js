@@ -3,8 +3,7 @@ let room = Room('start');
 
 let darkness = Hotspot('darkness', {
     description:'Peer into darkness',
-    invisible:true,
-    svg:'darkness1'
+    invisible:true
 });
 
 let door = Hotspot('door', {
@@ -42,7 +41,7 @@ let ceiling = Hotspot('ceiling', {
 
 
 darkness.click = async function( hotspot, locals ) {
-    switch( hotspot.flag ) {
+    switch( hotspot.i ) {
         case 0:
             await Say('Hello darkness my old friend');
             hotspot.description = 'Look closer into darkness';
@@ -57,13 +56,13 @@ darkness.click = async function( hotspot, locals ) {
             HotspotDisable('start','darkness');
             break;
     }
-    hotspot.flag++;
-    if( hotspot.flag>2 ) hotspot.flag=0;
+    hotspot.i++;
+    if( hotspot.i>2 ) hotspot.i=0;
 };
 
 lightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
-    switch( hotspot.flag ) {
+    switch( hotspot.i ) {
         case 0:
             await Say('Hey there is something here!');
             hotspot.description = 'Touch object in darkness';
@@ -109,12 +108,12 @@ lightswitch.click = async function( hotspot, locals ) {
                 Say('Nothing');
             }
     }
-    hotspot.flag++;
+    hotspot.i++;
 };
 
 anotherlightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
-    switch( hotspot.flag ) {
+    switch( hotspot.i ) {
         case 0:
             await Say('I think I can see something!');
             hotspot.description = 'Touch object in darkness';
@@ -159,7 +158,7 @@ anotherlightswitch.click = async function( hotspot, locals ) {
                 Say('Nothing');
             }
     }
-    hotspot.flag++;
+    hotspot.i++;
 };
 
 

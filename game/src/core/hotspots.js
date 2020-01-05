@@ -7,6 +7,7 @@ function Hotspot(name,values) {
         active:true,
         invisible:false,
         flag:false,
+        i:0,
         on:false,
         svg:name,
         name:name,
