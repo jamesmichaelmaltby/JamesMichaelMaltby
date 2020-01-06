@@ -52,10 +52,8 @@ async function ClearAllSavedData() {
 async function ResetGame() {
   DisableInterface();
   if(defaultGlobals === undefined) return;
+  globals = JSON.parse(defaultGlobals);
 
-  console.log(defaultGlobals);
-  globals = Object.assign({},defaultGlobals);
-  
   SetMessageColour('red');
   await Say('Game resetting');
   DefaultMessageColour();
