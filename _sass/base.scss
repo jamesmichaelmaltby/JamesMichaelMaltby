@@ -18,7 +18,7 @@ body {
     position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
     /*body,html { margin: 0; height: 100%; overflow: hidden; }*/
 }
 
@@ -118,7 +118,7 @@ td {
     box-sizing: border-box;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1023px) {
     blockquote {
         max-width: 780px;
     }

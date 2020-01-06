@@ -1,33 +1,80 @@
 .game {
-    //position:absolute;
-    //left:0;
-    //right:0;
-    background:rgb(14,14,14);
-    //top:0;
-    //bottom:0;
+    background:rgb(14,14,14); 
     color:#fefefe;
-    /*font-family:"Lucida Console", Monaco, monospace;*/
-    overflow:hidden;
-    padding:4rem;
+    padding:0;
     font-weight:700;
-    font-size:14pt;
+    font-size:0.8rem;
     box-sizing:border-box;
-    width:100%;
-    height:100%;
-    text-shadow:-2px -2px 2px 2px 0px black;
     margin: 0;
     text-align: center;
-    position:relative;
-    min-height:50vh;
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.room {
+    width:100%;
+    height:100%;
+    position: relative;
+    overflow:hidden;
+    padding-top:56.25%;
+}
+
+@media (min-width: 1023px) {
+    .game {
+        font-size:1rem;
+    }
+}
+.room svg {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1023px) {
+    .room {
+        padding-top:0;
+    }
+    .room svg {
+        min-height: 100%;
+        min-width: 100%;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: 100%;
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.game svg g {
+    pointer-events:all;
 }
 
 .console {
     z-index:500;
     position: absolute;
-    top:2rem;
+    top:2em;
     left:0;
     right:0;
     text-align: center;
+    pointer-events: none;
 }
 
 .game .hover {
@@ -35,26 +82,49 @@
     top:0;
     left:0;
     transform: translate(-50%, -150%);
-    color:#444;
+    color:#777;
     white-space:nowrap;
     transition:opacity 0.1s linear;
     transition-delay: 0.4s;
     opacity:1.0;
     z-index:250;
+    background-color:rgba(14,14,14,0.8);
+    padding:0.5em 1.5em;
+    border-radius:2em;
+    pointer-events: none;
 }
 
-.game.nointerface, .game.nointerface .game__hotspot {
-     cursor:none;
+.game .message {
+    margin:0 auto;
+    display:inline-block;
+    color:#777;
+    white-space:nowrap;
+    transition:opacity 0.1s linear;
+    transition-delay: 0.4s;
+    opacity:1.0;
+    z-index:250;
+    background-color:rgba(14,14,14,0.8);
+    padding:0.5em 1.5em;
+    border-radius:2rem;
+    pointer-events: none;
+}
+
+.game.nointerface {
+    cursor:none !important;
+}
+.game.nointerface .game__hotspot, .game.nointerface svg, .game.nointerface g {
+     cursor:none !important;
+     pointer-events: none;
 }
 .game.nointerface .hover {
     opacity:0;
-    color:#aaa;
+    color:#ccc;
 }
 
 .game.nointerface.hoversay .hover {
     opacity:1.0;
     transition:none;
-    color:#aaa;
+    color:#777;
 }
 
 
@@ -84,4 +154,8 @@
    -moz-transform: translate3d(0, 0, 0);
    -ms-transform: translate3d(0, 0, 0);
    transform: translate3d(0, 0, 0);
+}
+
+.game svg g .hotspot {
+    pointer-events: none;
 }

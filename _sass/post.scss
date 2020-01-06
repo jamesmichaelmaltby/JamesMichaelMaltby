@@ -21,16 +21,16 @@ margin:0 auto 0 auto;
     border-top:1px solid #ddd;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
     .jmm-post {
-        padding:3rem 6rem;
+        padding:3rem;
         margin:0 ;
         max-width:100%;
     }
 }
 
 
-@media (min-width: 1366px) { 
+@media (min-width: 1365px) { 
     .jmm-post__sidebar {
         position: absolute;width:250px;right:2rem;top:3rem;bottom:0;
         position:fixed;

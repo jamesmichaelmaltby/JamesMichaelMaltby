@@ -1,19 +1,20 @@
+
+
 async function logKey(e) {
     if( game.interfaceLocked ) return;
-    if (e.code == 'KeyS') {
-        localStorage.setItem('save', JSON.stringify(globals) );
-        console.log( JSON.parse(localStorage.getItem('save') ) );
-        SetMessageColour('yellow');
-        await Say('Saved');
-        ResetMessageColour();
-    } else if (e.code == 'KeyL') {
-        load = localStorage.getItem('save');
-        if(load) {
-            globals = JSON.parse(load);
-            EnterRoom( globals.currentRoom );
-            SetMessageColour('yellow');
-            await Say('Loaded');
-            ResetMessageColour();
+    var code = e.code;
+    if( code.startsWith('Digit') ) {
+        code = code.replace('Digit','');
+        if (e.shiftKey) {
+            await SaveGame(code);
+        } else {
+            await LoadGame(code);
+        }
+    } else {
+        if( e.shiftKey && code == 'Escape' ) {
+            ClearAllSavedData();
+        } else if( e.shiftKey && code == 'KeyR' ) {
+            ResetGame();
         }
     }
 }
@@ -26,7 +27,13 @@ function mouseMove(e) {
     var y = (e.clientY - main.offsetTop);
     hover.style.left = x + "px";
     hover.style.top = y + "px";
-    hover.innerHTML = overHotspot;
+    if( overHotspot) { 
+        hover.style.display = 'block';
+        hover.innerHTML = overHotspot;
+    } else {
+        hover.style.display = 'none';
+        hover.innerHTML = '';
+    }
     overHotspot = '';
 }
 gamescreen.addEventListener('mousemove', mouseMove);
