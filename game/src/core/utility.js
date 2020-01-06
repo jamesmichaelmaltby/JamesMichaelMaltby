@@ -65,7 +65,12 @@ async function ResetGame() {
   async function SaveGame(n) {
     localStorage.setItem('save'+n, JSON.stringify(globals) );
     SetMessageColour('yellow');
-    await Say('Saved to Slot ' + n);
+
+    if(n==0 || n=='0') {
+      await Say('Autosaved');
+    } else {
+      await Say('Saved to Slot ' + n);
+    }
     DefaultMessageColour();
     localStorage.setItem('lastSave',n);
 }
@@ -76,7 +81,11 @@ async function LoadGame(n) {
        newglobals = JSON.parse(load);
        globals = Object.assign(globals,newglobals);
        SetMessageColour('yellow');
-       await Say('Loading Save ' + n);
+       if(n==0 || n=='0') {
+        await Say('Loading Autosave');
+        } else {
+        await Say('Loading Save ' + n);
+        }
        DefaultMessageColour();
        localStorage.setItem('lastSave',n);
        EnterRoom( globals.currentRoom );
