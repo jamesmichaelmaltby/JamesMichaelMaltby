@@ -1,6 +1,18 @@
 
-(function() { {% include_relative src/rooms/example.js %} })();
-
+{% include_relative /src/core/main.js %}
+{% include_relative /src/core/input.js %}
+{% include_relative /src/core/utility.js %}
+{% include_relative /src/core/rooms.js %}
+{% include_relative /src/core/hotspots.js %}
+{% include_relative /src/core/characters.js %}
+{% include_relative /src/core/scripts.js %}
+{% for file in site.static_files %}
+{% if file.path contains '/rooms/' %}
+(function() { 
+  {% include_relative /src/rooms/{{ file.name }} %}
+})();
+{% endif %}
+{% endfor %}
 
 scripts.main = async function( ) {
     EnterRoom('start');
@@ -11,3 +23,7 @@ scripts.main = async function( ) {
     EnableInterface();
 };
 
+var defaultGlobals = JSON.stringify(globals);
+if( !LoadLastSave() ) {
+    StartScript('main');
+}
