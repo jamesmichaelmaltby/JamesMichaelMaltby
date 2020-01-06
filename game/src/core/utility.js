@@ -48,6 +48,22 @@ async function ClearAllSavedData() {
   DefaultMessageColour();
 }
 
+
+async function ResetGame() {
+  DisableInterface();
+  if(defaultGlobals === undefined) return;
+
+  console.log(defaultGlobals);
+  globals = Object.assign({},defaultGlobals);
+  
+  SetMessageColour('red');
+  await Say('Game resetting');
+  DefaultMessageColour();
+  await WaitMiliseconds(250);
+  EnableInterface();
+  StartScript('main');
+}
+
   async function SaveGame(n) {
     localStorage.setItem('save'+n, JSON.stringify(globals) );
     SetMessageColour('yellow');

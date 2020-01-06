@@ -25,6 +25,7 @@ full: true
 {% include_relative src/core/characters.js %}
 {% include_relative src/core/scripts.js %}
 {% include_relative src/game.js %}
+var defaultGlobals = Object.assign({},globals);
 if( !LoadLastSave() ) {
     StartScript('main');
 }

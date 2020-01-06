@@ -13,6 +13,8 @@ async function logKey(e) {
     } else {
         if( e.shiftKey && code == 'Escape' ) {
             ClearAllSavedData();
+        } else if( e.shiftKey && code == 'KeyR' ) {
+            ResetGame();
         }
     }
 }
