@@ -51,7 +51,7 @@ async function ClearAllSavedData() {
   async function SaveGame(n) {
     localStorage.setItem('save'+n, JSON.stringify(globals) );
     SetMessageColour('yellow');
-    await Say('Saved to slot ' + n);
+    await Say('Saved to Slot ' + n);
     DefaultMessageColour();
     localStorage.setItem('lastSave',n);
 }
@@ -62,7 +62,7 @@ async function LoadGame(n) {
        newglobals = JSON.parse(load);
        globals = Object.assign(globals,newglobals);
        SetMessageColour('yellow');
-       await Say('Loaded Save ' + n);
+       await Say('Loading Save ' + n);
        DefaultMessageColour();
        localStorage.setItem('lastSave',n);
        EnterRoom( globals.currentRoom );
