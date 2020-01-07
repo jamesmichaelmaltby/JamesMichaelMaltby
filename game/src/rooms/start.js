@@ -91,8 +91,8 @@ async function lightswitches(name,hotspot,locals) {
                 hotspot.description = 'Touch object in darkness';
                 break;
             case 1:
-                await Say('It feels like a button!');
-                if( locals.triedswitch ) await Say('I better not get my hopes up.');
+                await Say('It feels like a button...');
+                if( locals.triedswitch ) await Say('...I better not get my hopes up.');
                 hotspot.description = 'Use button';
                 break;
             case 2:
@@ -218,7 +218,7 @@ panel.click = async function( hotspot, locals ) {
         }
     } else if( hotspot.triedpanel ) {
         if( locals.hotspots.lightswitch.on || locals.hotspots.anotherlightswitch.on || locals.hotspots.yetanotherlightswitch.on) {
-            if( !hotspot.hurtbypanel ) await Say( 'I cannot see anything...');
+            if( !hotspot.hurtbypanel ) await Say( 'I think I can get my hand inside...');
             HotspotEnable('yetanotherlightswitch');
             hotspot.i++;
             if( locals.hotspots.lightswitch.on ) {
@@ -265,7 +265,7 @@ panel.click = async function( hotspot, locals ) {
             hotspot.hurtbypanel = true;  
         }
     } else {
-        await Say( 'Hang on a minute I think there is a panel on the wall here');
+        await Say( 'Hang on a minute I think there is a panel on the wall here.');
         hotspot.triedpanel = true;
         hotspot.description = 'Touch panel';
     }
@@ -290,7 +290,7 @@ room.enter = async function( locals ) {
     + LoadSound('error.aiff')
     + LoadSound('ding.wav')
     + LoadSound('input.wav');
-    /*PlaySound('murder-scene', true);*/
+    PlaySound('murder-scene', true);
 };
 
 room.exit = async function( locals ) {

@@ -43,9 +43,9 @@ if(audiocontext) {
     music.gain.value = 0.75;
     music.connect(master);
 }
-var looping;
-function PlaySound(name, loop) {
-    if(loop && looping) StopLoop();
+var loopSource;
+function PlaySound(name, loop, resume) {
+    if(loop && loopSource) StopLoop();
     if(audiocontext === undefined) return;
     if(resources.audio[name]===undefined) return;
     var source = audiocontext.createBufferSource(); 
@@ -53,7 +53,7 @@ function PlaySound(name, loop) {
     source.loop = loop;      
     if(loop) {
         source.connect(music); 
-        looping = source;
+        loopSource = source;
     }
     else source.connect(master);     
     source.start(0);     
@@ -61,5 +61,8 @@ function PlaySound(name, loop) {
 }
 
 function StopLoop() {
-    if(looping) looping.stop();
+    if(loopSource) {
+        loopSource.stop();
+        loopSource = null;
+    }
 }

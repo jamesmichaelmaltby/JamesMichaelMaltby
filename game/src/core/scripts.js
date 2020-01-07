@@ -1,4 +1,6 @@
-
+function ResumeScripts() {
+    
+}
 
 async function StartScript(script, loop, resume) {
     if( scripts.running[script] ) return;
@@ -31,8 +33,6 @@ async function StartScript(script, loop, resume) {
         } else {
             globals.scripts[script].maxiterations = 0;
         }
-
-        alert('About to run...');
         
         async function RunScript() {
             var stopscript = false;

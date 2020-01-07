@@ -14,7 +14,7 @@ var resources = {
     backgrounds:{}
 };
 var game = {
-    interfaceLocked:false
+    interfaceLocked:true
 };
 var globals = {
     rooms : {},

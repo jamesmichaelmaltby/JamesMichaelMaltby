@@ -42,10 +42,6 @@ function click(e) {
     if( defaultGlobals ) return;
     audiocontext.resume();
     defaultGlobals = JSON.stringify(globals);
-    DefaultMessageColour();
-    if( !LoadLastSave() ) {
-        console.log('Starting new game');
-        StartScript('main');
-    }
+    LoadLastSave();
 }
 gamescreen.addEventListener('click', click);

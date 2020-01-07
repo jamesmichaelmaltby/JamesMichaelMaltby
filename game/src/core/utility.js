@@ -57,9 +57,7 @@ async function ResetGame() {
   SetMessageColour('red');
   await Say('Game resetting');
   DefaultMessageColour();
-  await WaitMiliseconds(250);
   EnableInterface();
-
   StartScript('main');
 }
 
@@ -80,6 +78,7 @@ async function LoadGame(n) {
    load = localStorage.getItem('save'+n);
    if(load) {
        newglobals = JSON.parse(load);
+       await ClearRoom();
        globals = Object.assign(globals,newglobals);
        SetMessageColour('yellow');
        if(n==0 || n=='0') {
@@ -89,6 +88,8 @@ async function LoadGame(n) {
         }
        DefaultMessageColour();
        localStorage.setItem('lastSave',n);
+       game.interfaceLocked = false;
+       ResumeScripts();
        EnterRoom( globals.currentRoom );
    }
 }
@@ -97,7 +98,8 @@ function LoadLastSave() {
   var lastSave = localStorage.getItem('lastSave');
   if(lastSave !=null ) {
     LoadGame(lastSave);
-    return true;
+  } else {
+    game.interfaceLocked = false;
+    StartScript('main');
   }
-  else return false;
 }
