@@ -2,6 +2,7 @@
 {% include_relative /src/core/main.js %}
 {% include_relative /src/core/input.js %}
 {% include_relative /src/core/utility.js %}
+{% include_relative /src/core/audio.js %}
 {% include_relative /src/core/rooms.js %}
 {% include_relative /src/core/hotspots.js %}
 {% include_relative /src/core/characters.js %}
