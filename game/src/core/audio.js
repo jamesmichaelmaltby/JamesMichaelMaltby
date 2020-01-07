@@ -37,13 +37,23 @@ async function LoadSound(name) {
     });
 }
 
+if(audiocontext) {
+    var master = audiocontext.createGain();
+    master.gain.value = 0.25;
+    master.connect(audiocontext.destination);
+    var music = audiocontext.createGain();
+    music.gain.value = 0.75;
+    music.connect(master);
+}
 
 function PlaySound(name, loop) {
     if(audiocontext === undefined) return;
     if(sounds[name]===undefined) return;;
     var source = audiocontext.createBufferSource(); 
     source.buffer = sounds[name];       
-    source.loop = loop;             
-    source.connect(audiocontext.destination);       
+    source.loop = loop;      
+    if(loop) source.connect(music); 
+    else source.connect(master);     
     source.start(0);     
+    source.connect(music);
 }
