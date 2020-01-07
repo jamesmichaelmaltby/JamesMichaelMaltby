@@ -10,10 +10,16 @@ function Room(name) {
     };
 }
 
+
+async function LoadBackground(name) {
+
+}
+
 async function EnterRoom(name) {
     hover.innerHTML = '';
     hover.style.display = 'none';
     roomarea.style.display = 'none';
+    roomarea.innerHTML = '';
     gameconsole.innerHTML = '';
 
     overHotspot = '';
@@ -23,20 +29,12 @@ async function EnterRoom(name) {
             var hotspotdiv;
             if( globals.rooms[name].hotspots[hotspot].svg ) {
                 hotspotdiv = document.getElementById( globals.rooms[name].hotspots[hotspot].svg );
+                if( hotspotdiv === undefined) return alert('Error hotspot not found');
+                console.log(hotspotdiv);
+
                 hotspotdiv.style.cursor = "pointer";
                 hotspotdiv.style.display = "block";
                 hotspotdiv.id = hotspot;
-            } else {
-                /*hotspotdiv = document.createElement("div");
-                hotspotdiv.className = "game__hotspot gpu";
-                hotspotdiv.style.position = "absolute";
-                hotspotdiv.style.left = globals.rooms[name].hotspots[hotspot].x;
-                hotspotdiv.style.top = globals.rooms[name].hotspots[hotspot].y;
-                hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width;
-                hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height;
-                       hotspotdiv.id = hotspot;          
-                roomarea.appendChild(hotspotdiv);
-                */
             }
             
             if( globals.rooms[name].hotspots[hotspot].active == false) {
@@ -56,7 +54,6 @@ async function EnterRoom(name) {
             if( globals.rooms[name].hotspots[hotspot].invisible ) hotspotdiv.style.visibility = 'hidden';
             else hotspotdiv.style.visibility = 'visible';
         }
-        DefaultMessageColour();
         await rooms[name].enter( globals.rooms[name] );
         roomarea.style.display = 'block';
     }
