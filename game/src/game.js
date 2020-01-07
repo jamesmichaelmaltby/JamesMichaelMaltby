@@ -25,6 +25,7 @@ scripts.main = async function( ) {
 };
 
 var defaultGlobals = JSON.stringify(globals);
+gamescreen.click();
 if( !LoadLastSave() ) {
     StartScript('main');
 }

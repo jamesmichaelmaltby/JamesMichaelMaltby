@@ -246,9 +246,7 @@ ceiling.click = async function( hotspot, locals ) {
 
 room.enter = async function( locals ) {
     await LoadSound('murder-scene');
-    console.log('Loaded?');
     PlaySound('murder-scene');
-    console.log('Played?');
 };
 
 room.exit = async function( locals ) {

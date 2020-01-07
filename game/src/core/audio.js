@@ -22,26 +22,26 @@ async function LoadSound(name) {
     request.onload = function() {
         audiocontext.decodeAudioData(request.response, function(buffer) {
             sounds[name] = buffer;
-            console.log(buffer);
+            request.loaded = true;
         }, null);
     };
     request.send();
-
     return new Promise(resolve => {
         var loading = setInterval(() => {
-            if(request.readyState == 4) {
+            if(request.loaded) {
                 resolve('done');
                 clearInterval(loading);
             }
-        }, 2000);
+        }, 10);
     });
 }
 
 
-async function PlaySound(name) {
+function PlaySound(name) {
     if(audiocontext === undefined) return;
+    if(sounds[name]===undefined) return;;
     var source = audiocontext.createBufferSource(); 
     source.buffer = sounds[name];                    
     source.connect(audiocontext.destination);       
-    source.start(0);                                                               
+    source.start(0);                                                         
 }

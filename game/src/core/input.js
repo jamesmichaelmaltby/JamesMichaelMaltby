@@ -38,3 +38,8 @@ function mouseMove(e) {
 }
 gamescreen.addEventListener('mousemove', mouseMove);
 
+
+function click(e) {
+    audiocontext.resume();
+}
+gamescreen.addEventListener('click', click);
