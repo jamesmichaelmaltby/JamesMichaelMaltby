@@ -66,9 +66,20 @@ lightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
     if( locals.panelfixed ) {
         PlaySound('button');
-        await HotspotSay('anotherlightswitch','*klik*');
-        if(hotspot.on) await Say('It is now on');
-        else await Say('It is now off');
+        await HotspotSay('lightswitch','*klik*');
+        if( locals.codeposition == 3) {
+            PlaySound('ding');
+            await HotspotSay('panel','*ding*');
+            await Say('You win');
+            locals.codeposition = 0;
+        } else {
+            PlaySound('error');
+            await HotspotSay('panel','*error*');
+            /*PlaySound('button');
+            await HotspotSay('lightswitch','*klik*');*/
+            hotspot.on = false;
+            locals.codeposition=0;
+        }
     } else {
         switch( hotspot.i ) {
             case 0:
@@ -140,8 +151,16 @@ anotherlightswitch.click = async function( hotspot, locals ) {
     if( locals.panelfixed ) {
         PlaySound('button');
         await HotspotSay('anotherlightswitch','*klik*');
-        if(hotspot.on) await Say('It is now on');
-        else await Say('It is now off');
+        if( locals.codeposition == 1) {
+            locals.codeposition++;
+        } else {
+            PlaySound('error');
+            await HotspotSay('panel','*error*');
+            /*PlaySound('shock1');
+            await HotspotSay('anotherlightswitch','*buzz*');*/
+            hotspot.on = false;
+            locals.codeposition=0;
+        }
     } else { 
         switch( hotspot.i ) {
             case 0:
@@ -213,8 +232,16 @@ yetanotherlightswitch.click = async function( hotspot, locals ) {
     PlaySound('button');
     await HotspotSay('yetanotherlightswitch','*klik*');
     if( locals.panelfixed ) {
-        if(hotspot.on) await Say('It is now on');
-        else await Say('It is now off');
+        if( locals.codeposition == 0 || locals.codeposition == 2) {
+            locals.codeposition++;
+        } else {
+            PlaySound('error');
+            await HotspotSay('panel','*error*');
+            /*PlaySound('button');
+            await HotspotSay('yetanotherlightswitch','*klik*');*/
+            hotspot.on = false;
+            locals.codeposition=0;
+        }
     } else {
         if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
             PlaySound('power-down');
@@ -243,6 +270,10 @@ panel.click = async function( hotspot, locals ) {
                 await Say( '...I am really not much of an electrician.');
                 hotspot.description = 'Inspect panel';
                 locals.panelfixed  = true;
+                locals.hotspots.lightswitch.description = "Use button";
+                locals.hotspots.anotherlightswitch.description = "Use button";
+                locals.hotspots.yetanotherlightswitch.description = "Use button"; 
+                locals.codeposition = 0;
             } else {
                 await Say( 'I think I can feel some loss wires...');
                 await Say( '...they are not connected to anything.');
@@ -316,11 +347,13 @@ ceiling.click = async function( hotspot, locals ) {
 };
 
 room.enter = async function( locals ) {
-    await LoadSound('murder-scene.mp3');
-    await LoadSound('shock1.wav');
-    await LoadSound('shock2.wav');
-    await LoadSound('button.wav');
-    await LoadSound('power-down.mp3');
+    await LoadSound('murder-scene.mp3') 
+    + LoadSound('shock1.wav') 
+    + LoadSound('shock2.wav') 
+    + LoadSound('button.wav')
+    + LoadSound('power-down.mp3')
+    + LoadSound('error.aiff')
+    + LoadSound('ding.wav');
     PlaySound('murder-scene', true);
 };
 
