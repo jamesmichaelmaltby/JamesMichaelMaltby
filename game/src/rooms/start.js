@@ -290,7 +290,7 @@ room.enter = async function( locals ) {
     + LoadSound('error.aiff')
     + LoadSound('ding.wav')
     + LoadSound('input.wav');
-    PlaySound('murder-scene', true);
+    /*PlaySound('murder-scene', true);*/
 };
 
 room.exit = async function( locals ) {

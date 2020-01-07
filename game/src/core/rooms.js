@@ -11,17 +11,45 @@ function Room(name) {
 }
 
 
-async function LoadBackground(name) {
 
+async function ClearRoom() {
+    roomarea.innerHTML = '';
+    StopLoop();
+}
+
+async function RenderBackground(name) {
+    roomarea.innerHTML = resources.backgrounds[name];
+}
+
+async function LoadBackground(name) {
+    if(resources.backgrounds[name]) RenderBackground(name);
+    else {
+        var request = new XMLHttpRequest();
+        request.open('GET', 'src/backgrounds/' + name + '.svg', true);
+        request.onload = function() {
+            resources.backgrounds[name] = request.response;
+            RenderBackground(name);
+            request.loaded = true;
+        };
+        request.send();
+        return new Promise(resolve => {
+            var loading = setInterval(() => {
+                if(request.loaded) {
+                    resolve('done');
+                    clearInterval(loading);
+                }
+            }, 10);
+        });
+    }
 }
 
 async function EnterRoom(name) {
     hover.innerHTML = '';
     hover.style.display = 'none';
     roomarea.style.display = 'none';
-    roomarea.innerHTML = '';
     gameconsole.innerHTML = '';
-
+    await LoadBackground(name);
+    
     overHotspot = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
@@ -30,8 +58,6 @@ async function EnterRoom(name) {
             if( globals.rooms[name].hotspots[hotspot].svg ) {
                 hotspotdiv = document.getElementById( globals.rooms[name].hotspots[hotspot].svg );
                 if( hotspotdiv === undefined) return alert('Error hotspot not found');
-                console.log(hotspotdiv);
-
                 hotspotdiv.style.cursor = "pointer";
                 hotspotdiv.style.display = "block";
                 hotspotdiv.id = hotspot;

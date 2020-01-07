@@ -50,15 +50,16 @@ async function ClearAllSavedData() {
 
 
 async function ResetGame() {
-  DisableInterface();
   if(defaultGlobals === undefined) return;
+  DisableInterface();
+  ClearRoom();
   globals = JSON.parse(defaultGlobals);
-
   SetMessageColour('red');
   await Say('Game resetting');
   DefaultMessageColour();
   await WaitMiliseconds(250);
   EnableInterface();
+
   StartScript('main');
 }
 

@@ -9,6 +9,10 @@ var scripts = {
     running : {}
 };
 var rooms = {};
+var resources = {
+    audio:{},
+    backgrounds:{}
+};
 var game = {
     interfaceLocked:false
 };
