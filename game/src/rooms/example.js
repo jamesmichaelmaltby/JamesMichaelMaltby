@@ -62,22 +62,26 @@ darkness.click = async function( hotspot, locals ) {
     if( hotspot.i>2 ) hotspot.i=0;
 };
 
-lightswitch.click = async function( hotspot, locals ) {
+
+async function lightswitches(name,hotspot,locals) {
     hotspot.on = !hotspot.on;
     if( locals.panelfixed ) {
         PlaySound('button');
-        await HotspotSay('lightswitch','*klik*');
-        if( locals.codeposition == 3) {
+        await WaitMiliseconds(200);
+        PlaySound('input');
+        await HotspotSay(name,'*beep*');
+        if( name == 'anotherlightswitch' && locals.codeposition == 1) {
+            locals.codeposition++;
+        } else if( name == 'lightswitch' && locals.codeposition == 3) {
             PlaySound('ding');
+            locals.hotspots.panel.messageColour = 'green';
             await HotspotSay('panel','*ding*');
+            locals.hotspots.panel.messageColour = 'red';
             await Say('You win');
             locals.codeposition = 0;
         } else {
             PlaySound('error');
             await HotspotSay('panel','*error*');
-            /*PlaySound('button');
-            await HotspotSay('lightswitch','*klik*');*/
-            hotspot.on = false;
             locals.codeposition=0;
         }
     } else {
@@ -95,7 +99,7 @@ lightswitch.click = async function( hotspot, locals ) {
                 if( locals.triedswitch ) {
                     await Say('Deep breath...');
                     PlaySound('button');
-                    await HotspotSay('lightswitch','*klik*');
+                    await HotspotSay(name,'*klik*');
                     await WaitSeconds(2);
                     await Say('*sigh*');
                     await WaitSeconds(1);
@@ -109,7 +113,7 @@ lightswitch.click = async function( hotspot, locals ) {
                 } else { 
                     await Say('Here goes...');
                     PlaySound('button');
-                    await HotspotSay('lightswitch','*klik*');
+                    await HotspotSay(name,'*klik*');
                     await WaitSeconds(2);
                     await Say('Nothing happened...');
                     await Say('...just my luck!');
@@ -120,7 +124,7 @@ lightswitch.click = async function( hotspot, locals ) {
             default:
                 if( locals.hotspots.panel.triedpanel ) {
                     PlaySound('button');
-                    await HotspotSay('lightswitch','*klik*');
+                    await HotspotSay(name,'*klik*');
                     if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
                         PlaySound('power-down');
                         await HotspotSay('panel','*powering down*');
@@ -137,100 +141,29 @@ lightswitch.click = async function( hotspot, locals ) {
                     }
                 } else {
                     PlaySound('button');
-                    await HotspotSay('lightswitch','*klik*');
+                    await HotspotSay(name,'*klik*');
                     await WaitSeconds(1);
                     Say('Nothing');
                 }
         }
         hotspot.i++;
     }
+};
+
+lightswitch.click = async function( hotspot, locals ) {
+    await lightswitches('lightswitch',hotspot,locals);
 };
 
 anotherlightswitch.click = async function( hotspot, locals ) {
-    hotspot.on = !hotspot.on;
-    if( locals.panelfixed ) {
-        PlaySound('button');
-        await HotspotSay('anotherlightswitch','*klik*');
-        if( locals.codeposition == 1) {
-            locals.codeposition++;
-        } else {
-            PlaySound('error');
-            await HotspotSay('panel','*error*');
-            /*PlaySound('shock1');
-            await HotspotSay('anotherlightswitch','*buzz*');*/
-            hotspot.on = false;
-            locals.codeposition=0;
-        }
-    } else { 
-        switch( hotspot.i ) {
-            case 0:
-                await Say('I think I can see something!');
-                hotspot.description = 'Touch object in darkness';
-                break;
-            case 1:
-                await Say('It feels like a button!');
-                if( locals.triedswitch ) await Say('I better not get my hopes up.');
-                hotspot.description = 'Use button';
-                break;
-            case 2:
-                if( locals.triedswitch ) {
-                    await Say('Deep breath...');
-                    PlaySound('button');
-                    await HotspotSay('anotherlightswitch','*klik*');
-                    await WaitSeconds(2);
-                    await Say('*sigh*');
-                    await WaitSeconds(1);
-                    PlaySound('shock2');
-                    await HotspotSay('panel','*buzzing noises*');
-                    await HotspotSay('panel','*electricical spark*');
-                    HotspotEnable('panel');
-                    await WaitSeconds(1);
-                    await Say('Hmmm I wonder where that came from?');
-                    hotspot.description = 'Use ambiguous button';
-                } else { 
-                    await Say('Here goes...');
-                    PlaySound('button');
-                    await HotspotSay('anotherlightswitch','*klik*');
-                    await WaitSeconds(2);
-                    await Say('Nothing happened...');
-                    await Say('...just my luck!');
-                    locals.triedswitch = true;
-                    hotspot.description = 'Use useless button';
-                }
-                break;
-            default:
-                if( locals.hotspots.panel.triedpanel ) {
-                    PlaySound('button');
-                    await HotspotSay('anotherlightswitch','*klik*');
-                    if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
-                        PlaySound('power-down');
-                        locals.powerdown = true;
-                        await HotspotSay('panel','*powering down*');
-                        await WaitSeconds(1);
-                        await Say('Hey I think the buzzing stopped!');
-                        await Say('Maybe I should not be playing with these buttons in the dark.');
-                    } else {
-                        if(locals.powerdown) {
-                            PlaySound('shock2');
-                            await HotspotSay('panel','*buzzing*');
-                            locals.powerdown = false;
-                        }
-                    }
-                } else {
-                    PlaySound('button');
-                    await HotspotSay('anotherlightswitch','*klik*');
-                    Say('Nothing');
-                }
-        }
-        hotspot.i++;
-    }
+    await lightswitches('anotherlightswitch',hotspot,locals);
 };
-
 
 yetanotherlightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
     PlaySound('button');
-    await HotspotSay('yetanotherlightswitch','*klik*');
+    await WaitMiliseconds(200);
+    PlaySound('input');
+    await HotspotSay('yetanotherlightswitch','*beep*');
     if( locals.panelfixed ) {
         if( locals.codeposition == 0 || locals.codeposition == 2) {
             locals.codeposition++;
@@ -353,7 +286,8 @@ room.enter = async function( locals ) {
     + LoadSound('button.wav')
     + LoadSound('power-down.mp3')
     + LoadSound('error.aiff')
-    + LoadSound('ding.wav');
+    + LoadSound('ding.wav')
+    + LoadSound('input.wav');
     PlaySound('murder-scene', true);
 };
 
