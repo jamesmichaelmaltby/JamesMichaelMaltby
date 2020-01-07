@@ -160,11 +160,11 @@ anotherlightswitch.click = async function( hotspot, locals ) {
 
 yetanotherlightswitch.click = async function( hotspot, locals ) {
     hotspot.on = !hotspot.on;
-    PlaySound('button');
-    await WaitMiliseconds(200);
-    PlaySound('input');
-    await HotspotSay('yetanotherlightswitch','*beep*');
     if( locals.panelfixed ) {
+        PlaySound('button');
+        await WaitMiliseconds(200);
+        PlaySound('input');
+        await HotspotSay('yetanotherlightswitch','*beep*');
         if( locals.codeposition == 0 || locals.codeposition == 2) {
             locals.codeposition++;
         } else {
@@ -176,6 +176,8 @@ yetanotherlightswitch.click = async function( hotspot, locals ) {
             locals.codeposition=0;
         }
     } else {
+        PlaySound('button');
+        await HotspotSay('yetanotherlightswitch','*klik*');
         if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
             PlaySound('power-down');
             await HotspotSay('panel','*powering down*');
