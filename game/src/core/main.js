@@ -16,5 +16,6 @@ var globals = {
     rooms : {},
     scripts: {
         running: {}
-    }
+    },
+    sounds : {}
 };

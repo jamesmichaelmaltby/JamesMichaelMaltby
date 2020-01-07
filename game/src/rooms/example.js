@@ -81,7 +81,9 @@ lightswitch.click = async function( hotspot, locals ) {
                 await WaitSeconds(2);
                 await Say('*sigh*');
                 await WaitSeconds(1);
+                PlaySound('shock2');
                 await HotspotSay('door','*buzzing noises*');
+                await HotspotSay('door','*electricical spark*');
                 HotspotEnable('start','door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
@@ -102,9 +104,18 @@ lightswitch.click = async function( hotspot, locals ) {
                 PlaySound('button');
                 await HotspotSay('lightswitch','*klik*');
                 if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+                    PlaySound('power-down');
+                    await HotspotSay('door','*powering down*');
+                    locals.powerdown = true;
                     await WaitSeconds(1);
                     await Say('Hey I think the buzzing stopped!');
                     await Say('Maybe I should not be playing with these buttons in the dark.');
+                } else {
+                    if(locals.powerdown) {
+                        PlaySound('shock2');
+                        await HotspotSay('door','*buzzing*');
+                        locals.powerdown = false;
+                    }
                 }
             } else {
                 PlaySound('button');
@@ -136,8 +147,10 @@ anotherlightswitch.click = async function( hotspot, locals ) {
                 await WaitSeconds(2);
                 await Say('*sigh*');
                 await WaitSeconds(1);
-                await HotspotSay('start','door','*buzzing noises*');
-                HotspotEnable('start','door');
+                PlaySound('shock2');
+                await HotspotSay('door','*buzzing noises*');
+                await HotspotSay('door','*electricical spark*');
+                HotspotEnable('door');
                 await WaitSeconds(1);
                 await Say('Hmmm I wonder where that came from?');
                 hotspot.description = 'Use ambiguous button';
@@ -157,9 +170,18 @@ anotherlightswitch.click = async function( hotspot, locals ) {
                 PlaySound('button');
                 await HotspotSay('anotherlightswitch','*klik*');
                 if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+                    PlaySound('power-down');
+                    locals.powerdown = true;
+                    await HotspotSay('door','*powering down*');
                     await WaitSeconds(1);
                     await Say('Hey I think the buzzing stopped!');
                     await Say('Maybe I should not be playing with these buttons in the dark.');
+                } else {
+                    if(locals.powerdown) {
+                        PlaySound('shock2');
+                        await HotspotSay('door','*buzzing*');
+                        locals.powerdown = false;
+                    }
                 }
             } else {
                 PlaySound('button');
@@ -176,9 +198,18 @@ yetanotherlightswitch.click = async function( hotspot, locals ) {
     PlaySound('button');
     await HotspotSay('yetanotherlightswitch','*klik*');
     if( !locals.hotspots.lightswitch.on && !locals.hotspots.anotherlightswitch.on && !locals.hotspots.yetanotherlightswitch.on ) {
+        PlaySound('power-down');
+        await HotspotSay('door','*powering down*');
+        locals.powerdown = true;
         await WaitSeconds(1);
         await Say('Hey I think the buzzing stopped!');
         await Say('Maybe I should not be playing with these buttons in the dark.');
+    } else {
+        if(locals.powerdown) {
+            PlaySound('shock2');
+            await HotspotSay('door','*buzzing*');
+            locals.powerdown = false;
+        }
     }
 };
 
@@ -262,6 +293,7 @@ room.enter = async function( locals ) {
     await LoadSound('shock1.wav');
     await LoadSound('shock2.wav');
     await LoadSound('button.wav');
+    await LoadSound('power-down.mp3');
     PlaySound('murder-scene', true);
 };
 

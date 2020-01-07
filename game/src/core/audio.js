@@ -22,6 +22,7 @@ async function LoadSound(name) {
     request.onload = function() {
         audiocontext.decodeAudioData(request.response, function(buffer) {
             sounds[name] = buffer;
+            globals.sounds[name] = {};
             request.loaded = true;
         }, null);
     };
@@ -44,5 +45,5 @@ function PlaySound(name, loop) {
     source.buffer = sounds[name];       
     source.loop = loop;             
     source.connect(audiocontext.destination);       
-    source.start(0);                                                         
+    source.start(0);     
 }
