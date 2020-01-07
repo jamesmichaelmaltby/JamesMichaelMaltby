@@ -40,6 +40,12 @@ gamescreen.addEventListener('mousemove', mouseMove);
 
 
 function click(e) {
+    if( defaultGlobals ) return;
     audiocontext.resume();
+    defaultGlobals = JSON.stringify(globals);
+    gamescreen.click();
+    if( !LoadLastSave() ) {
+        StartScript('main');
+    }
 }
 gamescreen.addEventListener('click', click);
