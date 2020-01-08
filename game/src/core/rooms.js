@@ -10,12 +10,46 @@ function Room(name) {
     };
 }
 
+
+
+async function ClearRoom() {
+    roomarea.innerHTML = '';
+    StopLoop();
+}
+
+async function RenderBackground(name) {
+    roomarea.innerHTML = resources.backgrounds[name];
+}
+
+async function LoadBackground(name) {
+    if(resources.backgrounds[name]) RenderBackground(name);
+    else {
+        var request = new XMLHttpRequest();
+        request.open('GET', 'src/backgrounds/' + name + '.svg', true);
+        request.onload = function() {
+            resources.backgrounds[name] = request.response;
+            RenderBackground(name);
+            request.loaded = true;
+        };
+        request.send();
+        return new Promise(resolve => {
+            var loading = setInterval(() => {
+                if(request.loaded) {
+                    resolve('done');
+                    clearInterval(loading);
+                }
+            }, 10);
+        });
+    }
+}
+
 async function EnterRoom(name) {
     hover.innerHTML = '';
     hover.style.display = 'none';
     roomarea.style.display = 'none';
     gameconsole.innerHTML = '';
-
+    await LoadBackground(name);
+    
     overHotspot = '';
     if( rooms[name] && rooms[name].enter ) {
         globals.currentRoom = name;
@@ -23,20 +57,10 @@ async function EnterRoom(name) {
             var hotspotdiv;
             if( globals.rooms[name].hotspots[hotspot].svg ) {
                 hotspotdiv = document.getElementById( globals.rooms[name].hotspots[hotspot].svg );
+                if( hotspotdiv === undefined) return alert('Error hotspot not found');
                 hotspotdiv.style.cursor = "pointer";
                 hotspotdiv.style.display = "block";
                 hotspotdiv.id = hotspot;
-            } else {
-                /*hotspotdiv = document.createElement("div");
-                hotspotdiv.className = "game__hotspot gpu";
-                hotspotdiv.style.position = "absolute";
-                hotspotdiv.style.left = globals.rooms[name].hotspots[hotspot].x;
-                hotspotdiv.style.top = globals.rooms[name].hotspots[hotspot].y;
-                hotspotdiv.style.width = globals.rooms[name].hotspots[hotspot].width;
-                hotspotdiv.style.height = globals.rooms[name].hotspots[hotspot].height;
-                       hotspotdiv.id = hotspot;          
-                roomarea.appendChild(hotspotdiv);
-                */
             }
             
             if( globals.rooms[name].hotspots[hotspot].active == false) {
@@ -56,7 +80,6 @@ async function EnterRoom(name) {
             if( globals.rooms[name].hotspots[hotspot].invisible ) hotspotdiv.style.visibility = 'hidden';
             else hotspotdiv.style.visibility = 'visible';
         }
-        DefaultMessageColour();
         await rooms[name].enter( globals.rooms[name] );
         roomarea.style.display = 'block';
     }
