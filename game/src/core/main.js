@@ -3,7 +3,6 @@ var gamescreen = document.getElementById('gamescreen');
 var roomarea = document.getElementById('roomarea');
 var main = document.getElementById('main');
 var hover = document.getElementById('hover');
-roomarea.style.display = 'none';
 
 var scripts = {
     running : {}

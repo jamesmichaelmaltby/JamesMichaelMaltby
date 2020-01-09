@@ -38,10 +38,10 @@ function mouseMove(e) {
 }
 gamescreen.addEventListener('mousemove', mouseMove);
 
-function click(e) {
+function gameclick(e) {
     if( defaultGlobals ) return;
     audiocontext.resume();
     defaultGlobals = JSON.stringify(globals);
     LoadLastSave();
 }
-gamescreen.addEventListener('click', click);
+/*gamescreen.addEventListener('click', click);*/
