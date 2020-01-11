@@ -17,6 +17,38 @@ function Hotspot(name,values) {
     return rooms[room].hotspots[name] = {};
 }
 
+var overHotspot = '';
+function HoverHotspot(x,y) {
+    var hover = document.getElementById('hover');
+    if(hover==null) {
+        hover = document.createElement('div');
+        hover.id = 'hover';
+        hover.className = 'hover gpu';
+        roomarea.appendChild(hover);
+    }
+
+    hover.style.display = 'block';
+    hover.style.left = x + "px";
+    hover.style.top = y + "px";
+    hover.innerHTML = overHotspot;
+}
+
+function HoverHotspotRemove() {
+    var hover = document.getElementById('hover');
+    if( hover == null ) return;
+    hover.style.display = 'none';
+    hover.innerHTML = '';
+    overHotspot = null;
+}
+
+function HoverHotspotSetText(text) {
+    overHotspot = text;
+}
+
+function HoverHotspotGetText() {
+    return overHotspot;
+}
+
 async function HotspotClick( room, name) {
     if(name === undefined) {
         name = room;

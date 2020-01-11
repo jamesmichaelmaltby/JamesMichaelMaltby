@@ -44,10 +44,10 @@ async function LoadBackground(name) {
 }
 
 async function EnterRoom(name) {
-    hover.innerHTML = '';
-    hover.style.display = 'none';
-    roomarea.style.display = 'none';
-    gameconsole.innerHTML = '';
+    HoverHotspotRemove();
+    /*roomarea.style.display = 'none';*/
+    /*gameconsole.innerHTML = '';*/
+
     await LoadBackground(name);
     
     overHotspot = '';
@@ -74,7 +74,7 @@ async function EnterRoom(name) {
                 HotspotClick(globals.currentRoom,this.id);
             };
             hotspotdiv.onmousemove = function(e) {
-                overHotspot = globals.rooms[globals.currentRoom].hotspots[this.id].description;
+                HoverHotspotSetText(globals.rooms[globals.currentRoom].hotspots[this.id].description);
             };
 
             if( globals.rooms[name].hotspots[hotspot].invisible ) hotspotdiv.style.visibility = 'hidden';

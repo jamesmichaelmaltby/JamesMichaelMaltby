@@ -2,8 +2,7 @@
 function EnableInterface() {
     game.interfaceLocked = false;
     gamescreen.className = gamescreen.className.replace(" nointerface", "");
-    hover.innerHTML = '';
-    hover.style.display = "none";
+    HoverHotspotRemove();
     overHotspot = '';
 }
 
@@ -43,9 +42,7 @@ async function ClearAllSavedData() {
   localStorage.removeItem('save7');
   localStorage.removeItem('save8');
   localStorage.removeItem('save9');
-  SetMessageColour('red');
-  await Say('Cleared all saved data');
-  DefaultMessageColour();
+  await Say('red', 'Cleared all saved data');
 }
 
 
@@ -54,23 +51,20 @@ async function ResetGame() {
   DisableInterface();
   ClearRoom();
   globals = JSON.parse(defaultGlobals);
-  SetMessageColour('red');
-  await Say('Game resetting');
-  DefaultMessageColour();
+  await Say('red','Game restarting');
   EnableInterface();
   StartScript('main');
 }
 
   async function SaveGame(n) {
     localStorage.setItem('save'+n, JSON.stringify(globals) );
-    SetMessageColour('yellow');
 
     if(n==0 || n=='0') {
-      await Say('Autosaved');
+      await Say('yellow','Autosaved');
     } else {
-      await Say('Saved to Slot ' + n);
+      await Say('yellow','Saved to Slot ' + n);
     }
-    DefaultMessageColour();
+
     localStorage.setItem('lastSave',n);
 }
 
@@ -80,13 +74,11 @@ async function LoadGame(n) {
        newglobals = JSON.parse(load);
        await ClearRoom();
        globals = Object.assign(globals,newglobals);
-       SetMessageColour('yellow');
        if(n==0 || n=='0') {
-        await Say('Loading Autosave');
+        await Say('yellow','Loading Autosave');
         } else {
-        await Say('Loading Save ' + n);
+        await Say('yellow','Loading Save ' + n);
         }
-       DefaultMessageColour();
        localStorage.setItem('lastSave',n);
        game.interfaceLocked = false;
        ResumeScripts();

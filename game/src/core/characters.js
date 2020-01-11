@@ -14,62 +14,62 @@ async function DefaultMessageColour() {
     SetMessageColour("#fefefe");
 }
 
-function Say(message) {
+function Say(character, text) {
+    if(text===undefined) {
+        text = character;
+        character = 'ego';
+    }
     var promise, ms;
-    ms = Math.max(1500,message.length*50);
+    ms = Math.max(1500,text.length*50);
 
-    gameconsole.style.display = 'inline-block';
-    gameconsole.innerHTML = message;
-    currentMessages++;
+    var message = document.createElement('div');
+    message.className = 'message';
+    message.innerHTML = text;
+
+    if(character == 'ego') {
+        message.style.left = '50%';
+        message.style.top = '20%';
+        message.style.color= '#fefefe';
+    } else {
+        message.style.left = '50%';
+        message.style.top = '14%';
+        message.style.color = character;
+    }
+    roomarea.appendChild(message);
+
     promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
-           currentMessages--;
-            if(currentMessages==0) {
-                gameconsole.style.display = 'none';
-                gameconsole.innerHTML = '';
-            }
+            roomarea.removeChild(message);
             resolve('timeout done');
         }, ms);
     });
     return promise;
 }
 
-
-var currentHotspots = 0;
-function HotspotSay(room, hotspot, message) {
-    if(message === undefined) {
-        message = hotspot;
-        hotspot = room;
-        room = globals.currentRoom;
-    }
+function HotspotSay(hotspot, text, override_ms) {
+    var room = globals.currentRoom;
     var promise, ms;
-    ms = Math.max(1500,message.length*50);
+    ms = Math.max(1500,text.length*50);
+    if(override_ms) ms = override_ms;
     
     var hs = document.getElementById(hotspot);
     var bounds = hs.getBoundingClientRect();
     var x = parseFloat(bounds.x) - main.offsetLeft + parseFloat(bounds.width)/2;
     var y = parseFloat(bounds.y) - main.offsetTop + parseFloat(bounds.height)/3;
-    console.log(bounds);
-
-    hover.style.left = x + "px";
-    hover.style.top = y + "px";
-    hover.style.display = 'block';
-    hover.innerHTML = message;
+  
+    var message = document.createElement('div');
+    message.className = 'message';
+    message.innerHTML = text;
+    message.style.left = x + "px";
+    message.style.top = y + "px";
+    roomarea.appendChild(message);
 
     if(globals.rooms[room].hotspots[hotspot].messageColour) {
-        hover.style.color = globals.rooms[room].hotspots[hotspot].messageColour;
+        message.style.color = globals.rooms[room].hotspots[hotspot].messageColour;
     }
-    if(currentHotspots==0) gamescreen.className += " hoversay";
-    currentHotspots++;
     promise = new Promise(function(resolve, reject) {
         setTimeout(function() {
-            currentHotspots--;
-            if(currentHotspots==0) {
-                hover.style.display = 'none';
-                hover.innerHTML = '';
-                hover.style.color = null;
-                gamescreen.className = gamescreen.className.replace(" hoversay", "");
-            }
+            roomarea.removeChild(message);
             resolve('timeout done');
         }, ms);
     });

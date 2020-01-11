@@ -10,7 +10,6 @@ let panel = Hotspot('panel', {
     description:'Inspect faint shape',
     active:false,
     invisible:true,
-    messageColour:'red',
     svg:'door'
 });
 
@@ -69,14 +68,13 @@ async function lightswitches(name,hotspot,locals) {
         PlaySound('button');
         await WaitMiliseconds(200);
         PlaySound('input');
-        await HotspotSay(name,'*beep*');
+        HotspotSay(name,'*klik*');
+        await HotspotSay('panel','*beep*');
         if( name == 'anotherlightswitch' && locals.codeposition == 1) {
             locals.codeposition++;
         } else if( name == 'lightswitch' && locals.codeposition == 3) {
             PlaySound('ding');
-            locals.hotspots.panel.messageColour = 'green';
             await HotspotSay('panel','*ding*');
-            locals.hotspots.panel.messageColour = 'red';
             await Say('You win');
             locals.codeposition = 0;
         } else {
@@ -164,7 +162,8 @@ yetanotherlightswitch.click = async function( hotspot, locals ) {
         PlaySound('button');
         await WaitMiliseconds(200);
         PlaySound('input');
-        await HotspotSay('yetanotherlightswitch','*beep*');
+        HotspotSay('yetanotherlightswitch','*klik*');
+        await HotspotSay('panel','*beep*');
         if( locals.codeposition == 0 || locals.codeposition == 2) {
             locals.codeposition++;
         } else {
@@ -222,36 +221,33 @@ panel.click = async function( hotspot, locals ) {
             HotspotEnable('yetanotherlightswitch');
             hotspot.i++;
             if( locals.hotspots.lightswitch.on ) {
-                switch( Random(4) ) {
-                    case 0: HotspotSay('lightswitch','*fizzle*'); break;
-                    case 1: HotspotSay('lightswitch','*buzz*'); break;
-                    case 2: HotspotSay('lightswitch','*spark*'); break;
-                    case 3: HotspotSay('lightswitch','*crackle*'); break;
-                }
                 PlaySound('shock1');
-                await WaitSeconds(0.5);
+                switch( Random(4) ) {
+                    case 0: await HotspotSay('lightswitch','*fizzle*',250); break;
+                    case 1: await HotspotSay('lightswitch','*buzz*',250); break;
+                    case 2: await HotspotSay('lightswitch','*spark*',250); break;
+                    case 3: await HotspotSay('lightswitch','*crackle*',250); break;
+                }
             }
             if( locals.hotspots.anotherlightswitch.on ) {
-                switch( Random(4) ) {
-                    case 0: HotspotSay('anotherlightswitch','*fizzle*'); break;
-                    case 1: HotspotSay('anotherlightswitch','*buzz*'); break;
-                    case 2: HotspotSay('anotherlightswitch','*spark*'); break;
-                    case 3: HotspotSay('anotherlightswitch','*crackle*'); break;
-                }
                 PlaySound('shock1');
-                await WaitSeconds(0.5);
+                switch( Random(4) ) {
+                    case 0: await HotspotSay('anotherlightswitch','*fizzle*',250); break;
+                    case 1: await HotspotSay('anotherlightswitch','*buzz*',250); break;
+                    case 2: await HotspotSay('anotherlightswitch','*spark*',250); break;
+                    case 3: await HotspotSay('anotherlightswitch','*crackle*',250); break;
+                }
             }
             if( locals.hotspots.yetanotherlightswitch.on ) {
-                switch( Random(4) ) {
-                    case 0: HotspotSay('yetanotherlightswitch','*fizzle*'); break;
-                    case 1: HotspotSay('yetanotherlightswitch','*buzz*'); break;
-                    case 2: HotspotSay('yetanotherlightswitch','*spark*'); break;
-                    case 3: HotspotSay('yetanotherlightswitch','*crackle*'); break;
-                }
                 PlaySound('shock1');
-                await WaitSeconds(0.5);
+                switch( Random(4) ) {
+                    case 0: await HotspotSay('yetanotherlightswitch','*fizzle*',250); break;
+                    case 1: await HotspotSay('yetanotherlightswitch','*buzz*',250); break;
+                    case 2: await HotspotSay('yetanotherlightswitch','*spark*',250); break;
+                    case 3: await HotspotSay('yetanotherlightswitch','*crackle*',250); break;
+                }
             }
-            HotspotSay('start','panel','*zap*');
+            HotspotSay('panel','*zap*');
             PlaySound('shock2');
             await WaitSeconds(2);
             await Say( 'Ouch!');
@@ -307,9 +303,9 @@ scripts.clock = async function( locals ) {
 scripts.main = async function( ) {
     DisableInterface();
     await EnterRoom('start');
-    await WaitSeconds(1);
+    /*await WaitSeconds(1);
     await Say('Typical...');
     await Say('...I enter the one escape room where there is no light...');
-    await Say('...there must be a light switch somewhere?');
+    await Say('...there must be a light switch somewhere?');*/
     EnableInterface();
 };

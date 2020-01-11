@@ -20,21 +20,16 @@ async function logKey(e) {
 }
 document.addEventListener('keypress', logKey);
 
-var overHotspot;
 function mouseMove(e) {
     if( game.interfaceLocked ) return;
     var x = (e.clientX - main.offsetLeft);
     var y = (e.clientY - main.offsetTop);
-    hover.style.left = x + "px";
-    hover.style.top = y + "px";
-    if( overHotspot) { 
-        hover.style.display = 'block';
-        hover.innerHTML = overHotspot;
+    if( HoverHotspotGetText() ) {
+        HoverHotspot(x,y);
     } else {
-        hover.style.display = 'none';
-        hover.innerHTML = '';
+        HoverHotspotRemove();
     }
-    overHotspot = '';
+    HoverHotspotSetText(null);
 }
 gamescreen.addEventListener('mousemove', mouseMove);
 
