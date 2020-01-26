@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<title>Immersive Training</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88915216-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-88915216-1');
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+<script src="videojs/video.min.js"></script>
+<link rel="stylesheet" href="videojs/video-js.min.css" />
+
+<script src="videojs-vr/videojs-vr.min.js"></script>
+
+
+<script src="vendor/jquery.min.js"></script>
+<link rel="stylesheet" href="vendor/fancybox.min.css" />
+<script src="vendor/fancybox.min.js"></script>
+
+<script>
+function touchHandler(event)
+{
+    var touches = event.changedTouches,
+        first = touches[0],
+        type = "";
+    switch(event.type)
+    {
+        case "touchstart": type = "mousedown"; break;
+        case "touchmove":  type = "mousemove"; break;        
+        case "touchend":   type = "mouseup";   break;
+        default:           return;
+    }
+
+    // initMouseEvent(type, canBubble, cancelable, view, clickCount, 
+    //                screenX, screenY, clientX, clientY, ctrlKey, 
+    //                altKey, shiftKey, metaKey, button, relatedTarget);
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+    simulatedEvent.initMouseEvent(type, true, true, window, 1, 
+                                  first.screenX, first.screenY, 
+                                  first.clientX, first.clientY, false, 
+                                  false, false, false, 0/*left*/, null);
+
+    first.target.dispatchEvent(simulatedEvent);
+    // event.preventDefault();
+}
+
+function init() 
+{
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);    
+    //document.addEventListener("contextmenu", function(event) { event.preventDefault(); }, true );
+}
+init();
+
+
+</script>
+
+<style>
+html {
+    /*touch-action:none;*/
+}
+iframe {
+    overflow:hidden !important;
+}
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+    box-sizing: border-box;
+}
+a, img {
+    -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+html{height:100%;width:100%;padding:0;margin:0}
+body{color:#333;font-family:'Open Sans';height:100%;width:100%;padding:0;margin:0;
+
+}
+object {height:100vh;width:100vw;padding:0;margin:0}
+#video-container {
+    cursor:move;
+    width:100%;
+    height:60vh;
+    background:black;
+}
+#video-container video {
+    width:100vw;
+    height:60vh;
+    background:black;
+}
+.video-wrap {
+    position: relative;
+    width:100%;
+    height:60vh;
+    background:black;
+}
+
+.webvr-button {
+    display:none !important;
+}
+.sidebar {
+    display:block;
+    /*position:absolute;*/
+   /* background:white;*/
+    /*margin-top:-50%;*/
+    /*width:20vw;*/
+    width:100%;
+    margin:0 auto;
+    max-width:1024px;
+    box-sizing:border-box;
+    padding:0 2rem;
+    /*box-shadow:0 0 1rem rgba(0,0,0,0.5);*/
+}
+.sidebar-logo {
+    text-align:center;
+}
+
+.link {
+width:100%;
+ bottom:0.5rem;
+    left:0.5rem;
+    width:280px;
+    box-shadow: 0 0 0.25rem rgba(0,0,0,0.5);
+    position:fixed;
+    overflow:auto;
+}
+.link img {
+    width:100%;
+    float:left;
+}
+
+
+.map {
+width:25%;
+min-width:120px;
+ /*top:7.5rem;
+    right:1rem;
+    width:280px;*/
+    /*box-shadow: 0 0 0.25rem rgba(0,0,0,0.5);*/
+    /*position:fixed;*/
+    overflow:auto;
+}
+.map img {
+    width:100%;
+    float:left;
+}
+.map .overlay {
+    /*position:absolute;
+    top:50%;
+    left:1rem;
+    right:1rem;
+    text-align: center;
+    display:block;*/
+}
+
+.vjs-control-text {
+    display: none !important;
+}
+
+.map {
+    position:absolute;
+    top:1rem;
+    left:1rem;
+    width:18vw;
+}
+
+
+.tile {
+    width:50%;
+    display:block;
+    float:left;
+    padding:1rem;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+    .tile {
+        width:25%;
+    }
+
+    #video-container, #video-container video, .video-wrap {
+        height:70vh;
+    }
+}
+.tile:hover {
+    background:#f7f7f7;
+}
+.tile.active {
+    background:#e0e0e0;
+}
+.tile img {
+    width:100%;
+}
+.tile a {
+    text-decoration: none;
+    color:#333;
+    font-size:1rem;
+    font-weight:400;
+}
+.tile a .text {
+    /*background:white;*/
+    padding:0.5rem 0;
+    display:block;
+    float:left;
+    width:100%;
+    box-sizing: border-box;
+    color:#666;
+}
+
+.tile a .text h2 {
+    margin:0;
+    padding:0;
+    font-size:0.9rem;
+    color:#333;
+}
+.tile a .text p {
+    margin:0;
+    padding:0.25rem 0;
+    font-size:0.8rem;
+    display: none;
+}
+
+.fancybox-content {
+    padding:0;
+}
+.vjs-control-bar {
+ display: none !important;
+}
+.vjs-error-display {
+display: none !important;
+}
+
+h1 {
+    font-size:1.75rem;
+    font-weight:400;
+    margin-top:0;
+    padding-top:0;
+}
+p {
+    font-size:0.9rem;
+}
+*:focus {
+  outline: none;
+}
+
+@keyframes draginstructions {
+  0% {
+    opacity:0;
+    transform: scale(1.0) translateX(0%);
+  }
+  10% {
+    opacity:1;
+    transform: scale(0.7) translateX(0%);
+  }
+  15% {
+    opacity:1;
+    transform: scale(0.7) translateX(0%);
+  }
+  37% {
+    opacity:1;
+    transform: scale(0.7) translateX(-100%);
+  }
+  80% {
+    opacity:1;
+    transform: scale(0.7) translateX(100%);
+  }
+  90% {
+    transform: scale(0.7) translateX(100%);
+    opacity:0;
+  }
+  100% {
+    transform: scale(0.7) translateX(100%);
+    opacity:0;
+  }
+}
+
+
+.instructions {
+    position:absolute;
+    bottom:6vh;
+    left:0;
+    right:0;
+    width:100%;
+    text-align: center;
+    pointer-events: none;
+}
+.instructions img {
+    min-width:72px;
+    width:12vh;
+    animation:draginstructions 3s ease;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+.instructions p {
+    color:white;
+    padding:0;
+    margin:0;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    font-size:2vh;
+}
+.back {
+    position:fixed;
+    left:0;
+    top:0;
+    width:6vw;
+    height:6vw;
+    padding:1vw;
+    box-sizing: border-box;
+}
+.back img {
+    width:100%;
+    opacity:0.5
+}
+
+main {
+    position: relative;
+}
+
+header {
+    background:white;
+    overflow: hidden;
+    /*border-bottom:1px solid #eee;*/
+    box-shadow:0 0 1rem rgba(0,0,0,0.5);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    z-index:9999;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin:0;
+    padding:0;
+}
+
+header img {
+    width:96px;
+    float:left;
+}
+header a {
+    float:left;
+    padding:1.5rem 2rem 1.5rem 2rem;
+    line-height: 1;
+    text-decoration: none;
+    color:#222;
+    opacity:0.25;
+}
+
+header a:hover {
+    opacity:0.5;
+}
+
+header a.active {
+    opacity:1.0;
+}
+
+header nav ul {
+    margin:0;
+    padding:1rem 0 0 0;
+    list-style: none;
+}
+header nav ul li {
+    display:inline-block;
+    padding:0;
+    margin:0;
+}
+header nav ul li a {
+    text-decoration: none;
+    color:#aaa;
+}
+header nav ul li a:hover {
+    color:black;
+}
+
+header h1{
+    padding:0;
+    margin:0;
+    line-height:1;
+    font-size:1.25em;
+}
+
+footer {
+    padding:4rem 2rem 2rem 2rem;
+    font-size:0.8em;
+    color:#777;
+    clear:both;
+    max-width:1024px;
+    width:100%;
+    margin:0 auto;
+}
+
+.aside {
+    max-width:1024px;
+    width:100%;
+    margin:0 auto;
+    padding:1rem 2rem 2rem 2rem;
+    font-size:0.9rem;
+    box-sizing: border-box;
+}
+.aside p {
+    max-width:720px
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <a href="index.html">
+            Immersive Induction to College
+        </a>
+
+        <a class="active" href="apple.html">
+            Immersive Training in Industry
+        </a>
+
+    </header>
+<main>
+
+<div class="video-wrap">
+<video onclick="play();" ontouch="play();" id="video-container" preload="auto" loop crossOrigin="anonymous" width="100%" height="100%" playsinline autoplay webkit-playsinline>
+ <source src="cdn/apple/1.mp4" type="video/mp4">
+</video>
+<div class="instructions">
+    <img src="drag.svg"/>
+    <p>Touch and drag to explore the whole video</p>
+</div>
+</div>
+<div class="aside">
+    <h2>Immersive Training in Industry &mdash; Part 1</h2>
+    <p>
+    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+    </p>
+</div>
+<div class="sidebar">
+
+    <div id="video1" class="tile active">
+        <a href="javascript:loadvideo('1');">
+            <img src="cdn/apple/1.jpg"/>
+            <div class="text">
+                <h2>Part 1</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video2" class="tile">
+        <a href="javascript:loadvideo('2');">
+            <img src="cdn/apple/2.jpg"/>
+            <div class="text">
+                <h2>Part 2</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video3" class="tile">
+        <a href="javascript:loadvideo('3');">
+            <img src="cdn/apple/3.jpg"/>
+            <div class="text">
+                <h2>Part 3</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video4" class="tile">
+        <a href="javascript:loadvideo('4');">
+            <img src="cdn/apple/4.jpg"/>
+            <div class="text">
+                <h2>Part 4</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video6" class="tile">
+        <a href="javascript:loadvideo('6');">
+            <img src="cdn/apple/6.jpg"/>
+            <div class="text">
+                <h2>Part 5</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video7" class="tile">
+        <a href="javascript:loadvideo('7');">
+            <img src="cdn/apple/7.jpg"/>
+            <div class="text">
+                <h2>Part 6</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video8" class="tile">
+        <a href="javascript:loadvideo('8');">
+            <img src="cdn/apple/8.jpg"/>
+            <div class="text">
+                <h2>Part 7</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video9" class="tile">
+        <a href="javascript:loadvideo('9');">
+            <img src="cdn/apple/9.jpg"/>
+            <div class="text">
+                <h2>Part 8</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+    <div id="video10" class="tile">
+        <a href="javascript:loadvideo('10');">
+            <img src="cdn/apple/10.jpg"/>
+            <div class="text">
+                <h2>Part 9. Shipping</h2>
+                <p>Explore locations across the college</p>
+            </div>
+        </a>
+    </div>
+
+
+</div>
+
+</main>
+<footer>
+    <br/>
+</footer>
+<script>
+    var player, vr, camera;
+
+    function loadvideo(video,direction) {
+        player.src({
+            "type": "video/mp4",
+            "src": "cdn/apple/"+video+".mp4"
+        });
+        player.play();
+        $.fancybox.close();
+        if(direction) {
+            // camera.position.y = direction * Math.PI / 180;
+        }
+
+        var activeTiles = document.querySelectorAll(".tile.active");
+
+        activeTiles.forEach(function(activeTile) {
+            activeTile.className = activeTile.className.replace(' active','');
+        });
+
+        var id = document.getElementById("video"+video);
+        id.className += ' active';
+        window.scrollTo(0, 0);
+    }
+
+function play() {
+    player.play();
+}
+
+    (function(){
+        player = videojs( '#video-container' );
+        vr = player.vr({projection: "360",motionControls:true});
+        camera = player.vr.camera;
+        player.volume(1.0);
+        play();
+    })();
+
+    $.fancybox.defaults.hideScrollbar = false;
+
+</script>
+</body>
+</html>
